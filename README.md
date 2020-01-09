@@ -30,7 +30,14 @@ Quality assurance lead: [Gillian](https://github.com/yeo-yeo)
 
 ### Design Process
 #### Initial Exploration
+
+![a](https://imgur.com/Dxz4Pws.jpg)
+![a](https://imgur.com/JvDTjEz.jpg)
+
+
+
 #### User Research
+We wrote our user research script and questions, and tracked responses in [this Google Doc](https://docs.google.com/document/d/1lQWcgmyjNmRlyZqQc-Wxc6-UaOgbgnxEwWQv-LosjRs/edit)
 #### Prototyping
 #### User Testing
 #### More Prototyping
