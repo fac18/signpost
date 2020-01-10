@@ -2,15 +2,16 @@
 A community-driven service for those experiencing or at risk of homelessness in Islington
 
 ## Readme Contents:
-- Team
-- Overview
-- Installation Guide
-- User Journey
-- Design Process
-- First Build Sprint
-- Second Build Sprint
-- Potential Future Developments
-- Learning Outcomes
+- [Team](#team)
+- [Overview](#overview)
+- [Installation Guide](#installation-guide)
+- [User Journey](#user-journey)
+- [Design Process](#design-process)
+- [First Build Sprint](#first-build-sprint)
+- [Second Build Sprint](#second-build-sprint)
+- [Potential Future Developments](#potential-future-developments)
+- [Learning Outcomes](#learning-outcomes)
+- [Tech Stack](#tech-stack)
 
 ### Team
 
@@ -95,7 +96,7 @@ Our changes following user testing:
 
 ### First Build Sprint
 
-### Second Built Sprint
+### Second Build Sprint
 
 ### Potential Future Developments
  - Expand geographical location
