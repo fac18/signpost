@@ -13,6 +13,8 @@ A community-driven service for those experiencing or at risk of homelessness in 
 - [Learning Outcomes](#learning-outcomes)
 - [Tech Stack](#tech-stack)
 
+---
+
 ### Team
 
 Scrum master: [Renata](https://github.com/renatajarmova)\
