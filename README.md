@@ -59,16 +59,33 @@ Our top 5 user research insights were:
  - *In light of this, it would make sense to focus on one particular area of services or geography.  We have chosen to focus on Islington.*
 
 #### Prototyping
+Prototyping wasn't too hard because the previous steps had given us a very clear idea of what we wanted to build 😊
+We made a list of all the 'screens' and divided them up between us
+
 #### User Testing
 We wrote our user testing script and questions, and tracked responses in [this Google Doc](https://docs.google.com/document/d/1lQWcgmyjNmRlyZqQc-Wxc6-UaOgbgnxEwWQv-LosjRs/edit)
 #### More Prototyping
+
+Our changes following user testing:
+
+- Add info page about app purpose
+- Change category order
+- Add help page for map
+- Add help prompt if no interaction at beginning
+- Make back to services button more prominent
+- Add label to edit button and more interactions
+- Add next buttons
+- Colour
 
 ### First Build Sprint
 
 ### Second Built Sprint
 
 ### Potential Future Developments
+ - Expand geographical location
 
 ### Learning Outcomes
+We learnt:
+Design process, e.g. rapid prototyping, user research, user testing, using Figma to build a prototype
 
 ### Tech Stack
