@@ -22,6 +22,8 @@ Quality assurance lead: [Gillian](https://github.com/yeo-yeo)
 
 ### Overview
 
+Signpost is an app/desktop website that lets people experiencing or at risk of homelessness find services relevant for them.  Services are organised into categories and displayed as pins on a map.  Further information such as opening hours and contact details are available for each service.  Users can contribute their own suggestions and services to make sure the data is relevant and maintainable.
+
 ### Installation Guide
 
 ### User Journey
@@ -31,11 +33,25 @@ Quality assurance lead: [Gillian](https://github.com/yeo-yeo)
 ### Design Process
 #### Initial Exploration
 
-<p>
-<img src="https://imgur.com/Dxz4Pws.jpg" width="500" height="375">
-<img src="https://imgur.com/JvDTjEz.jpg" width="375" height="500">
+<p float="left">
+<img src="https://imgur.com/Dxz4Pws.jpg" width="400">
+<img src="https://imgur.com/JvDTjEz.jpg" width="300">
 </p>
 
+#### Moodboard and similar services
+<p float="left">
+<img width="400" alt="Screenshot 2020-01-10 at 12 22 04" src="https://user-images.githubusercontent.com/28454190/72152779-e6051500-33a3-11ea-8da9-cc4b4b5b1d7f.png">
+<img src="https://user-images.githubusercontent.com/28454190/72152271-6591e480-33a2-11ea-899e-c1ac508054da.JPG" width="300">
+</p>
+
+#### 'Crazy 8' rapid page sketching
+<img src="https://user-images.githubusercontent.com/28454190/72152268-6591e480-33a2-11ea-818b-04d14e880281.JPG" width="400">
+
+#### User story brainstorming
+<img src="https://user-images.githubusercontent.com/28454190/72152269-6591e480-33a2-11ea-908f-ba7a28c0b50b.JPG" width="400">
+
+#### Collaborated Storyboard
+<img src="https://user-images.githubusercontent.com/28454190/72152267-64f94e00-33a2-11ea-9a74-fc6ea6ac04f5.JPG" width="400">
 
 #### User Research
 
