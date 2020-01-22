@@ -37,6 +37,7 @@ class App extends Component {
                 <li key={index}>{password}</li>
               ))}
             </ul>
+            <p>signposty stuff</p>
             <button className="more" onClick={this.getPasswords}>
               Get More
             </button>
