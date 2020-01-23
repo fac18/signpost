@@ -12,7 +12,7 @@ function Airtable() {
   }, []);
 
   return (
-    <div className='App'>
+    <div>
       <h2>{airtableData ? airtableData[0].id : null}</h2>
       <div></div>
     </div>

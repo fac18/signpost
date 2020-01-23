@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Airtable from './components/Airtable/airtable.js';
+import Airtable from './components/Airtable/Airtable.js';
 
 function App() {
   const [passwords, setPasswords] = React.useState(null);
@@ -19,7 +19,7 @@ function App() {
   return (
     <div className='App'>
       <Airtable />
-      {/* Render the passwords if we have them */}
+
       {!passwords ? null : passwords.length ? (
         <div>
           <h1>5 Passwords.</h1>
