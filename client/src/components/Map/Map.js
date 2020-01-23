@@ -1,5 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Airtable from '../Airtable/Airtable.js';
 
 const GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_TOKEN;
 
@@ -93,6 +94,7 @@ const Map = ({ airTableData }) => {
 
   return (
     <div>
+     <Airtable />
       <Link to="iconspage">
         <a href="/iconspage" m>
           Back to services
