@@ -15,8 +15,7 @@ import { ReactComponent as Women } from "./icons/Women.svg";
 
 import './IconsPage.css';
 
-
-const Icons = (props) => {
+const Icons = () => {
   return (
 <section className="icon-panel">
 <Advice />
