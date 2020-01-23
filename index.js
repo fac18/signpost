@@ -22,7 +22,7 @@ app.get('/api/passwords', (req, res) => {
 });
 
 app.get('/api/airtable', (req, res) => {
-  const airtableUrl = `https://api.airtable.com/v0/appnOxIi3Xwhtwq3N/Services%20Database?api_key=${process.env.AIRTABLE_TOKEN}`;
+  const airtableUrl = `https://api.airtable.com/v0/appnOxIi3Xwhtwq3N/Services%20Database?api_key=${process.env.AIRTABLE_TOKEN}&view=${category}`;
   console.log('has entered server endpoint airtable');
 
   https.get(airtableUrl, response => {

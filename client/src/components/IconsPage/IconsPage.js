@@ -31,14 +31,20 @@ const categories = [
 ];
 
 const Icons = props => {
-  const [ chosenCategory, setCategory ] = React.useState(null);
+  const [chosenCategory, setCategory] = React.useState(null);
 
-
+  React.useEffect(() => {
+    console.log(chosenCategory);
+  }, [chosenCategory]);
 
   return (
     <section className='icon-panel'>
       {categories.map(category => (
-        <a className='icon-panel__button' type='submit' value={category}>
+        <a
+          className='icon-panel__button'
+          value={category}
+          onClick={() => setCategory({ category })}
+        >
           <img
             className='icon-panel__button__image'
             src={require(`./icons/${category}.svg`)}
