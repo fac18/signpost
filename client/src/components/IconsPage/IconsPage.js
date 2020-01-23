@@ -16,30 +16,35 @@ import React from 'react';
 import './IconsPage.css';
 
 const categories = [
-  'Animals',
-  'Children',
-  'Food',
-  'Laundry',
-  'Learning',
-  'Map',
-  'Medical',
   'Shelter',
   'Shower',
+  'Medical',
+  'Food',
+  'Learning',
+  'Women',
   'Wellbeing',
-  'Women'
+  'Advice',
+  'Children',
+  'Animals',
+  'Laundry',
+  'Map'
 ];
 
 const Icons = props => {
+  const [ chosenCategory, setCategory ] = React.useState(null);
+
+
+
   return (
     <section className='icon-panel'>
       {categories.map(category => (
-        <button className='icon-panel__button' type='submit' value={category}>
+        <a className='icon-panel__button' type='submit' value={category}>
           <img
             className='icon-panel__button__image'
             src={require(`./icons/${category}.svg`)}
             alt={category}
           />
-        </button>
+        </a>
       ))}
     </section>
   );
