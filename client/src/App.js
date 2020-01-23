@@ -6,6 +6,7 @@ import LandingPage from "./components/LandingPage/LandingPage";
 import IconsPage from "./components/IconsPage/IconsPage";
 import AboutUs from "./components/AboutUs/AboutUs";
 import AddNewService from "./components/AddNewService/AddNewService";
+import SuggestChange from "./components/SuggestChange/SuggestChange";
 import ThankYou from "./components/ThankYou/ThankYou";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path='/iconspage' component={IconsPage} />
       <Route path='/map' component={Map} />
       <Route path='/addservice' component={AddNewService} />
+      <Route path='/suggestchange' component={SuggestChange} />
       <Route path='thankyou' component={ThankYou} />
     </Router>
   );
