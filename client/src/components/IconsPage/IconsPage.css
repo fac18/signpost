@@ -1,11 +1,12 @@
 
 .icon-panel {
   display: grid;
-  grid-template-columns: repeat(2, 500px [col-start]);
+  grid-template-columns: repeat(2, 200px [col-start]);
   justify-content: center;
   margin: 10px;
 }
 .icon-panel__button{
+
 
 }
 .icon-panel__button__image{

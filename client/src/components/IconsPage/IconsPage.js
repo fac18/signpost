@@ -31,16 +31,20 @@ const categories = [
 ];
 
 const Icons = props => {
+  const [ chosenCategory, setCategory ] = React.useState(null);
+
+
+
   return (
     <section className='icon-panel'>
       {categories.map(category => (
-        <button className='icon-panel__button' type='submit' value={category}>
+        <a className='icon-panel__button' type='submit' value={category}>
           <img
             className='icon-panel__button__image'
             src={require(`./icons/${category}.svg`)}
             alt={category}
           />
-        </button>
+        </a>
       ))}
     </section>
   );
