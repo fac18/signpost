@@ -1,4 +1,4 @@
-import React, { components } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 
@@ -11,7 +11,7 @@ import AddNewService from "./components/AddNewService/AddNewService";
 import SuggestChange from "./components/SuggestChange/SuggestChange";
 import ThankYou from "./components/ThankYou/ThankYou";
 import Info from "./components/ServiceInformation/ServiceInformation";
-import Icons from "./components/IconsPage/IconsPage.js"
+
 
 function App() {
   return (
