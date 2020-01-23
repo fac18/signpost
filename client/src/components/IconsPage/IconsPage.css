@@ -1,4 +1,6 @@
 .icon-panel {
-align-items: center;
+    display: flex;
+    
+    column-count: 2;
 
 }
