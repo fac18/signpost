@@ -1,12 +1,13 @@
-import React, { Component } from "react";
-import "./App.css";
+import React, { Component } from 'react';
+import './App.css';
+import Airtable from './components/Airtable/airtable.js';
 
 function App() {
   const [passwords, setPasswords] = React.useState(null);
 
   const getPasswords = () => {
     // Get the passwords and store them in state
-    fetch("/api/passwords")
+    fetch('/api/passwords')
       .then(res => res.json())
       .then(passwords => setPasswords(passwords));
   };
@@ -16,12 +17,13 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className='App'>
+      <Airtable />
       {/* Render the passwords if we have them */}
       {!passwords ? null : passwords.length ? (
         <div>
           <h1>5 Passwords.</h1>
-          <ul className="passwords">
+          <ul className='passwords'>
             {/*
                 Generally it's bad to use "index" as a key.
                 It's ok for this example because there will always
@@ -33,7 +35,7 @@ function App() {
             ))}
           </ul>
           <p>signposty stuff</p>
-          <button className="more" onClick={() => getPasswords()}>
+          <button className='more' onClick={() => getPasswords()}>
             Get More
           </button>
         </div>
@@ -41,7 +43,7 @@ function App() {
         // Render a helpful message otherwise
         <div>
           <h1>No passwords :(</h1>
-          <button className="more" onClick={() => getPasswords()}>
+          <button className='more' onClick={() => getPasswords()}>
             Try Again?
           </button>
         </div>

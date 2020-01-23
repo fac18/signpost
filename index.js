@@ -22,6 +22,25 @@ app.get('/api/passwords', (req, res) => {
   console.log(`Sent ${count} passwords`);
 });
 
+app.get('/api/airtable', (req, res) => {
+  const airtableUrl =
+    'https://api.airtable.com/v0/appnOxIi3Xwhtwq3N/Services%20Database?api_key=keyFuz93usHqwagyl';
+  console.log('has entered server endpoint airtable');
+
+  https.get(airtableUrl, response => {
+    console.log('starting request');
+    let data = '';
+    response.on('data', chunk => {
+      data += chunk;
+    });
+
+    response.on('end', () => {
+      console.log(data);
+      res.end(data);
+    });
+  });
+});
+
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (req, res) => {
