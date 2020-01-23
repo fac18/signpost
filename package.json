@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "experss": "0.0.1-security",
     "express": "^4.17.1",
     "password-generator": "^2.2.3"
   }
