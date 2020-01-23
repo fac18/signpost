@@ -1,54 +1,28 @@
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Icons from './components/IconsPage/IconsPage.js';
 import React, { Component } from 'react';
 import './App.css';
-import Airtable from './components/Airtable/Airtable.js';
+import Map from './components/Map/Map';
+import LandingPage from './components/LandingPage/LandingPage';
+import IconsPage from './components/IconsPage/IconsPage';
+import AboutUs from './components/AboutUs/AboutUs';
+import AddNewService from './components/AddNewService/AddNewService';
+import SuggestChange from './components/SuggestChange/SuggestChange';
+import ThankYou from './components/ThankYou/ThankYou';
+import Info from './components/ServiceInformation/ServiceInformation';
 
 function App() {
-  const [passwords, setPasswords] = React.useState(null);
-
-  const getPasswords = () => {
-    // Get the passwords and store them in state
-    fetch('/api/passwords')
-      .then(res => res.json())
-      .then(passwords => setPasswords(passwords));
-  };
-
-  React.useEffect(() => {
-    getPasswords();
-  }, []);
-
   return (
-    <div className='App'>
-      <Airtable />
-
-      {!passwords ? null : passwords.length ? (
-        <div>
-          <h1>5 Passwords.</h1>
-          <ul className='passwords'>
-            {/*
-                Generally it's bad to use "index" as a key.
-                It's ok for this example because there will always
-                be the same number of passwords, and they never
-                change positions in the array.
-              */}
-            {passwords.map((password, index) => (
-              <li key={index}>{password}</li>
-            ))}
-          </ul>
-          <p>signposty stuff</p>
-          <button className='more' onClick={() => getPasswords()}>
-            Get More
-          </button>
-        </div>
-      ) : (
-        // Render a helpful message otherwise
-        <div>
-          <h1>No passwords :(</h1>
-          <button className='more' onClick={() => getPasswords()}>
-            Try Again?
-          </button>
-        </div>
-      )}
-    </div>
+    <Router>
+      <Route exact path='/' component={LandingPage} />
+      <Route path='/about' component={AboutUs} />
+      <Route path='/iconspage' component={IconsPage} />
+      <Route path='/map' component={Map} />
+      <Route path='/addservice' component={AddNewService} />
+      <Route path='/suggestchange' component={SuggestChange} />
+      <Route path='thankyou' component={ThankYou} />
+      <Route path='/info' component={Info} />
+    </Router>
   );
 }
 
