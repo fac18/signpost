@@ -1,15 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Airtable from '../Airtable/Airtable.js';
 
 const Map = props => {
   let styles = {
-    width: "600",
-    height: "450",
-    frameborder: "0",
-    style: "border:0"
+    width: '600',
+    height: '450',
+    frameborder: '0',
+    style: 'border:0'
   };
   return (
     <div>
+      <Airtable />
       <Link to='iconspage'>
         <a href='/iconspage' m>
           Back to services

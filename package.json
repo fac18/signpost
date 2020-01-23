@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
+    "experss": "0.0.1-security",
     "express": "^4.17.1",
     "password-generator": "^2.2.3",
     "react-router-dom": "^5.1.2"
