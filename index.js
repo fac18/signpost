@@ -1,7 +1,9 @@
+require('dotenv').config();
+
 const express = require('express');
 const path = require('path');
 const generatePassword = require('password-generator');
-
+const https = require('https');
 const app = express();
 
 // Serve static files from the React app
@@ -20,8 +22,7 @@ app.get('/api/passwords', (req, res) => {
 });
 
 app.get('/api/airtable', (req, res) => {
-  const airtableUrl =
-    'https://api.airtable.com/v0/appnOxIi3Xwhtwq3N/Services%20Database?api_key=keyFuz93usHqwagyl';
+  const airtableUrl = `https://api.airtable.com/v0/appnOxIi3Xwhtwq3N/Services%20Database?api_key=${process.env.AIRTABLE_TOKEN}`;
   console.log('has entered server endpoint airtable');
 
   https.get(airtableUrl, response => {
