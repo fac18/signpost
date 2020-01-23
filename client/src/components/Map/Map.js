@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Map = props => {
   let styles = {
@@ -9,6 +10,14 @@ const Map = props => {
   };
   return (
     <div>
+      <Link to='iconspage'>
+        <a href='/iconspage' m>
+          Back to services
+        </a>
+      </Link>
+      <Link to='/info'>
+        <button>?</button>
+      </Link>
       <h1>Map is working </h1>
       <iframe
         style={styles}
