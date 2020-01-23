@@ -16,17 +16,18 @@ import React from 'react';
 import './IconsPage.css';
 
 const categories = [
-  'Animals',
-  'Children',
-  'Food',
-  'Laundry',
-  'Learning',
-  'Map',
-  'Medical',
   'Shelter',
   'Shower',
+  'Medical',
+  'Food',
+  'Learning',
+  'Women',
   'Wellbeing',
-  'Women'
+  'Advice',
+  'Children',
+  'Animals',
+  'Laundry',
+  'Map'
 ];
 
 const Icons = props => {

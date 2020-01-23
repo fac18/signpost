@@ -1,6 +1,14 @@
+
 .icon-panel {
-    display: flex;
-    
-    column-count: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 200px [col-start]);
+  justify-content: center;
+  margin: 10px;
+}
+.icon-panel__button{
+
+
+}
+.icon-panel__button__image{
 
 }
