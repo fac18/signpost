@@ -7,21 +7,21 @@ import "./LandingPage.css";
 const LandingPage = () => {
   return (
     <>
-      <Link to="/about">
-        <button className="about-button">
+      <Link to='/about'>
+        <button className='about-button'>
           <About />
         </button>
       </Link>
-      <section className="logo">
+      <section className='logo'>
         <Logo />
       </section>
-      <h1 className="signpost">Signpost</h1>
-      <p className="subtext">
+      <h1 className='signpost'>Signpost</h1>
+      <p className='subtext'>
         A community-driven service for those experiencing or at risk of
         homelessness in Islington
       </p>
-      <Link to="/iconspage">
-        <button className="start-button">Get started</button>
+      <Link to='/icons-page'>
+        <button className='start-button'>Get started</button>
       </Link>
     </>
   );
