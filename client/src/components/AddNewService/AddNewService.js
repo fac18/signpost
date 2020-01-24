@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const AddNewService = props => {
   return (
     <>
-      <Link to='/iconspage'>
+      <Link to='/icons-page'>
         <button>X</button>
       </Link>
       <h1>Add a new service</h1>
@@ -69,7 +69,7 @@ const AddNewService = props => {
         </label>
         <br />
       </form>
-      <Link to='/thankyou'>
+      <Link to='/thank-you'>
         <button type='submit'>Add</button>
       </Link>
     </>
