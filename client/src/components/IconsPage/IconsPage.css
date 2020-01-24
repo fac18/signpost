@@ -1,14 +1,26 @@
+.headline {
+  margin-top: 50px;
+  font-size: 50px;
+  color: var(--mako);
+}
 
 .icon-panel {
   display: grid;
-  grid-template-columns: repeat(2, 200px [col-start]);
+  grid-template-columns: repeat(4, 200px [col-start]);
   justify-content: center;
+  margin: 5px;
+}
+
+.icon-panel__button{
   margin: 10px;
 }
-.icon-panel__button{
 
-
-}
 .icon-panel__button__image{
+}
 
+.icon-text{
+  color: var(--mako);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 25px;
 }

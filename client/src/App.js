@@ -9,7 +9,7 @@ import AddNewService from './components/AddNewService/AddNewService';
 import SuggestChange from './components/SuggestChange/SuggestChange';
 import ThankYou from './components/ThankYou/ThankYou';
 import ServiceInfo from './components/ServiceInformation/ServiceInformation';
-import Help from './components/Help/Help';
+import Help from './components/HelpPage/HelpPage';
 
 function App() {
   //INITIAL STATE WILL BE NULL WHEN AIRTABLE DATA IS COMING THROUGH

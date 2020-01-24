@@ -1,19 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ReactComponent as Logo } from "../../assets/signpost-logo.svg";
+import { ReactComponent as About } from "../../assets/about-us.svg";
+import "./LandingPage.css";
 
 const LandingPage = () => {
   return (
     <>
       <Link to='/about'>
-        <button>?</button>
+        <button className='about-button'>
+          <About />
+        </button>
       </Link>
-      <h1>Signpost</h1>
-      <p>
+      <section className='logo'>
+        <Logo />
+      </section>
+      <h1 className='signpost'>Signpost</h1>
+      <p className='subtext'>
         A community-driven service for those experiencing or at risk of
         homelessness in Islington
       </p>
       <Link to='/icons-page'>
-        <button>Get started</button>
+        <button className='start-button'>Get started</button>
       </Link>
     </>
   );
