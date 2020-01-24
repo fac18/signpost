@@ -1,11 +1,35 @@
-.logo {
-
+.about-button {
+display: flex;
+flex-direction: start;
+margin: 20px;
+background-color: transparent;
+border: transparent;
+border-radius: 50%;
+outline: none;
 }
 
-.about-button {
-
+.logo {
+margin: 10px;
 }
 
 .signpost {
-  
+ font-size: 90px;
+ color: var(--mako);
+ text-shadow: 5px 10px 18px var(--light-grey);
+}
+
+.subtext {
+  font-size: 30px;
+  color: var(--mako);
+}
+
+.start-button {
+  background-color: var(--mako);
+  color: var(--coral);
+  font-family: 'Passion One', cursive;
+  font-size: 30px;
+  padding: 10px;
+  box-shadow: 5px 10px 18px var(--mako);
+  border-color: var(--mako);
+  border-radius: 10px;
 }

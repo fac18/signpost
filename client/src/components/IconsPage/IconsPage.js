@@ -39,7 +39,7 @@ const Icons = props => {
 
   return (
     <section>
-      <h1 className="headline"> Which service do you need ? </h1>
+      <h1 className="headline"> Which service do you need? </h1>
       <article className="icon-panel">
         {categories.map(category => (
           <a
