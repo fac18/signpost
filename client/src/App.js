@@ -8,8 +8,8 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import AddNewService from "./components/AddNewService/AddNewService";
 import SuggestChange from "./components/SuggestChange/SuggestChange";
 import ThankYou from "./components/ThankYou/ThankYou";
+import Help from "./components/HelpPage/HelpPage";
 import ServiceInfo from "./components/ServiceInformation/ServiceInformation";
-import Help from "./components/Help/Help";
 
 function App() {
   //INITIAL STATE WILL BE NULL WHEN AIRTABLE DATA IS COMING THROUGH
@@ -47,14 +47,14 @@ function App() {
 
   return (
     <Router>
-      <Route exact path="/" component={LandingPage} />
-      <Route path="/about" component={AboutUs} />
+      <Route exact path='/' component={LandingPage} />
+      <Route path='/about' component={AboutUs} />
       <Route
-        path="/iconspage"
+        path='/iconspage'
         render={() => <IconsPage setSelectedService={setSelectedService} />}
       />
       <Route
-        path="/map"
+        path='/map'
         render={() => (
           <Map
             selectedService={selectedService}
@@ -66,15 +66,15 @@ function App() {
           />
         )}
       />
-      <Route path="/addservice" component={AddNewService} />
+      <Route path='/addservice' component={AddNewService} />
       <Route
-        path="/suggestchange"
+        path='/suggestchange'
         render={() => <SuggestChange selectedMarker={selectedMarker} />}
       />
-      <Route path="/thankyou" component={ThankYou} />
-      <Route path="/help" component={Help} />
+      <Route path='/thankyou' component={ThankYou} />
+      <Route path='/help' component={Help} />
       <Route
-        path="/service"
+        path='/service'
         render={() => <ServiceInfo selectedMarkerData={selectedMarkerData} />}
       />
     </Router>
