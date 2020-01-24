@@ -1,0 +1,20 @@
+/*------------------------------------
+        Info bar on top of map
+-------------------------------------*/
+
+.wrapper {
+  position: relative;
+}
+
+.over-map {
+  position: absolute;
+  bottom: 0px;
+  background-color: white;
+  z-index: 2;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #ff9b77;
+}
