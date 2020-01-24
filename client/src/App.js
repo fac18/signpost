@@ -41,6 +41,23 @@ function App() {
       timings: 'sdgasd'
     }
   ]);
+
+  // When the selectedService is changed, trigger the API call to the backend
+
+  const getData = async () => {
+    await fetch(`/api/airtable?q=${selectedService}`)
+      .then(res => res.json())
+      .then(info => setSelectedServiceData(info.records));
+  };
+
+  React.useEffect(() => {
+    getData();
+  }, [selectedService]);
+
+  React.useEffect(() => {
+    console.log(selectedService);
+  }, [selectedService]);
+
   //set when map marker is clicked, data is filtered from selectedServiceData
   const [selectedMarker, setSelectedMarker] = React.useState(null);
   const [selectedMarkerData, setSelectedMarkerData] = React.useState(null);

@@ -5,6 +5,12 @@ const path = require('path');
 const generatePassword = require('password-generator');
 const https = require('https');
 const app = express();
+const url = require('url');
+const querystring = require('querystring');
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
@@ -21,8 +27,10 @@ app.get('/api/passwords', (req, res) => {
   console.log(`Sent ${count} passwords`);
 });
 
-app.get('/api/airtable', (req, res) => {
-  const airtableUrl = `https://api.airtable.com/v0/appnOxIi3Xwhtwq3N/Services%20Database?api_key=${process.env.AIRTABLE_TOKEN}&view=${category}`;
+app.get(`/api/airtable`, (req, res) => {
+  const airtableUrl = `https://api.airtable.com/v0/appnOxIi3Xwhtwq3N/Services%20Database?api_key=${process.env.AIRTABLE_TOKEN}&view=${selectedService}`;
+
+  console.log(req.query.q);
   console.log('has entered server endpoint airtable');
 
   https.get(airtableUrl, response => {
