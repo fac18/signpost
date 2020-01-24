@@ -30,12 +30,10 @@ const categories = [
   'Map'
 ];
 
-const Icons = props => {
-  const [chosenCategory, setCategory] = React.useState(null);
-
+const Icons = ({ selectedService, setSelectedService }) => {
   React.useEffect(() => {
-    console.log(chosenCategory);
-  }, [chosenCategory]);
+    console.log(selectedService);
+  }, [selectedService]);
 
   return (
     <section className='icon-panel'>
@@ -43,7 +41,7 @@ const Icons = props => {
         <a
           className='icon-panel__button'
           value={category}
-          onClick={() => setCategory({ category })}
+          onClick={() => setSelectedService({ category })}
         >
           <img
             className='icon-panel__button__image'
