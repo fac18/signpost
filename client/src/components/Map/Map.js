@@ -86,10 +86,10 @@ const Map = ({
   return (
     <>
       <Airtable />
-      <Link to='iconspage'>
-        <a href='/iconspage'>Back to services</a>
+      <Link to='icons-page'>
+        <a href='/icons-page'>Back to services</a>
       </Link>
-      <Link to='/info'>
+      <Link to='/help'>
         <button>?</button>
       </Link>
       <h1>Map is working </h1>

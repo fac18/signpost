@@ -13,7 +13,7 @@ const ServiceInfo = ({ selectedMarkerData }) => {
           <p>{selectedMarkerData.timings}</p>
         </a>
       </aside>
-      <Link to='/suggestchange'>
+      <Link to='/suggest-change'>
         <button>Suggest edit</button>
       </Link>
     </>

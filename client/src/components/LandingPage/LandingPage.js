@@ -12,7 +12,7 @@ const LandingPage = () => {
         A community-driven service for those experiencing or at risk of
         homelessness in Islington
       </p>
-      <Link to='/iconspage'>
+      <Link to='/icons-page'>
         <button>Get started</button>
       </Link>
     </>

@@ -8,7 +8,7 @@ const ThankYou = () => {
     <>
       <h3>Thank you for your contribution!</h3>
       <p>Our team will review your information and update the service soon.</p>
-      <Link to='/iconspage'>
+      <Link to='/icons-page'>
         <button>Next</button>
       </Link>
     </>
