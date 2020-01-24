@@ -41,7 +41,7 @@ const Icons = ({ selectedService, setSelectedService }) => {
         <a
           className='icon-panel__button'
           value={category}
-          onClick={() => setSelectedService({ category })}
+          onClick={() => setSelectedService(category)}
         >
           <img
             className='icon-panel__button__image'

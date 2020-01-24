@@ -9,12 +9,13 @@ import AddNewService from './components/AddNewService/AddNewService';
 import SuggestChange from './components/SuggestChange/SuggestChange';
 import ThankYou from './components/ThankYou/ThankYou';
 import ServiceInfo from './components/ServiceInformation/ServiceInformation';
-import Help from './components/Help/Help';
+import useDidMountEffect from './useDidMountEffect';
+// import Help from './components/Help/Help';
 
 function App() {
   //INITIAL STATE WILL BE NULL WHEN AIRTABLE DATA IS COMING THROUGH
   //set when icon is is selected, data populated from airtable
-  const [selectedService, setSelectedService] = React.useState('wellbeing');
+  const [selectedService, setSelectedService] = React.useState(null);
   const [selectedServiceData, setSelectedServiceData] = React.useState([
     {
       Name: 'The Margins Project',
@@ -50,11 +51,11 @@ function App() {
       .then(info => setSelectedServiceData(info.records));
   };
 
-  React.useEffect(() => {
+  useDidMountEffect(() => {
     getData();
   }, [selectedService]);
 
-  React.useEffect(() => {
+  useDidMountEffect(() => {
     console.log(selectedService);
   }, [selectedService]);
 
@@ -94,7 +95,7 @@ function App() {
         render={() => <SuggestChange selectedMarker={selectedMarker} />}
       />
       <Route path='/thank-you' component={ThankYou} />
-      <Route path='/help' component={Help} />
+      {/* <Route path='/help' component={Help} /> */}
       <Route
         path='/service'
         render={() => <ServiceInfo selectedMarkerData={selectedMarkerData} />}
