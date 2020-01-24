@@ -1,17 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-// Do something with the text area inputed by the user -> send it somewhere?
-
-const Info = () => {
+const ServiceInfo = props => {
+  // console.log(name);
   return (
     <>
-      <Link to='/map'>
-        <button>X</button>
-      </Link>
-      <h1>NEED HELP?</h1>
+      <aside>
+        <a>
+          <h1>Name</h1>
+          {/* <h3>{name}</h3>
+          <p>{description}</p>
+          <p>{address}</p>
+          <p>{timings}</p> */}
+        </a>
+      </aside>
     </>
   );
 };
 
-export default Info;
+export default ServiceInfo;

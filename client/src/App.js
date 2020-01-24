@@ -9,6 +9,7 @@ import AddNewService from "./components/AddNewService/AddNewService";
 import SuggestChange from "./components/SuggestChange/SuggestChange";
 import ThankYou from "./components/ThankYou/ThankYou";
 import Help from "./components/HelpPage/HelpPage";
+import ServiceInfo from "./components/ServiceInformation/ServiceInformation";
 
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
       <Route path='/map' component={Map} />
       <Route path='/addservice' component={AddNewService} />
       <Route path='/suggestchange' component={SuggestChange} />
-      <Route path='thankyou' component={ThankYou} />
+      <Route path='/thankyou' component={ThankYou} />
       <Route path='/help' component={Help} />
+      <Route path='/service' component={ServiceInfo} />
     </Router>
   );
 }

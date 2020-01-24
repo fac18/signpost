@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// Do something with the text area inputed by the user -> send it somewhere?
+// Need to add icons to this page
 
 const Help = () => {
   return (
@@ -10,6 +10,12 @@ const Help = () => {
         <button>X</button>
       </Link>
       <h1>NEED HELP?</h1>
+      <p>Zoom in</p>
+      <p>Zoom out</p>
+      <p>Click pin to see more information</p>
+      <p>Search location by postcode, area, street, etc</p>
+      <p>Read more about this service</p>
+      <p>You are here</p>
     </>
   );
 };

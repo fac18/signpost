@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Airtable from "../Airtable/Airtable.js";
 import InfoBar from "../InfoBar/InfoBar";
+import ServiceInfo from "../ServiceInformation/ServiceInformation";
 
 const GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_TOKEN;
 
@@ -114,9 +115,9 @@ const Map = ({ airTableData }) => {
   }, [selectedMarker]);
 
   return (
-    <div>
+    <>
       <Airtable />
-      <Link to='iconspage'>
+      <Link to='/iconspage'>
         <a href='/iconspage'>Back to services</a>
       </Link>
       <Link to='/help'>
@@ -125,14 +126,16 @@ const Map = ({ airTableData }) => {
       <h1>Map is working </h1>
       <div id='google-map' ref={googleMapRef} style={mapStyles} />
       {selectedMarkerData ? (
-        <InfoBar
-          name={selectedMarkerData.Name}
-          description={selectedMarkerData.description}
-          address={selectedMarkerData.address}
-          timings={selectedMarkerData.timings}
-        />
+        <Link to='/service'>
+          <InfoBar
+            name={selectedMarkerData.Name}
+            description={selectedMarkerData.description}
+            address={selectedMarkerData.address}
+            timings={selectedMarkerData.timings}
+          />
+        </Link>
       ) : null}
-    </div>
+    </>
   );
 };
 
