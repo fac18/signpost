@@ -51,12 +51,9 @@ function App() {
       .then(info => setSelectedServiceData(info.records));
   };
 
-  useDidMountEffect(() => {
+  React.useEffect(() => {
     getData();
-  }, [selectedService]);
-
-  useDidMountEffect(() => {
-    console.log(selectedService);
+    console.log(selectedServiceData);
   }, [selectedService]);
 
   //set when map marker is clicked, data is filtered from selectedServiceData

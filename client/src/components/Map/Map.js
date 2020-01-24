@@ -1,15 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Airtable from "../Airtable/Airtable.js";
-import InfoBar from "../InfoBar/InfoBar";
-import ServiceInfo from "../ServiceInformation/ServiceInformation";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Airtable from '../Airtable/Airtable.js';
+import InfoBar from '../InfoBar/InfoBar';
+import ServiceInfo from '../ServiceInformation/ServiceInformation';
 
 const GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_TOKEN;
 
 // styles
 const mapStyles = {
-  width: "100%",
-  height: "400px"
+  width: '100%',
+  height: '400px'
 };
 
 const Map = ({
@@ -33,7 +33,7 @@ const Map = ({
         lng: -0.1043
       }
     });
-    map.addListener("click", () => {
+    map.addListener('click', () => {
       setSelectedMarker(null);
       setSelectedMarkerData(null);
     });
@@ -59,18 +59,19 @@ const Map = ({
         title: selectedServiceData[i].Name
       });
 
-      marker.addListener("click", function(e) {
+      marker.addListener('click', function(e) {
         setSelectedMarker(e.tb.target.parentNode.title);
       });
     }
   }
 
   React.useEffect(() => {
-    const googleMapScript = document.createElement("script");
+    const googleMapScript = document.createElement('script');
     googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API_KEY}&libraries=places`;
     window.document.body.appendChild(googleMapScript);
-    googleMapScript.addEventListener("load", () => {
+    googleMapScript.addEventListener('load', () => {
       googleMap.current = createGoogleMap();
+      console.log(selectedServiceData);
     });
   }, []);
 
