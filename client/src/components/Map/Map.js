@@ -6,64 +6,31 @@ import ServiceInfo from "../ServiceInformation/ServiceInformation";
 
 const GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_TOKEN;
 
-const myLocation = {
-  lat: 51.5458,
-  lng: -0.1043
-};
 // styles
 const mapStyles = {
   width: "100%",
   height: "400px"
 };
 
-//fake airtable data
-const data = [
-  {
-    Name: "The Margins Project",
-    Lat: "51.5449449",
-    Lng: "-0.1049151",
-    description: "Enter description here",
-    address: "123 here",
-    timings: "12:00"
-  },
-  {
-    Name: "Other Project",
-    Lat: "51.555667",
-    Lng: "-0.0991213",
-    description: "szfasf",
-    address: "asdgasdg",
-    timings: "12"
-  },
-  {
-    Name: "And Another Project",
-    Lat: "51.543596",
-    Lng: "-0.091032",
-    description: "asdgdsg",
-    address: "146",
-    timings: "sdgasd"
-  }
-];
-
-//fake state of current service
-const service = "address";
-
-const Map = ({ airTableData }) => {
-  //fake state: selected marker
-  const [selectedMarker, setSelectedMarker] = React.useState(null);
-  const [selectedMarkerData, setSelectedMarkerData] = React.useState(null);
-
+const Map = ({
+  selectedService,
+  selectedServiceData,
+  selectedMarker,
+  setSelectedMarker,
+  selectedMarkerData,
+  setSelectedMarkerData
+}) => {
   // refs
   const googleMapRef = React.createRef();
   const googleMap = React.useRef(null);
-  const marker = React.useRef(null);
 
   // helper functions
   const createGoogleMap = () => {
     const map = new window.google.maps.Map(googleMapRef.current, {
       zoom: 14,
       center: {
-        lat: myLocation.lat,
-        lng: myLocation.lng
+        lat: 51.5458,
+        lng: -0.1043
       }
     });
     map.addListener("click", () => {
@@ -73,23 +40,26 @@ const Map = ({ airTableData }) => {
     createMarkers(map);
   };
 
+  //function to iterate over the list of services and create a marker for each
   function createMarkers(map) {
-    //change 'data' in here when we have the real data plumbing
-    for (var i = 0; i < data.length; i++) {
+    for (var i = 0; i < selectedServiceData.length; i++) {
+      const markerImage = {
+        url: require(`./pin-icons/${selectedService}-pin.svg`),
+        scaledSize: new window.google.maps.Size(48, 48)
+      };
+
       const marker = new window.google.maps.Marker({
         position: {
-          lat: Number(data[i].Lat),
-          lng: Number(data[i].Lng)
+          lat: Number(selectedServiceData[i].Lat),
+          lng: Number(selectedServiceData[i].Lng)
         },
         map: map,
-        //change service when we have the real data plumbing
-        icon: `./${service}.png`,
+        icon: markerImage,
         animation: window.google.maps.Animation.DROP,
-        title: data[i].Name
+        title: selectedServiceData[i].Name
       });
 
       marker.addListener("click", function(e) {
-        // console.log(e.tb.target.parentNode.title);
         setSelectedMarker(e.tb.target.parentNode.title);
       });
     }
@@ -99,7 +69,6 @@ const Map = ({ airTableData }) => {
     const googleMapScript = document.createElement("script");
     googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API_KEY}&libraries=places`;
     window.document.body.appendChild(googleMapScript);
-
     googleMapScript.addEventListener("load", () => {
       googleMap.current = createGoogleMap();
     });
@@ -107,7 +76,7 @@ const Map = ({ airTableData }) => {
 
   React.useEffect(() => {
     if (selectedMarker) {
-      const filteredData = data.filter(
+      const filteredData = selectedServiceData.filter(
         record => record.Name === selectedMarker
       );
       setSelectedMarkerData(filteredData[0]);
@@ -117,10 +86,10 @@ const Map = ({ airTableData }) => {
   return (
     <>
       <Airtable />
-      <Link to='/iconspage'>
+      <Link to='iconspage'>
         <a href='/iconspage'>Back to services</a>
       </Link>
-      <Link to='/help'>
+      <Link to='/info'>
         <button>?</button>
       </Link>
       <h1>Map is working </h1>
