@@ -1,15 +1,14 @@
-
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import React, { Component } from 'react';
-import './App.css';
-import Map from './components/Map/Map';
-import LandingPage from './components/LandingPage/LandingPage';
-import IconsPage from './components/IconsPage/IconsPage';
-import AboutUs from './components/AboutUs/AboutUs';
-import AddNewService from './components/AddNewService/AddNewService';
-import SuggestChange from './components/SuggestChange/SuggestChange';
-import ThankYou from './components/ThankYou/ThankYou';
-import Info from './components/ServiceInformation/ServiceInformation';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import React, { Component } from "react";
+import "./App.css";
+import Map from "./components/Map/Map";
+import LandingPage from "./components/LandingPage/LandingPage";
+import IconsPage from "./components/IconsPage/IconsPage";
+import AboutUs from "./components/AboutUs/AboutUs";
+import AddNewService from "./components/AddNewService/AddNewService";
+import SuggestChange from "./components/SuggestChange/SuggestChange";
+import ThankYou from "./components/ThankYou/ThankYou";
+import Help from "./components/HelpPage/HelpPage";
 
 function App() {
   return (
@@ -21,7 +20,7 @@ function App() {
       <Route path='/addservice' component={AddNewService} />
       <Route path='/suggestchange' component={SuggestChange} />
       <Route path='thankyou' component={ThankYou} />
-      <Route path='/info' component={Info} />
+      <Route path='/help' component={Help} />
     </Router>
   );
 }

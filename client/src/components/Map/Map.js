@@ -119,7 +119,7 @@ const Map = ({ airTableData }) => {
       <Link to='iconspage'>
         <a href='/iconspage'>Back to services</a>
       </Link>
-      <Link to='/info'>
+      <Link to='/help'>
         <button>?</button>
       </Link>
       <h1>Map is working </h1>
