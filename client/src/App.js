@@ -9,8 +9,7 @@ import AddNewService from './components/AddNewService/AddNewService';
 import SuggestChange from './components/SuggestChange/SuggestChange';
 import ThankYou from './components/ThankYou/ThankYou';
 import ServiceInfo from './components/ServiceInformation/ServiceInformation';
-import useDidMountEffect from './useDidMountEffect';
-// import Help from './components/Help/Help';
+import Help from './components/HelpPage/HelpPage';
 
 function App() {
   //INITIAL STATE WILL BE NULL WHEN AIRTABLE DATA IS COMING THROUGH
@@ -53,7 +52,7 @@ function App() {
 
   React.useEffect(() => {
     getData();
-    console.log(selectedServiceData);
+    console.log('I am selected service data', selectedServiceData);
   }, [selectedService]);
 
   //set when map marker is clicked, data is filtered from selectedServiceData
