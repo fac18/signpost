@@ -98,6 +98,12 @@ Our changes following user testing:
 
 ### First Build Sprint
 
+Mon/Tues: slow start: planning and researching.  Lots of big initial blockers.
+Weds: trying to figure out how to build Express backend with React front end, also how to overwrite Git project
+Thurs: Lift off! Move Google Maps call to front end, stick with Express for AirTable
+Fri:
+
+
 ### Second Build Sprint
 
 ### Potential Future Developments
