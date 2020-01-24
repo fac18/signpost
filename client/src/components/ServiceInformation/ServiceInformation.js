@@ -1,18 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const ServiceInfo = props => {
-  // console.log(name);
+const ServiceInfo = ({ selectedMarkerData }) => {
+  console.log(selectedMarkerData);
   return (
     <>
       <aside>
         <a>
-          <h1>Name</h1>
-          {/* <h3>{name}</h3>
-          <p>{description}</p>
-          <p>{address}</p>
-          <p>{timings}</p> */}
+          <h3>{selectedMarkerData.Name}</h3>
+          <p>{selectedMarkerData.description}</p>
+          <p>{selectedMarkerData.address}</p>
+          <p>{selectedMarkerData.timings}</p>
         </a>
       </aside>
+      <Link to='/suggestchange'>
+        <button>Suggest edit</button>
+      </Link>
     </>
   );
 };
