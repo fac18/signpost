@@ -1,21 +1,20 @@
 .about-button {
-display: flex;
-flex-direction: start;
-margin: 20px;
-background-color: transparent;
-border: transparent;
-border-radius: 50%;
-outline: none;
+  display: flex;
+  flex-direction: start;
+  margin: 10px;
+  background-color: transparent;
+  border: transparent;
+  outline: none;
 }
 
 .logo {
-margin: 10px;
+  margin: 10px;
 }
 
 .signpost {
- font-size: 90px;
- color: var(--mako);
- text-shadow: 5px 10px 18px var(--light-grey);
+  font-size: 90px;
+  color: var(--mako);
+  text-shadow: 5px 10px 18px var(--light-grey);
 }
 
 .subtext {
@@ -26,7 +25,7 @@ margin: 10px;
 .start-button {
   background-color: var(--mako);
   color: var(--coral);
-  font-family: 'Passion One', cursive;
+  font-family: "Passion One", cursive;
   font-size: 30px;
   padding: 10px;
   box-shadow: 5px 10px 18px var(--mako);

@@ -1,0 +1,26 @@
+.close-button {
+  display: flex;
+  flex-direction: start;
+  margin: 10px;
+  background-color: transparent;
+  border: transparent;
+  outline: none;
+}
+
+.who-title {
+  font-size: 40px;
+}
+
+.about-text {
+  color: var(--mako);
+  width: 600px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 25px;
+}
