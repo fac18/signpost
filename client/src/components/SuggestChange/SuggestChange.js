@@ -13,7 +13,7 @@ const SuggestChange = () => {
       <form>
         <textarea rows='10' cols='30'></textarea>
         <br />
-        <Link to='/thankyou'>
+        <Link to='/thank-you'>
           <button type='submit'>Post</button>
         </Link>
       </form>

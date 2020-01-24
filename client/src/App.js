@@ -88,13 +88,13 @@ function App() {
           />
         )}
       />
-      <Route path='/addservice' component={AddNewService} />
+      <Route path='/add-service' component={AddNewService} />
       <Route
-        path='/suggestchange'
+        path='/suggest-change'
         render={() => <SuggestChange selectedMarker={selectedMarker} />}
       />
-      {/* <Route path='/thankyou' component={ThankYou} />
-      <Route path='/help' component={Help} /> */}
+      <Route path='/thank-you' component={ThankYou} />
+      <Route path='/help' component={Help} />
       <Route
         path='/service'
         render={() => <ServiceInfo selectedMarkerData={selectedMarkerData} />}
