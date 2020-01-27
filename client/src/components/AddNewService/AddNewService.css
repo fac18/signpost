@@ -1,0 +1,52 @@
+.close-button {
+  display: flex;
+  background-color: transparent;
+  border: transparent;
+  outline: none;
+}
+.close-button {
+cursor: pointer;
+}
+
+.title {
+  font-size: 60px;
+  color: var(--coral)
+}
+
+.add-form {
+  color: var(--mako);
+  width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+.form__input {
+  color: var(--mako);
+  font-size: 25px;
+  font-family: "Passion One", cursive;
+}
+
+.dropdown {
+  color: var(--mako);
+  font-size: 25px;
+  font-family: "Passion One", cursive;
+    padding: 15px;
+}
+.dropdown:hover{
+  cursor: pointer;
+}
+
+.submit-button {
+  background-color: var(--mako);
+  color: var(--coral);
+  font-family: "Passion One", cursive;
+  font-size: 30px;
+  padding: 10px;
+  box-shadow: 5px 10px 18px var(--mako);
+  border-color: var(--mako);
+  border-radius: 10px;
+  margin: 10px;
+}
+.submit-button:hover{
+  cursor: pointer;
+}

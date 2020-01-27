@@ -39,7 +39,7 @@ function App() {
       <Route exact path='/' component={LandingPage} />
       <Route path='/about' component={AboutUs} />
       <Route
-        path='/iconspage'
+        path='/icons-page'
         render={() => (
           <IconsPage
             selectedService={selectedService}
