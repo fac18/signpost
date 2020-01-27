@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as Close } from "../../assets/close-button.svg";
+import { ReactComponent as Close } from "../../assets/close.svg";
 
 import "./AboutUs.css";
 

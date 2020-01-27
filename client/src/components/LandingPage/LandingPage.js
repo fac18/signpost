@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/signpost-logo.svg";
-import { ReactComponent as About } from "../../assets/about-us.svg";
+import { ReactComponent as About } from "../../assets/about.svg";
 import "./LandingPage.css";
 
 const LandingPage = () => {

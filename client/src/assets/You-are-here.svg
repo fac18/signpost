@@ -1,0 +1,28 @@
+<svg width="156" height="158" viewBox="0 0 156 158" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d)">
+<rect x="4" width="147.5" height="150" rx="10" fill="#2C3138"/>
+</g>
+<g filter="url(#filter1_d)">
+<path d="M79 25C59.7 25 44 40.7 44 60C44 86.25 79 125 79 125C79 125 114 86.25 114 60C114 40.7 98.3 25 79 25ZM79 35C80.3135 34.9997 81.6143 35.2581 82.828 35.7604C84.0417 36.2628 85.1445 36.9993 86.0736 37.9279C87.0026 38.8565 87.7397 39.959 88.2426 41.1724C88.7456 42.3858 89.0047 43.6865 89.005 45C89.0053 46.3135 88.7469 47.6143 88.2446 48.828C87.7422 50.0417 87.0057 51.1445 86.0771 52.0736C85.1485 53.0026 84.046 53.7397 82.8326 54.2426C81.6192 54.7456 80.3186 55.0047 79.005 55.005C76.3522 55.0057 73.8077 53.9525 71.9314 52.0771C70.0551 50.2017 69.0007 47.6578 69 45.005C68.9993 42.3522 70.0525 39.8077 71.9279 37.9314C73.8033 36.0551 76.3472 35.0007 79 35ZM79 85C70.65 85 63.3 80.75 59 74.25C59.1 67.65 72.35 64 79 64C85.65 64 98.9 67.65 99 74.25C96.8182 77.5588 93.8482 80.2735 90.3572 82.1499C86.8661 84.0264 82.9634 85.0058 79 85Z" fill="#FF9B77"/>
+</g>
+<defs>
+<filter id="filter0_d" x="0" y="0" width="155.5" height="158" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.8 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<filter id="filter1_d" x="40" y="25" width="78" height="108" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.8 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+</defs>
+</svg>

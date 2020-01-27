@@ -1,10 +1,12 @@
 .about-button {
   display: flex;
-  flex-direction: start;
   margin: 10px;
   background-color: transparent;
   border: transparent;
   outline: none;
+}
+.about-button:hover{
+  cursor: pointer;
 }
 
 .logo {
@@ -31,4 +33,7 @@
   box-shadow: 5px 10px 18px var(--mako);
   border-color: var(--mako);
   border-radius: 10px;
+}
+.start-button:hover{
+  cursor: pointer;
 }
