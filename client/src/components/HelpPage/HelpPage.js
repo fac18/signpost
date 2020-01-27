@@ -12,9 +12,9 @@ import "./HelpPage.css"
 const instructions = [
   "Zoom in",
   "Zoom out",
-  "Map pin",
+  "Location of service",
   "Search",
-  "See more",
+  "See more information",
   "You are here"
 ];
 
