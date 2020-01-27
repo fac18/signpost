@@ -1,6 +1,17 @@
+.add-button {
+  display: flex;
+  margin: 10px;
+  background-color: transparent;
+  border: transparent;
+  outline: none;
+}
+.add-button:hover {
+  cursor: pointer;
+}
+
 .headline {
-  margin-top: 50px;
-  font-size: 50px;
+  margin-top: 5px;
+  font-size: 45px;
   color: var(--mako);
 }
 
@@ -8,17 +19,13 @@
   display: grid;
   grid-template-columns: repeat(4, 200px [col-start]);
   justify-content: center;
-  margin: 5px;
 }
 
-.icon-panel__button{
+.icon-panel__button {
   margin: 10px;
 }
 
-.icon-panel__button__image{
-}
-
-.icon-text{
+.icon-text {
   color: var(--mako);
   text-align: center;
   text-transform: uppercase;

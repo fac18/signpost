@@ -1,17 +1,6 @@
 import React from 'react';
-
-// import { ReactComponent as Advice } from './icons/Advice.svg';
-// import { ReactComponent as Animals } from './icons/Animals.svg';
-// import { ReactComponent as Children } from './icons/Children.svg';
-// import { ReactComponent as Food } from './icons/Food.svg';
-// import { ReactComponent as Clothing } from './icons/Clothing.svg';
-// import { ReactComponent as Learning } from './icons/Learning.svg';
-// import { ReactComponent as All } from './icons/All.svg';
-// import { ReactComponent as Medical } from './icons/Medical.svg';
-// import { ReactComponent as Shelter } from './icons/Shelter.svg';
-// import { ReactComponent as Shower } from './icons/Shower.svg';
-// import { ReactComponent as Wellbeing } from './icons/Wellbeing.svg';
-// import { ReactComponent as Women } from './icons/Women.svg';
+import { ReactComponent as Add } from '../../assets/add.svg';
+import { Link } from 'react-router-dom';
 
 import './IconsPage.css';
 
@@ -36,27 +25,30 @@ const Icons = ({ selectedService, setSelectedService }) => {
   }, [selectedService]);
 
   return (
-    <section>
-      <h1 className='headline'> Which service do you need? </h1>
-      <article className='icon-panel'>
-        {categories.map(category => (
-          <a
-            className='icon-panel__button'
-            value={category}
-            onClick={() => setSelectedService(category)}
-          >
-            <figure>
-              <img
-                className='icon-panel__button__image'
-                src={require(`./icons/${category}.svg`)}
-                alt={category}
-              />
-              <figcaption className='icon-text'>{category}</figcaption>
-            </figure>
-          </a>
-        ))}
-      </article>
-    </section>
+    <>
+      <Link to='/add-service'>
+        <button className='add-button'>
+          <Add />
+        </button>
+      </Link>
+      <section>
+        <h1 className='headline'> Which service do you need? </h1>
+        <article className='icon-panel'>
+          {categories.map(category => (
+            <a
+              className='icon-panel__button'
+              value={category}
+              onClick={() => setSelectedService({ category })}
+            >
+              <figure>
+                <img src={require(`./icons/${category}.svg`)} alt={category} />
+                <figcaption className='icon-text'>{category}</figcaption>
+              </figure>
+            </a>
+          ))}
+        </article>
+      </section>
+    </>
   );
 };
 

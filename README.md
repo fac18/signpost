@@ -29,6 +29,12 @@ Signpost is an app/desktop website that lets people experiencing or at risk of h
 
 ### Installation Guide
 
+1. Clone the repo ```git clone https://github.com/fac18/signpost.git```
+2. Intall the dependencies by running ```npm i && cd client && npm i && cd ..```
+3. Set up two ```.env``` files (ask for the keys if you're reviewing us). There should be two .env files, one in the client folder root and one in the backend folder root too. *
+4. To check tests run ```npm test```
+5. Start the server with ```npm start``` and go to ```localhost:3000``` *
+
 ### User Journey
 
 ### User Stories
@@ -100,11 +106,13 @@ Our changes following user testing:
 
 Mon/Tues: slow start: planning and researching.  Lots of big initial blockers.
 Weds: trying to figure out how to build Express backend with React front end, also how to overwrite Git project
-Thurs: Lift off! Move Google Maps call to front end, stick with Express for AirTable
-Fri:
-
+Thurs: Lift off! Move Google Maps call to front end, stick with Express for AirTable. Connected pages by using React Router
+Fri: Displayed markers by accessing dummy data - made improvements with making a connection between both our map API and our airtable API - made initial style for main pages - added all of necessary svg icons - rendered the components in App by passing their states too so they can be updated/accessed where needed.
 
 ### Second Build Sprint
+
+Monday: Sprint #1 mini presentations (we've talked about what we've found interesting from the prev. week and showed our estimates and actuals to the class). Start new week with a new sprint planning. Continue with styling/svg and connections between routes. Connected both the map API and the airtable API, managed to display the pins with the correct data accessed from our database. Initial search bar that finds the places inputed by the user. 
+Tuesday:
 
 ### Potential Future Developments
  - Expand geographical location
