@@ -15,25 +15,24 @@ function App() {
   //INITIAL STATE WILL BE NULL WHEN AIRTABLE DATA IS COMING THROUGH
   //set when icon is is selected, data populated from airtable
   const [selectedService, setSelectedService] = React.useState(null);
-
   const [selectedServiceData, setSelectedServiceData] = React.useState(null);
+
+  //set when map marker is clicked, data is filtered from selectedServiceData
+  const [selectedMarker, setSelectedMarker] = React.useState(null);
+  const [selectedMarkerData, setSelectedMarkerData] = React.useState(null);
 
   // When the selectedService is changed, trigger the API call to the backend
 
-  const getData = async () => {
-    await fetch(`/api/airtable?q=${selectedService}`)
+  const getData = service => {
+    fetch(`/api/airtable?q=${selectedService}`)
       .then(res => res.json())
-      .then(info => setSelectedServiceData(info));
+      .then(info => setSelectedServiceData(info.records));
   };
 
   React.useEffect(() => {
     getData();
     console.log('I am selected service data', selectedServiceData);
   }, [selectedService]);
-
-  //set when map marker is clicked, data is filtered from selectedServiceData
-  const [selectedMarker, setSelectedMarker] = React.useState(null);
-  const [selectedMarkerData, setSelectedMarkerData] = React.useState(null);
 
   return (
     <Router>
@@ -67,7 +66,7 @@ function App() {
         render={() => <SuggestChange selectedMarker={selectedMarker} />}
       />
       <Route path='/thank-you' component={ThankYou} />
-      {/* <Route path='/help' component={Help} /> */}
+      <Route path='/help' component={Help} />
       <Route
         path='/service'
         render={() => <ServiceInfo selectedMarkerData={selectedMarkerData} />}
