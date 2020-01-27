@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as Close } from "../../assets/close-button.svg";
+import { ReactComponent as Close } from "../../assets/close.svg";
 
 import "./AboutUs.css";
 
@@ -13,7 +13,7 @@ const AboutUs = () => {
         </button>
       </Link>
       <fieldset className="about-text">
-      <legend className="who-title">WHO ARE WE?</legend>
+      <legend className="title">Who are we?</legend>
       <p>
         Signpost is here to empower people who are experiencing homelessness in
         Islington.

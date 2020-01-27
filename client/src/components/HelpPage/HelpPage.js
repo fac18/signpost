@@ -1,21 +1,47 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ReactComponent as Close } from "../../assets/close.svg";
+import "./HelpPage.css";
 
-// Need to add icons to this page
+const instructions = [
+  "Zoom in",
+  "Zoom out",
+  "Location of service",
+  "Search",
+  "See more information",
+  "You are here"
+];
 
+// Close needs to return to populated map
 const Help = () => {
+  const [instruction, setInstruction] = React.useState(null);
   return (
     <>
-      <Link to='/map'>
-        <button>X</button>
+      <Link to="/map">
+        <button className="close-button">
+          <Close />
+        </button>
       </Link>
-      <h1>NEED HELP?</h1>
-      <p>Zoom in</p>
-      <p>Zoom out</p>
-      <p>Click pin to see more information</p>
-      <p>Search location by postcode, area, street, etc</p>
-      <p>Read more about this service</p>
-      <p>You are here</p>
+      <section>
+        <h1 className="headline"> Need help? </h1>
+        <article className="help-panel">
+          {instructions.map(instruction => (
+            <a
+              className="help-panel__icon"
+              value={instruction}
+              onClick={() => setInstruction({ instruction })}
+            >
+              <figure>
+                <img
+                  src={require(`../../assets/${instruction}.svg`)}
+                  alt={instruction}
+                />
+                <figcaption className="help-text">{instruction}</figcaption>
+              </figure>
+            </a>
+          ))}
+        </article>
+      </section>
     </>
   );
 };
