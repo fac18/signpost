@@ -48,7 +48,6 @@ const Map = ({
         url: require(`./pin-icons/${selectedService}-pin.svg`),
         scaledSize: new window.google.maps.Size(48, 48)
       };
-
       const marker = new window.google.maps.Marker({
         position: {
           lat: Number(selectedServiceData[i].Lat),

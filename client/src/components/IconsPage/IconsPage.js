@@ -33,7 +33,7 @@ const categories = [
 
 const Icons = ({ selectedService, setSelectedService }) => {
   React.useEffect(() => {
-    console.log(selectedService);
+    console.log('i am the selected service', selectedService);
   }, [selectedService]);
 
   return (
@@ -41,7 +41,7 @@ const Icons = ({ selectedService, setSelectedService }) => {
       <h1 className='headline'> Which service do you need? </h1>
       <article className='icon-panel'>
         {categories.map(category => (
-          <Link to='/map'>
+          <Link key={category} to='/map'>
             <a
               className='icon-panel__button'
               value={category}
