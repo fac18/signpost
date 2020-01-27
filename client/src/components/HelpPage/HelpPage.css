@@ -8,14 +8,25 @@
 cursor: pointer;
 }
 
+.help-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 200px [col-start]);
+  justify-content: center;
+
+}
+.help-panel__icon{
+  margin: 10px;
+}
+
 .help-text {
   color: var(--mako);
   width: 600px;
   margin: auto;
+  align-items: center;
 }
 
-.help-title {
-  font-size: 45px;
+.headline {
+  font-size: 50px;
   color: var(--coral);
 }
 
