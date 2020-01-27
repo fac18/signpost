@@ -114,9 +114,7 @@ const Map = ({
 
   return (
     <>
-      <Link to="icons-page">
-        <a href="/icons-page">Back to services</a>
-      </Link>
+      <Link to="icons-page">Back to services</Link>
       <Link to="/help">
         <button>?</button>
       </Link>
