@@ -9,18 +9,14 @@
   cursor: pointer;
 }
 
-.logo {
-  margin: 10px;
-}
-
 .signpost {
-  font-size: 90px;
+  font-size: 80px;
   color: var(--mako);
   text-shadow: 5px 10px 18px var(--light-grey);
 }
 
 .subtext {
-  font-size: 30px;
+  font-size: 25px;
   color: var(--mako);
 }
 
