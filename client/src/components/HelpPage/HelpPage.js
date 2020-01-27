@@ -1,12 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as Close } from "../../assets/close.svg";
-// import { ReactComponent as ZoomIn } from "../../assets/zoom-in.svg";
-// import { ReactComponent as ZoomOut } from "../../assets/zoom-out.svg";
-// import { ReactComponent as MapPin } from "../../assets/map-pin.svg";
-// import { ReactComponent as Search } from "../../assets/search.svg";
-// import { ReactComponent as SeeMore} from "../../assets/see-more.svg";
-// import { ReactComponent as YouAreHere } from "../../assets/you-are-here.svg";
 import "./HelpPage.css";
 
 const instructions = [
@@ -18,8 +12,7 @@ const instructions = [
   "You are here"
 ];
 
-// Need to add icons to this page
-// Need to work out how to make the endpoint go back to map population of specific category
+// Close needs to return to populated map
 const Help = () => {
   const [instruction, setInstruction] = React.useState(null);
   return (
@@ -54,10 +47,3 @@ const Help = () => {
 };
 
 export default Help;
-
-// <ZoomIn /> <p>Zoom in</p>
-// <ZoomOut /><p>Zoom out</p>
-// <MapPin /><p>Click pin to see more information</p>
-// <Search /><p>Search location by postcode, area, street, etc</p>
-// <SeeMore /><p>Read more about this service</p>
-// <YouAreHere /><p>You are here</p>
