@@ -124,6 +124,7 @@ const Map = ({
       <h1>Map is working </h1>
       <input
         value={searchLocation}
+        type="search"
         onChange={event => setSearchLocation(event.target.value)}
       ></input>
       <button onClick={geocodeSearch}>submit</button>
