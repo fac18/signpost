@@ -10,12 +10,12 @@ import { ReactComponent as Close } from "../../assets/close.svg";
 import "./HelpPage.css"
 
 const instructions = [
-  "zoom-in",
-  "zoom-out",
-  "map-pin",
-  "search",
-  "see-more",
-  "you-are-here"
+  "Zoom in",
+  "Zoom out",
+  "Map pin",
+  "Search",
+  "See more",
+  "You are here"
 ];
 
 // Need to add icons to this page
@@ -34,14 +34,14 @@ const Help = () => {
       <article className="help-panel">
         {instructions.map(instruction => (
           <a
-          className="help-panel-icon"
+          className="help-panel__icon"
             value={instruction}
             onClick={() => setInstruction({ instruction })}>
             <figure>
             <img
               src={require(`../../assets/${instruction}.svg`)}
               alt={instruction}/>
-              <figcaption className="icon-text">{instruction}</figcaption>
+              <figcaption className="help-text">{instruction}</figcaption>
               </figure>
           </a>
         ))}
