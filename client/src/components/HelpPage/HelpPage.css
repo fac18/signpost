@@ -5,7 +5,7 @@
   border: transparent;
   outline: none;
 }
-.close-button:hover{
+.close-button:hover {
   cursor: pointer;
 }
 
@@ -23,7 +23,7 @@
   justify-content: center;
 }
 
-.help-text{
+.help-text {
   color: var(--mako);
   text-align: center;
   text-transform: uppercase;

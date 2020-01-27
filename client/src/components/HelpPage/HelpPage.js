@@ -7,7 +7,7 @@ import { ReactComponent as Close } from "../../assets/close.svg";
 // import { ReactComponent as Search } from "../../assets/search.svg";
 // import { ReactComponent as SeeMore} from "../../assets/see-more.svg";
 // import { ReactComponent as YouAreHere } from "../../assets/you-are-here.svg";
-import "./HelpPage.css"
+import "./HelpPage.css";
 
 const instructions = [
   "Zoom in",
@@ -24,35 +24,36 @@ const Help = () => {
   const [instruction, setInstruction] = React.useState(null);
   return (
     <>
-    <Link to='/map'>
-      <button className="close-button">
-      <Close />
-      </button>
-    </Link>
-    <section>
-      <h1 className="headline"> Need help? </h1>
-      <article className="help-panel">
-        {instructions.map(instruction => (
-          <a
-          className="help-panel__icon"
-            value={instruction}
-            onClick={() => setInstruction({ instruction })}>
-            <figure>
-            <img
-              src={require(`../../assets/${instruction}.svg`)}
-              alt={instruction}/>
-              <figcaption className="help-text">{instruction}</figcaption>
+      <Link to="/map">
+        <button className="close-button">
+          <Close />
+        </button>
+      </Link>
+      <section>
+        <h1 className="headline"> Need help? </h1>
+        <article className="help-panel">
+          {instructions.map(instruction => (
+            <a
+              className="help-panel__icon"
+              value={instruction}
+              onClick={() => setInstruction({ instruction })}
+            >
+              <figure>
+                <img
+                  src={require(`../../assets/${instruction}.svg`)}
+                  alt={instruction}
+                />
+                <figcaption className="help-text">{instruction}</figcaption>
               </figure>
-          </a>
-        ))}
-      </article>
-    </section>
+            </a>
+          ))}
+        </article>
+      </section>
     </>
   );
 };
 
 export default Help;
-
 
 // <ZoomIn /> <p>Zoom in</p>
 // <ZoomOut /><p>Zoom out</p>

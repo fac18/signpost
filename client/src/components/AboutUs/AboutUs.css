@@ -1,5 +1,5 @@
 .close-button {
-  display: flex;  
+  display: flex;
   background-color: transparent;
   border: transparent;
   outline: none;
@@ -8,8 +8,8 @@
 cursor: pointer;
 }
 
-.who-title {
-  font-size: 45px;
+.title {
+  font-size: 60px;
   color: var(--coral);
 }
 

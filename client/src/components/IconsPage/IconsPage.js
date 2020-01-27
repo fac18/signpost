@@ -40,31 +40,30 @@ const Icons = props => {
   }, [chosenCategory]);
 
   return (
-<>
-<Link to='/add-service'>
-  <button className='add-button'>
-    <Add />
-  </button>
-  </Link>
-    <section>
-      <h1 className="headline"> Which service do you need? </h1>
-      <article className="icon-panel">
-        {categories.map(category => (
-          <a
-            className="icon-panel__button"
-            value={category}
-            onClick={() => setCategory({ category })}>
-            <figure>
-            <img
-              src={require(`./icons/${category}.svg`)}
-              alt={category}/>
-          <figcaption className="icon-text">{category}</figcaption>
-          </figure>
-          </a>
-        ))}
-      </article>
-    </section>
-</>
+    <>
+      <Link to="/add-service">
+        <button className="add-button">
+          <Add />
+        </button>
+      </Link>
+      <section>
+        <h1 className="headline"> Which service do you need? </h1>
+        <article className="icon-panel">
+          {categories.map(category => (
+            <a
+              className="icon-panel__button"
+              value={category}
+              onClick={() => setCategory({ category })}
+            >
+              <figure>
+                <img src={require(`./icons/${category}.svg`)} alt={category} />
+                <figcaption className="icon-text">{category}</figcaption>
+              </figure>
+            </a>
+          ))}
+        </article>
+      </section>
+    </>
   );
 };
 
