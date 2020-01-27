@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ServiceInfo = ({ selectedMarkerData }) => {
   console.log(selectedMarkerData);
@@ -10,10 +10,10 @@ const ServiceInfo = ({ selectedMarkerData }) => {
       </Link>
       <aside>
         <a>
-          <h3>{selectedMarkerData.Name}</h3>
-          <p>{selectedMarkerData.description}</p>
-          <p>{selectedMarkerData.address}</p>
-          <p>{selectedMarkerData.timings}</p>
+          <h3>{selectedMarkerData.fields.Name}</h3>
+          <p>{selectedMarkerData.fields.Description}</p>
+          <p>{selectedMarkerData.fields.Address}</p>
+          <p>{selectedMarkerData.fields.Opening}</p>
         </a>
       </aside>
       <Link to='/suggest-change'>
