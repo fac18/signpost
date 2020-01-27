@@ -14,7 +14,7 @@ import Help from './components/HelpPage/HelpPage';
 function App() {
   //INITIAL STATE WILL BE NULL WHEN AIRTABLE DATA IS COMING THROUGH
   //set when icon is is selected, data populated from airtable
-  const [selectedService, setSelectedService] = React.useState('wellbeing');
+  const [selectedService, setSelectedService] = React.useState('Wellbeing');
   const [selectedServiceData, setSelectedServiceData] = React.useState([
     {
       Name: 'The Margins Project',
