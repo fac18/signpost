@@ -14,40 +14,16 @@ import Help from './components/HelpPage/HelpPage';
 function App() {
   //INITIAL STATE WILL BE NULL WHEN AIRTABLE DATA IS COMING THROUGH
   //set when icon is is selected, data populated from airtable
-  const [selectedService, setSelectedService] = React.useState('Shelter');
-  const [selectedServiceData, setSelectedServiceData] = React.useState([
-    {
-      Name: 'The Margins Project',
-      Lat: '51.5449449',
-      Lng: '-0.1049151',
-      description: 'Enter description here',
-      address: '123 here',
-      timings: '12:00'
-    },
-    {
-      Name: 'Other Project',
-      Lat: '51.555667',
-      Lng: '-0.0991213',
-      description: 'szfasf',
-      address: 'asdgasdg',
-      timings: '12'
-    },
-    {
-      Name: 'And Another Project',
-      Lat: '51.543596',
-      Lng: '-0.091032',
-      description: 'asdgdsg',
-      address: '146',
-      timings: 'sdgasd'
-    }
-  ]);
+  const [selectedService, setSelectedService] = React.useState(null);
+
+  const [selectedServiceData, setSelectedServiceData] = React.useState(null);
 
   // When the selectedService is changed, trigger the API call to the backend
 
   const getData = async () => {
     await fetch(`/api/airtable?q=${selectedService}`)
       .then(res => res.json())
-      .then(info => setSelectedServiceData(info.records));
+      .then(info => setSelectedServiceData(info));
   };
 
   React.useEffect(() => {

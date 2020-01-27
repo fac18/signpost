@@ -24,11 +24,20 @@ const Map = ({
   // refs
   const googleMapRef = React.createRef();
   const googleMap = React.useRef(null);
-  console.log('I am selected service data inside map', selectedServiceData);
+  const [mapReady, setMapReady] = React.useState(false);
+
+  console.log(
+    'I am selected service data inside map',
+    selectedServiceData.records
+      ? selectedServiceData.records[0].fields.Name
+      : 'I have not had time to get here'
+  );
 
   // helper functions
+  let map = null;
+
   const createGoogleMap = () => {
-    const map = new window.google.maps.Map(googleMapRef.current, {
+    map = new window.google.maps.Map(googleMapRef.current, {
       zoom: 14,
       center: {
         lat: 51.5458,
@@ -39,7 +48,7 @@ const Map = ({
       setSelectedMarker(null);
       setSelectedMarkerData(null);
     });
-    createMarkers(map);
+    setMapReady(true);
   };
 
   //function to iterate over the list of services and create a marker for each
@@ -51,13 +60,19 @@ const Map = ({
       };
       const marker = new window.google.maps.Marker({
         position: {
-          lat: Number(selectedServiceData[i].Lat),
-          lng: Number(selectedServiceData[i].Lng)
+          lat: selectedServiceData.records
+            ? Number(selectedServiceData.records[0].fields.Lat)
+            : null,
+          lng: selectedServiceData.records
+            ? Number(selectedServiceData.records[0].fields.Lng)
+            : null
         },
         map: map,
         icon: markerImage,
         animation: window.google.maps.Animation.DROP,
-        title: selectedServiceData[i].Name
+        title: selectedServiceData.records
+          ? selectedServiceData.records[0].fields.Name
+          : null
       });
 
       marker.addListener('click', function(e) {
@@ -72,9 +87,27 @@ const Map = ({
     window.document.body.appendChild(googleMapScript);
     googleMapScript.addEventListener('load', () => {
       googleMap.current = createGoogleMap();
-      console.log(selectedServiceData);
     });
-  }, []);
+  }, [selectedServiceData]);
+
+  React.useEffect(() => {
+    console.log(
+      'I am the react use effect creating the markers',
+      selectedServiceData
+    );
+    console.log('I am the map inside the react use effect', map);
+    if (selectedServiceData && mapReady) {
+      createMarkers(
+        new window.google.maps.Map(googleMapRef.current, {
+          zoom: 14,
+          center: {
+            lat: 51.5458,
+            lng: -0.1043
+          }
+        })
+      );
+    }
+  }, [mapReady, selectedServiceData]);
 
   React.useEffect(() => {
     if (selectedMarker) {
@@ -82,6 +115,7 @@ const Map = ({
         record => record.Name === selectedMarker
       );
       setSelectedMarkerData(filteredData[0]);
+      console.log('I am the filtered data', filteredData[0]);
     }
   }, [selectedMarker]);
 
@@ -101,9 +135,9 @@ const Map = ({
             <Link to='/service'>
               <InfoBar
                 name={selectedMarkerData.Name}
-                description={selectedMarkerData.description}
-                address={selectedMarkerData.address}
-                timings={selectedMarkerData.timings}
+                description={selectedMarkerData.Description}
+                address={selectedMarkerData.Address}
+                timings={selectedMarkerData.Opening}
               />
             </Link>
           ) : null}
