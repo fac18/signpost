@@ -18,3 +18,18 @@ a {
   text-decoration: none;
   color: var(--coral);
 }
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.help-button{
+  background-color: transparent;
+  border: transparent;
+  outline: none;
+  margin: 15px;
+}
+.help-button:hover{
+  cursor: pointer;
+}

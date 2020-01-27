@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import InfoBar from "../InfoBar/InfoBar";
+import ServiceInfo from "../ServiceInformation/ServiceInformation";
+import { ReactComponent as Close } from "../../assets/close.svg";
+import { ReactComponent as Help } from "../../assets/help.svg";
 import "./Map.css";
 
 const GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_TOKEN;
@@ -112,11 +115,18 @@ const Map = ({
 
   return (
     <>
-      <Link to="icons-page">Back to services</Link>
-      <Link to="/help">
-        <button>?</button>
+      <section className="nav-buttons">
+      <Link to='/icons-page'>
+        <button className="close-button">
+        <Close />
+        </button>
       </Link>
-      <h1>Map is working </h1>
+      <Link to='/help'>
+        <button className="help-button">
+        <Help />
+        </button>
+      </Link>
+      </section>
       <input
         value={searchLocation}
         type="search"
