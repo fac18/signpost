@@ -6,6 +6,7 @@ import ServiceInfo from "../ServiceInformation/ServiceInformation";
 import "./Map.css";
 
 const GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_TOKEN;
+const GOOGLE_GEOCODE_API_KEY = process.env.REACT_APP_GOOGLE_GEOCODE_TOKEN;
 
 // styles
 const mapStyles = {
@@ -22,6 +23,9 @@ const Map = ({
   setSelectedMarkerData
 }) => {
   const [searchLocation, setSearchLocation] = React.useState("");
+  const [searchLocationGeocoded, setSearchLocationGeocoded] = React.useState(
+    null
+  );
 
   // refs
   const googleMapRef = React.createRef();
@@ -41,6 +45,7 @@ const Map = ({
       setSelectedMarkerData(null);
     });
     createMarkers(map);
+    return map;
   };
 
   //function to iterate over the list of services and create a marker for each
@@ -88,15 +93,27 @@ const Map = ({
 
   const geocodeSearch = () => {
     fetch(
-      `https://maps.googleapis.com/maps/api/geocode/json?address=${searchLocation}&key=AIzaSyAcnwNgW-XQp7AhqI2kUM_MPhlVGFe4t5E`
+      `https://maps.googleapis.com/maps/api/geocode/json?address=${searchLocation}&key=${GOOGLE_GEOCODE_API_KEY}&region=GB`
     )
       .then(res => res.json())
-      .then(console.log);
+      .then(result => {
+        const lat = result.results[0].geometry.location.lat;
+        const lng = result.results[0].geometry.location.lng;
+        setSearchLocationGeocoded(new window.google.maps.LatLng(lat, lng));
+      });
   };
+
+  //move map centre to search location
+  React.useEffect(() => {
+    if (googleMap.current) {
+      googleMap.current.panTo(searchLocationGeocoded);
+    }
+  }, [searchLocationGeocoded]);
+
+  //new JS work ends here
 
   return (
     <>
-      <Airtable />
       <Link to="icons-page">
         <a href="/icons-page">Back to services</a>
       </Link>
