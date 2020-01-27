@@ -21,6 +21,8 @@ const Map = ({
   selectedMarkerData,
   setSelectedMarkerData
 }) => {
+  const [searchLocation, setSearchLocation] = React.useState("");
+
   // refs
   const googleMapRef = React.createRef();
   const googleMap = React.useRef(null);
@@ -84,21 +86,34 @@ const Map = ({
     }
   }, [selectedMarker]);
 
+  const geocodeSearch = () => {
+    fetch(
+      `https://maps.googleapis.com/maps/api/geocode/json?address=${searchLocation}&key=AIzaSyAcnwNgW-XQp7AhqI2kUM_MPhlVGFe4t5E`
+    )
+      .then(res => res.json())
+      .then(console.log);
+  };
+
   return (
     <>
       <Airtable />
-      <Link to='icons-page'>
-        <a href='/icons-page'>Back to services</a>
+      <Link to="icons-page">
+        <a href="/icons-page">Back to services</a>
       </Link>
-      <Link to='/help'>
+      <Link to="/help">
         <button>?</button>
       </Link>
       <h1>Map is working </h1>
-      <div className='wrapper'>
-        <div id='google-map' ref={googleMapRef} style={mapStyles} />
-        <div className='over-map'>
+      <input
+        value={searchLocation}
+        onChange={event => setSearchLocation(event.target.value)}
+      ></input>
+      <button onClick={geocodeSearch}>submit</button>
+      <div className="wrapper">
+        <div id="google-map" ref={googleMapRef} style={mapStyles} />
+        <div className="over-map">
           {selectedMarkerData ? (
-            <Link to='/service'>
+            <Link to="/service">
               <InfoBar
                 name={selectedMarkerData.Name}
                 description={selectedMarkerData.description}
