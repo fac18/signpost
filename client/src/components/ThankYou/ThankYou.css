@@ -1,0 +1,36 @@
+.heart {
+  animation-name: stretch;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.next-button {
+  background-color: var(--mako);
+  color: var(--coral);
+  font-family: "Passion One", cursive;
+  font-size: 30px;
+  padding: 10px;
+  box-shadow: 5px 10px 18px var(--mako);
+  border-color: var(--mako);
+  border-radius: 10px;
+}
+.next-button:hover {
+  cursor: pointer;
+}
