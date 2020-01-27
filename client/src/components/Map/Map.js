@@ -8,13 +8,11 @@ import { ReactComponent as Help } from "../../assets/help.svg";
 import "./Map.css";
 
 const GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_TOKEN;
-
 // styles
 const mapStyles = {
-  width: "100%",
-  height: "400px"
+  width: '100%',
+  height: '400px'
 };
-
 const Map = ({
   selectedService,
   selectedServiceData,
@@ -26,7 +24,6 @@ const Map = ({
   // refs
   const googleMapRef = React.createRef();
   const googleMap = React.useRef(null);
-
   // helper functions
   const createGoogleMap = () => {
     const map = new window.google.maps.Map(googleMapRef.current, {
@@ -36,13 +33,12 @@ const Map = ({
         lng: -0.1043
       }
     });
-    map.addListener("click", () => {
+    map.addListener('click', () => {
       setSelectedMarker(null);
       setSelectedMarkerData(null);
     });
     createMarkers(map);
   };
-
   //function to iterate over the list of services and create a marker for each
   function createMarkers(map) {
     for (var i = 0; i < selectedServiceData.length; i++) {
@@ -50,39 +46,39 @@ const Map = ({
         url: require(`./pin-icons/${selectedService}.svg`),
         scaledSize: new window.google.maps.Size(48, 48)
       };
-
       const marker = new window.google.maps.Marker({
         position: {
-          lat: Number(selectedServiceData[i].Lat),
-          lng: Number(selectedServiceData[i].Lng)
+          lat: Number(selectedServiceData[i].fields.Lat),
+          lng: Number(selectedServiceData[i].fields.Lng)
         },
         map: map,
         icon: markerImage,
         animation: window.google.maps.Animation.DROP,
-        title: selectedServiceData[i].Name
+        title: selectedServiceData[i].fields.Name
       });
-
-      marker.addListener("click", function(e) {
+      marker.addListener('click', function(e) {
         setSelectedMarker(e.tb.target.parentNode.title);
       });
     }
   }
-
   React.useEffect(() => {
-    const googleMapScript = document.createElement("script");
-    googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API_KEY}&libraries=places`;
-    window.document.body.appendChild(googleMapScript);
-    googleMapScript.addEventListener("load", () => {
-      googleMap.current = createGoogleMap();
-    });
-  }, []);
+    if (selectedServiceData) {
+      const googleMapScript = document.createElement('script');
+      googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API_KEY}&libraries=places`;
+      window.document.body.appendChild(googleMapScript);
+      googleMapScript.addEventListener('load', () => {
+        googleMap.current = createGoogleMap();
+      });
+    }
+  }, [selectedServiceData]);
 
   React.useEffect(() => {
     if (selectedMarker) {
       const filteredData = selectedServiceData.filter(
-        record => record.Name === selectedMarker
+        record => record.fields.Name === selectedMarker
       );
       setSelectedMarkerData(filteredData[0]);
+      console.log('I am the filtered data', filteredData[0]);
     }
   }, [selectedMarker]);
 
@@ -108,10 +104,10 @@ const Map = ({
           {selectedMarkerData ? (
             <Link to='/service'>
               <InfoBar
-                name={selectedMarkerData.Name}
-                description={selectedMarkerData.description}
-                address={selectedMarkerData.address}
-                timings={selectedMarkerData.timings}
+                name={selectedMarkerData.fields.Name}
+                description={selectedMarkerData.fields.Description}
+                address={selectedMarkerData.fields.Address}
+                timings={selectedMarkerData.fields.Opening}
               />
             </Link>
           ) : null}
