@@ -1,14 +1,16 @@
 .close-button {
   display: flex;
-  flex-direction: start;
-  margin: 10px;
   background-color: transparent;
   border: transparent;
   outline: none;
 }
+.close-button {
+cursor: pointer;
+}
 
-.who-title {
-  font-size: 40px;
+.title {
+  font-size: 60px;
+  color: var(--coral);
 }
 
 .about-text {
@@ -18,9 +20,9 @@
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 35px;
 }
 
 p {
-  font-size: 25px;
+  font-size: 20px;
 }
