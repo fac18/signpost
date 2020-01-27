@@ -6,7 +6,7 @@ const InfoBar = ({ name, description, address, timings }) => {
     <>
       <aside>
         <a>
-          <h3>{name}</h3>
+          <h2>{name}</h2>
           <p>{description}</p>
           <p>{address}</p>
           <p>{timings}</p>

@@ -5,6 +5,9 @@ const ServiceInfo = ({ selectedMarkerData }) => {
   console.log(selectedMarkerData);
   return (
     <>
+      <Link to='/map'>
+        <button>&#60;</button>
+      </Link>
       <aside>
         <a>
           <h3>{selectedMarkerData.Name}</h3>
