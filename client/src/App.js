@@ -1,49 +1,38 @@
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import React, { Component } from "react";
-import "./App.css";
-import Map from "./components/Map/Map";
-import LandingPage from "./components/LandingPage/LandingPage";
-import IconsPage from "./components/IconsPage/IconsPage";
-import AboutUs from "./components/AboutUs/AboutUs";
-import AddNewService from "./components/AddNewService/AddNewService";
-import SuggestChange from "./components/SuggestChange/SuggestChange";
-import ThankYou from "./components/ThankYou/ThankYou";
-import Help from "./components/HelpPage/HelpPage";
-import ServiceInfo from "./components/ServiceInformation/ServiceInformation";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React, { Component } from 'react';
+import './App.css';
+import Map from './components/Map/Map';
+import LandingPage from './components/LandingPage/LandingPage';
+import IconsPage from './components/IconsPage/IconsPage';
+import AboutUs from './components/AboutUs/AboutUs';
+import AddNewService from './components/AddNewService/AddNewService';
+import SuggestChange from './components/SuggestChange/SuggestChange';
+import ThankYou from './components/ThankYou/ThankYou';
+import ServiceInfo from './components/ServiceInformation/ServiceInformation';
+import Help from './components/HelpPage/HelpPage';
 
 function App() {
   //INITIAL STATE WILL BE NULL WHEN AIRTABLE DATA IS COMING THROUGH
   //set when icon is is selected, data populated from airtable
-  const [selectedService, setSelectedService] = React.useState("Wellbeing");
-  const [selectedServiceData, setSelectedServiceData] = React.useState([
-    {
-      Name: "The Margins Project",
-      Lat: "51.5449449",
-      Lng: "-0.1049151",
-      description: "Enter description here",
-      address: "123 here",
-      timings: "12:00"
-    },
-    {
-      Name: "Other Project",
-      Lat: "51.555667",
-      Lng: "-0.0991213",
-      description: "szfasf",
-      address: "asdgasdg",
-      timings: "12"
-    },
-    {
-      Name: "And Another Project",
-      Lat: "51.543596",
-      Lng: "-0.091032",
-      description: "asdgdsg",
-      address: "146",
-      timings: "sdgasd"
-    }
-  ]);
+  const [selectedService, setSelectedService] = React.useState(null);
+  const [selectedServiceData, setSelectedServiceData] = React.useState(null);
+
   //set when map marker is clicked, data is filtered from selectedServiceData
   const [selectedMarker, setSelectedMarker] = React.useState(null);
   const [selectedMarkerData, setSelectedMarkerData] = React.useState(null);
+
+  // When the selectedService is changed, trigger the API call to the backend
+
+  const getData = service => {
+    fetch(`/api/airtable?q=${selectedService}`)
+      .then(res => res.json())
+      .then(info => setSelectedServiceData(info.records));
+  };
+
+  React.useEffect(() => {
+    getData();
+    console.log('I am selected service data', selectedServiceData);
+  }, [selectedService]);
 
   return (
     <Router>
@@ -51,7 +40,12 @@ function App() {
       <Route path='/about' component={AboutUs} />
       <Route
         path='/icons-page'
-        render={() => <IconsPage setSelectedService={setSelectedService} />}
+        render={() => (
+          <IconsPage
+            selectedService={selectedService}
+            setSelectedService={setSelectedService}
+          />
+        )}
       />
       <Route
         path='/map'

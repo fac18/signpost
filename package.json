@@ -11,10 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "experss": "0.0.1-security",
     "express": "^4.17.1",
     "password-generator": "^2.2.3",
-    "react-router-dom": "^5.1.2"
+    "querystring": "^0.2.0",
+    "react-router-dom": "^5.1.2",
+    "url": "^0.11.0"
   }
 }
