@@ -1,0 +1,9 @@
+.close-button {
+  display: flex;
+  background-color: transparent;
+  border: transparent;
+  outline: none;
+}
+.close-button {
+cursor: pointer;
+}
