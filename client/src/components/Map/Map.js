@@ -45,7 +45,7 @@ const Map = ({
   function createMarkers(map) {
     for (var i = 0; i < selectedServiceData.length; i++) {
       const markerImage = {
-        url: require(`./pin-icons/${selectedService}-pin.svg`),
+        url: require(`./pin-icons/${selectedService}.svg`),
         scaledSize: new window.google.maps.Size(48, 48)
       };
       const marker = new window.google.maps.Marker({
