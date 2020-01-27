@@ -24,6 +24,7 @@ const Map = ({
   // refs
   const googleMapRef = React.createRef();
   const googleMap = React.useRef(null);
+  console.log('I am selected service data inside map', selectedServiceData);
 
   // helper functions
   const createGoogleMap = () => {
