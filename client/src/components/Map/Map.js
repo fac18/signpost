@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Airtable from "../Airtable/Airtable.js";
 import InfoBar from "../InfoBar/InfoBar";
 import ServiceInfo from "../ServiceInformation/ServiceInformation";
+import { ReactComponent as Close } from "../../assets/close.svg";
+import { ReactComponent as Help } from "../../assets/help.svg";
 import "./Map.css";
 
 const GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_TOKEN;
@@ -87,12 +89,18 @@ const Map = ({
   return (
     <>
       <Airtable />
-      <Link to='icons-page'>
-        <a href='/icons-page'>Back to services</a>
+      <section className="nav-buttons">
+      <Link to='/icons-page'>
+        <button className="close-button">
+        <Close />
+        </button>
       </Link>
       <Link to='/help'>
-        <button>?</button>
+        <button className="help-button">
+        <Help />
+        </button>
       </Link>
+      </section>
       <h1>Map is working </h1>
       <div className='wrapper'>
         <div id='google-map' ref={googleMapRef} style={mapStyles} />

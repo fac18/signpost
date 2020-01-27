@@ -1,12 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ReactComponent as Close } from "../../assets/close.svg";
+
+import "./ServiceInformation.css";
+
 
 const ServiceInfo = ({ selectedMarkerData }) => {
   console.log(selectedMarkerData);
   return (
     <>
       <Link to='/map'>
-        <button>&#60;</button>
+      <button className="close-button">
+      <Close />
+      </button>
       </Link>
       <aside>
         <a>
