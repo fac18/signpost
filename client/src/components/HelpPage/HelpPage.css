@@ -1,0 +1,24 @@
+.close-button {
+  display: flex;
+  background-color: transparent;
+  border: transparent;
+  outline: none;
+}
+.close-button {
+cursor: pointer;
+}
+
+.help-text {
+  color: var(--mako);
+  width: 600px;
+  margin: auto;
+}
+
+.help-title {
+  font-size: 45px;
+  color: var(--coral);
+}
+
+p {
+  font-size: 35px;
+}
