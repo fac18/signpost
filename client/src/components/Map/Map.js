@@ -96,7 +96,7 @@ const Map = ({
                 name={selectedMarkerData.fields.Name}
                 description={selectedMarkerData.fields.Description}
                 address={selectedMarkerData.fields.Address}
-                timings={selectedMarkerData.Opening}
+                timings={selectedMarkerData.fields.Opening}
               />
             </Link>
           ) : null}

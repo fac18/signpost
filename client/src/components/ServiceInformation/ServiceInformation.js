@@ -10,10 +10,10 @@ const ServiceInfo = ({ selectedMarkerData }) => {
       </Link>
       <aside>
         <a>
-          <h3>{selectedMarkerData.Name}</h3>
-          <p>{selectedMarkerData.Description}</p>
-          <p>{selectedMarkerData.Address}</p>
-          <p>{selectedMarkerData.Opening}</p>
+          <h3>{selectedMarkerData.fields.Name}</h3>
+          <p>{selectedMarkerData.fields.Description}</p>
+          <p>{selectedMarkerData.fields.Address}</p>
+          <p>{selectedMarkerData.fields.Opening}</p>
         </a>
       </aside>
       <Link to='/suggest-change'>
