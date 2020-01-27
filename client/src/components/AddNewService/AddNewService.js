@@ -1,12 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// LOW PRIORITY COMPONENT
-
-// Needs adding handle submit event onto the form
-// Send the data access from the form -> somewhere?
-// Lots of improvements to do here if we get to this point
-
 const AddNewService = props => {
   const [titleInput, setTitleInput] = React.useState("");
   const [locationInput, setLocationInput] = React.useState("");
@@ -15,12 +9,10 @@ const AddNewService = props => {
   const [contactNameInput, setContactNameInput] = React.useState("");
   const [contactDetailsInput, setContactDetailsInput] = React.useState("");
 
-  console.log(
-    { titleInput },
-    { locationInput },
-    { timesInput },
-    { serviceInput }
-  );
+  const handleSubmit = event => {
+    //write call to backend to insert data (from state)
+    event.preventDefault();
+  };
 
   return (
     <>
@@ -28,7 +20,7 @@ const AddNewService = props => {
         <button>X</button>
       </Link>
       <h1>Add a new service</h1>
-      <form className="form__style" method="POST">
+      <form className="form__style" onSubmit={handleSubmit}>
         <label htmlFor="title-input">
           <input
             id="title-input"
