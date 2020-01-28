@@ -17,3 +17,8 @@ legend {
   font-size: 50px;
   color: var(--coral);
 }
+
+a {
+  text-decoration: none;
+  color: var(--mako);
+}

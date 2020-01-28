@@ -1,10 +1,11 @@
-
-
 .service-name {
   font-size: 50px;
+  color: var(--coral);
+
 }
 
 .service-text {
 font-size: 25px;
 line-height: 10px;
+color: var(--coral);
 }

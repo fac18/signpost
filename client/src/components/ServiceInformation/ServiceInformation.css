@@ -1,3 +1,11 @@
+/* --------------------------
+      NAVIGATION BUTTONS
+   -------------------------- */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
 .close-button {
   display: flex;
   background-color: transparent;
@@ -8,14 +16,14 @@
 cursor: pointer;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-}
+/* ---------------------------
+    SERVICE DETAILS STYLING
+--------------------------- */
 
 .service-info {
   color: var(--mako);
-  max-width: 400px;
+  font-size: 30px;
+  max-width: 600px;
   margin: auto;
 }
 
