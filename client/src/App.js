@@ -10,6 +10,7 @@ import SuggestChange from "./components/SuggestChange/SuggestChange";
 import ThankYou from "./components/ThankYou/ThankYou";
 import ServiceInfo from "./components/ServiceInformation/ServiceInformation";
 import Help from "./components/HelpPage/HelpPage";
+import PopUp from "./components/PopUp/PopUp";
 
 function App() {
   //INITIAL STATE WILL BE NULL WHEN AIRTABLE DATA IS COMING THROUGH
@@ -37,10 +38,10 @@ function App() {
   //navigating to /map (without selectedService set) will redirect you to landing
   return (
     <Router>
-      <Route exact path="/" component={LandingPage} />
-      <Route path="/about" component={AboutUs} />
+      <Route exact path='/' component={LandingPage} />
+      <Route path='/about' component={AboutUs} />
       <Route
-        path="/icons-page"
+        path='/icons-page'
         render={() => (
           <IconsPage
             selectedService={selectedService}
@@ -49,7 +50,7 @@ function App() {
         )}
       />
       <Route
-        path="/map"
+        path='/map'
         render={() =>
           selectedService ? (
             <Map
@@ -61,19 +62,19 @@ function App() {
               setSelectedMarkerData={setSelectedMarkerData}
             />
           ) : (
-            <Redirect to="/icons-page" />
+            <Redirect to='/icons-page' />
           )
         }
       />
-      <Route path="/add-service" component={AddNewService} />
+      <Route path='/add-service' component={AddNewService} />
       <Route
-        path="/suggest-change"
+        path='/suggest-change'
         render={() => <SuggestChange selectedMarker={selectedMarker} />}
       />
-      <Route path="/thank-you" component={ThankYou} />
-      <Route path="/help" component={Help} />
+      <Route path='/thank-you' component={ThankYou} />
+      <Route path='/help' component={Help} />
       <Route
-        path="/service"
+        path='/service'
         render={() => <ServiceInfo selectedMarkerData={selectedMarkerData} />}
       />
     </Router>
