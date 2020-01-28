@@ -4,14 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "start": "cd server && node index.js",
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "coverage": "cd client && npm test -- --coverage --watchAll=false && codecov && cd ../server && npm test -- --coverage --watchAll=false && codecov",
+    "test": "cd client && npm run test && cd ../server && npm test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "coverage": "^0.4.1",
     "dotenv": "^8.2.0",
     "experss": "0.0.1-security",
     "express": "^4.17.1",
@@ -19,5 +22,8 @@
     "querystring": "^0.2.0",
     "react-router-dom": "^5.1.2",
     "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "supertest": "^4.0.2"
   }
 }
