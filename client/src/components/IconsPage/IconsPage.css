@@ -28,26 +28,24 @@
 
 /* MOBILE RESPONSIVE  */
 
-@media screen and (min-width:320px) and (max-width:640px) {
+@media screen and (min-width: 320px) and (max-width: 640px) {
   .add-button {
     display: flex;
+    width: 15vw;
     margin: 1vw;
     background-color: transparent;
     border: transparent;
     outline: none;
   }
-  .add-button:hover {
-    cursor: pointer;
-  }
 
   .icon-panel {
-    grid-template-columns: repeat(3, 40vw [col-start]);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35vw, 1fr));
     justify-content: center;
-    margin-left: 10vw;
   }
 
   .icon-panel__button__image {
-    width: 20vw;
+    width: 18vw;
   }
 
   .icon-panel__button {
