@@ -3,13 +3,19 @@
 }
 
 .infobar-style {
-font-size: 25px;
-line-height: 10px;
-color: var(--coral);
-
+  font-size: 25px;
+  line-height: 10px;
+  color: var(--coral);
 }
-/*
 
-p {
-  font-size: 20px;
-} */
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .name {
+    font-size: 8vw;
+  }
+
+  .infobar-style {
+    font-size: 4px;
+    line-height: 5vw;
+    color: var(--coral);
+  }
+}
