@@ -1,6 +1,59 @@
-/*------------------------------------
-        Info bar on top of map
--------------------------------------*/
+/* --------------------------
+      NAVIGATION BUTTONS
+   -------------------------- */
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.help-button{
+  background-color: transparent;
+  border: transparent;
+  outline: none;
+  margin: 15px;
+}
+.help-button:hover{
+  cursor: pointer;
+}
+
+/* ----------------
+     MAP STYLING
+   ---------------- */
+
+.search-bar {
+  font-size: 20px;
+  padding: 4.5px;
+  border-style: inset;
+  border-radius: 10px;
+  width: 300px;
+  outline: none;
+  /* font-family: "Passion One", cursive; */
+}
+
+.map-search {
+  background-color: var(--mako);
+  color: var(--coral);
+  font-family: "Passion One", cursive;
+  font-size: 16px;
+  padding: 5px;
+  margin: 10px;
+  border-color: var(--mako);
+  border-radius: 10px;
+  outline: none;
+}
+.map-search:hover {
+  cursor: pointer;
+}
+
+.map-area {
+  width: 100%;
+  height: 400px;
+}
+
+/* ---------------------------------------
+    INFOBAR FOR SERVICE (layered over map)
+   --------------------------------------- */
 
 .wrapper {
   position: relative;
@@ -17,19 +70,4 @@
 a {
   text-decoration: none;
   color: var(--coral);
-}
-
-.nav-buttons {
-  display: flex;
-  justify-content: space-between;
-}
-
-.help-button{
-  background-color: transparent;
-  border: transparent;
-  outline: none;
-  margin: 15px;
-}
-.help-button:hover{
-  cursor: pointer;
 }

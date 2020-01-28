@@ -9,11 +9,6 @@ import "./Map.css";
 const GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_TOKEN;
 const GOOGLE_GEOCODE_API_KEY = process.env.REACT_APP_GOOGLE_GEOCODE_TOKEN;
 
-// styles
-const mapStyles = {
-  width: "100%",
-  height: "400px"
-};
 const Map = ({
   selectedService,
   selectedServiceData,
@@ -130,11 +125,13 @@ const Map = ({
       <input
         value={searchLocation}
         type="search"
+        placeholder="search for a location"
+        className="search-bar"
         onChange={event => setSearchLocation(event.target.value)}
       ></input>
-      <button onClick={geocodeSearch}>submit</button>
+      <button className="map-search" onClick={geocodeSearch}>Submit</button>
       <div className="wrapper">
-        <div id="google-map" ref={googleMapRef} style={mapStyles} />
+        <div id="google-map" ref={googleMapRef} className="map-area"/>
         <div className="over-map">
           {selectedMarkerData ? (
             <Link to="/service">
