@@ -1,6 +1,6 @@
 .add-button {
   display: flex;
-  margin: 10px;
+  margin: 1vw;
   background-color: transparent;
   border: transparent;
   outline: none;
@@ -9,25 +9,55 @@
   cursor: pointer;
 }
 
-.headline {
-  margin-top: 5px;
-  font-size: 45px;
-  color: var(--mako);
-}
-
 .icon-panel {
   display: grid;
-  grid-template-columns: repeat(4, 200px [col-start]);
+  grid-template-columns: repeat(4, 20vw [col-start]);
   justify-content: center;
 }
 
 .icon-panel__button {
-  margin: 10px;
+  margin-top: 1vw;
 }
 
 .icon-text {
   color: var(--mako);
   text-align: center;
   text-transform: uppercase;
-  font-size: 25px;
+  font-size: 2vw;
+}
+
+/* MOBILE RESPONSIVE  */
+
+@media screen and (min-width:320px) and (max-width:640px) {
+  .add-button {
+    display: flex;
+    margin: 1vw;
+    background-color: transparent;
+    border: transparent;
+    outline: none;
+  }
+  .add-button:hover {
+    cursor: pointer;
+  }
+
+  .icon-panel {
+    grid-template-columns: repeat(3, 40vw [col-start]);
+    justify-content: center;
+    margin-left: 10vw;
+  }
+
+  .icon-panel__button__image {
+    width: 20vw;
+  }
+
+  .icon-panel__button {
+    margin: 10vw;
+  }
+
+  .icon-text {
+    color: var(--mako);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 6vw;
+  }
 }

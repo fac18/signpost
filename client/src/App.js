@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
-import "./App.css";
+import "./index.css";
 import Map from "./components/Map/Map";
 import LandingPage from "./components/LandingPage/LandingPage";
 import IconsPage from "./components/IconsPage/IconsPage";

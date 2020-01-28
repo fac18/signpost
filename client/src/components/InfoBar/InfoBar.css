@@ -1,10 +1,15 @@
-
-
-.service-name {
+.name {
   font-size: 50px;
 }
 
-.service-text {
+.infobar-style {
 font-size: 25px;
 line-height: 10px;
+color: var(--coral);
+
+}
+
+
+p {
+  font-size: 20px;
 }

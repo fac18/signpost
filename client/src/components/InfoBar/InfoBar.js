@@ -6,12 +6,12 @@ const InfoBar = ({ name, description, address, timings }) => {
   console.log(name);
   return (
     <>
-      <aside>
-          <h3 className="service-name">{name}</h3>
-          <p className="service-text">{address}</p>
-          <p className="service-text">{timings}</p>
-          <p className="service-text">{description}</p>
-          <p className="service-text">See more</p>
+      <aside className="infobar-style">
+          <h3 className="name">{name}</h3>
+          <p>{address}</p>
+          <p>{timings}</p>
+          <p>{description}</p>
+          <p>See more</p>
       </aside>
     </>
   );

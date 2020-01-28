@@ -4,6 +4,11 @@
 --light-grey: #DCDCDC;
 }
 
+@-webkit-viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+
 body {
   margin: 0;
   font-family: 'Passion One', cursive;
@@ -14,6 +19,67 @@ body {
 }
 
 legend {
-  font-size: 50px;
+  font-size: 5vw;
   color: var(--coral);
+}
+
+a {
+  text-decoration: none;
+  color: var(--mako);
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 4vw;
+  color: var(--mako);
+  justify-content: center;
+}
+
+h2 {
+  font-size: 2vw;
+}
+
+p {
+  font-size: 2vw;;
+}
+
+
+/* MOBILE RESPONSIVE */
+
+
+@media screen and (min-width:320px) and (max-width:640px) {
+  body {
+    margin: 0;
+    font-family: 'Passion One', cursive;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    background-image: url(./assets/signpost-background.png);
+  }
+
+  legend {
+    font-size: 15vw;
+    color: var(--coral);
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--mako);
+  }
+
+  h1 {
+    margin-top: 0;
+    margin-left: 16vw;
+    font-size: 10vw;
+    color: var(--mako);
+    justify-content: center;
+  }
+
+  h2 {
+    font-size: 6vw;
+  }
+
+  p {
+    font-size: 6vw;;
+  }
 }
