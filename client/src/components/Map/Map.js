@@ -115,29 +115,29 @@ const Map = ({
 
   return (
     <>
-      <section className="nav-buttons">
-      <Link to='/icons-page'>
-        <button className="close-button">
-        <Close />
-        </button>
-      </Link>
-      <Link to='/help'>
-        <button className="help-button">
-        <Help />
-        </button>
-      </Link>
+      <section className='nav-buttons'>
+        <Link to='/icons-page'>
+          <button className='close-button'>
+            <Close />
+          </button>
+        </Link>
+        <Link to='/help'>
+          <button className='help-button'>
+            <Help />
+          </button>
+        </Link>
       </section>
       <input
         value={searchLocation}
-        type="search"
+        type='search'
         onChange={event => setSearchLocation(event.target.value)}
       ></input>
       <button onClick={geocodeSearch}>submit</button>
-      <div className="wrapper">
-        <div id="google-map" ref={googleMapRef} style={mapStyles} />
-        <div className="over-map">
+      <div className='wrapper'>
+        <div id='google-map' ref={googleMapRef} style={mapStyles} />
+        <div className='over-map'>
           {selectedMarkerData ? (
-            <Link to="/service">
+            <Link to='/service'>
               <InfoBar
                 name={selectedMarkerData.fields.Name}
                 description={selectedMarkerData.fields.Description}
