@@ -145,7 +145,7 @@ const Map = ({
             <div className="over-map">
               {selectedMarkerData ? (
                 <Link to="/service">
-                  <InfoBar
+                  <InfoBar className="map-details"
                     name={selectedMarkerData.fields.Name}
                     description={selectedMarkerData.fields.Description}
                     address={selectedMarkerData.fields.Address}

@@ -23,23 +23,18 @@ const ServiceInfo = ({ selectedMarkerData }) => {
   </section>
       <fieldset className="service-info">
           <legend>{selectedMarkerData.fields.Name}</legend>
-
           <a href={"tel:" + selectedMarkerData.fields.Phone}>
-            {selectedMarkerData.fields.Phone}
-          </a>
+          {selectedMarkerData.fields.Phone}</a>
           <br />
           <a href={"mailto:" + selectedMarkerData.fields.Email}>
-            {selectedMarkerData.fields.Email}
-          </a>
+          {selectedMarkerData.fields.Email}</a>
           <br />
           <a href={selectedMarkerData.fields.Website} target='_blank'>
-            {selectedMarkerData.fields.Website}
-          </a>
+          {selectedMarkerData.fields.Website}</a>
           <p>{selectedMarkerData.fields.Opening}</p>
           <p>{selectedMarkerData.fields.Description}</p>
           <p>{selectedMarkerData.fields.Address}</p>
-        
-            </fieldset>
+      </fieldset>
       <Link to="/suggest-change">
         <button className="edit-button">Suggest edit</button>
       </Link>

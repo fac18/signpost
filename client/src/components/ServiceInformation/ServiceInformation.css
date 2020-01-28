@@ -22,7 +22,7 @@ cursor: pointer;
 
 .service-info {
   color: var(--mako);
-  font-size: 30px;
+  font-size: 20px;
   max-width: 600px;
   margin: auto;
 }
