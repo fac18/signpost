@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import InfoBar from "../InfoBar/InfoBar";
-import ServiceInfo from "../ServiceInformation/ServiceInformation";
+import BufferPage from "../BufferPage/BufferPage";
 import { ReactComponent as Close } from "../../assets/close.svg";
 import { ReactComponent as Help } from "../../assets/help.svg";
 import "./Map.css";
@@ -26,6 +26,15 @@ const Map = ({
   const [searchLocationGeocoded, setSearchLocationGeocoded] = React.useState(
     null
   );
+  console.log({ selectedService });
+  console.log({ selectedServiceData });
+
+  //switch from buffer to map after 2s
+  const [showMap, setShowMap] = React.useState(false);
+
+  React.useEffect(() => {
+    setTimeout(() => setShowMap(true), 2000);
+  }, []);
 
   // refs
   const googleMapRef = React.createRef();
@@ -69,7 +78,7 @@ const Map = ({
     }
   }
   React.useEffect(() => {
-    if (selectedServiceData) {
+    if (selectedServiceData && showMap) {
       const googleMapScript = document.createElement("script");
       googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API_KEY}&libraries=places`;
       window.document.body.appendChild(googleMapScript);
@@ -77,7 +86,7 @@ const Map = ({
         googleMap.current = createGoogleMap();
       });
     }
-  }, [selectedServiceData]);
+  }, [selectedServiceData, showMap]);
 
   React.useEffect(() => {
     if (selectedMarker) {
@@ -85,7 +94,6 @@ const Map = ({
         record => record.fields.Name === selectedMarker
       );
       setSelectedMarkerData(filteredData[0]);
-      console.log("I am the filtered data", filteredData[0]);
     }
   }, [selectedMarker]);
 
@@ -115,39 +123,45 @@ const Map = ({
 
   return (
     <>
-      <section className="nav-buttons">
-      <Link to='/icons-page'>
-        <button className="close-button">
-        <Close />
-        </button>
-      </Link>
-      <Link to='/help'>
-        <button className="help-button">
-        <Help />
-        </button>
-      </Link>
-      </section>
-      <input
-        value={searchLocation}
-        type="search"
-        onChange={event => setSearchLocation(event.target.value)}
-      ></input>
-      <button onClick={geocodeSearch}>submit</button>
-      <div className="wrapper">
-        <div id="google-map" ref={googleMapRef} style={mapStyles} />
-        <div className="over-map">
-          {selectedMarkerData ? (
-            <Link to="/service">
-              <InfoBar
-                name={selectedMarkerData.fields.Name}
-                description={selectedMarkerData.fields.Description}
-                address={selectedMarkerData.fields.Address}
-                timings={selectedMarkerData.fields.Opening}
-              />
+      {!showMap ? (
+        <BufferPage />
+      ) : (
+        <>
+          <section className="nav-buttons">
+            <Link to="/icons-page">
+              <button className="close-button">
+                <Close />
+              </button>
             </Link>
-          ) : null}
-        </div>
-      </div>
+            <Link to="/help">
+              <button className="help-button">
+                <Help />
+              </button>
+            </Link>
+          </section>
+          <input
+            value={searchLocation}
+            type="search"
+            onChange={event => setSearchLocation(event.target.value)}
+          ></input>
+          <button onClick={geocodeSearch}>submit</button>
+          <div className="wrapper">
+            <div id="google-map" ref={googleMapRef} style={mapStyles} />
+            <div className="over-map">
+              {selectedMarkerData ? (
+                <Link to="/service">
+                  <InfoBar
+                    name={selectedMarkerData.fields.Name}
+                    description={selectedMarkerData.fields.Description}
+                    address={selectedMarkerData.fields.Address}
+                    timings={selectedMarkerData.fields.Opening}
+                  />
+                </Link>
+              ) : null}
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 };
