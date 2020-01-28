@@ -1,4 +1,9 @@
 # signpost
+
+[![Build Status](https://travis-ci.com/fac18/signpost.svg?branch=master)](https://travis-ci.com/fac18/signpost)
+
+[![codecov](https://codecov.io/gh/fac18/signpost/branch/master/graph/badge.svg)](https://codecov.io/gh/fac18/signpost)
+
 A community-driven service for those experiencing or at risk of homelessness in Islington
 
 ## Readme Contents:
@@ -31,9 +36,9 @@ Signpost is an app/desktop website that lets people experiencing or at risk of h
 
 1. Clone the repo ```git clone https://github.com/fac18/signpost.git```
 2. Intall the dependencies by running ```npm i && cd client && npm i && cd ..```
-3. Set up two ```.env``` files (ask for the keys if you're reviewing us). There should be two .env files, one in the client folder root and one in the backend folder root too. *
+3. Set up two ```.env``` files (ask for the keys if you're reviewing us). There should be two .env files, one in the client folder root and one in the server folder root too. *
 4. To check tests run ```npm test```
-5. Start the server with ```npm start``` and go to ```localhost:3000``` *
+5. Start the server with ```npm run start:dev``` and go to ```localhost:3000``` *
 
 ### User Journey
 
