@@ -112,7 +112,12 @@ const Map = ({
     }
   }, [searchLocationGeocoded]);
 
-  //new JS work ends here
+  console.log(
+    selectedMarkerData ? selectedMarkerData.fields.TuesdayOpening : null
+  );
+  console.log(
+    selectedMarkerData ? selectedMarkerData.fields.TuesdayClosing : null
+  );
 
   return (
     <>
@@ -147,9 +152,38 @@ const Map = ({
                 <Link to="/service">
                   <InfoBar
                     name={selectedMarkerData.fields.Name}
-                    description={selectedMarkerData.fields.Description}
+                    description={selectedMarkerData.fields.ShortDescription}
                     address={selectedMarkerData.fields.Address}
-                    timings={selectedMarkerData.fields.Opening}
+                    timings={{
+                      monday: {
+                        opening: selectedMarkerData.fields.MondayOpening,
+                        closing: selectedMarkerData.fields.MondayClosing
+                      },
+                      tuesday: {
+                        opening: selectedMarkerData.fields.TuesdayOpening,
+                        closing: selectedMarkerData.fields.TuesdayClosing
+                      },
+                      wednesday: {
+                        opening: selectedMarkerData.fields.WednesdayOpening,
+                        closing: selectedMarkerData.fields.WednesdayClosing
+                      },
+                      thursday: {
+                        opening: selectedMarkerData.fields.ThursdayOpening,
+                        closing: selectedMarkerData.fields.ThursdayClosing
+                      },
+                      friday: {
+                        opening: selectedMarkerData.fields.FridayOpening,
+                        closing: selectedMarkerData.fields.FridayClosing
+                      },
+                      saturday: {
+                        opening: selectedMarkerData.fields.SaturdayOpening,
+                        closing: selectedMarkerData.fields.SaturdayClosing
+                      },
+                      sunday: {
+                        opening: selectedMarkerData.fields.SundayOpening,
+                        closing: selectedMarkerData.fields.SundayClosing
+                      }
+                    }}
                   />
                 </Link>
               ) : null}

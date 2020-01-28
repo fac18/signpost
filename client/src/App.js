@@ -23,15 +23,16 @@ function App() {
 
   // When the selectedService is changed, trigger the API call to the backend
 
-  const getData = service => {
-    fetch(`/api/airtable?q=${selectedService}`)
-      .then(res => res.json())
-      .then(info => setSelectedServiceData(info.records));
+  const getData = () => {
+    if (selectedService) {
+      fetch(`/api/airtable?q=${selectedService}`)
+        .then(res => res.json())
+        .then(info => setSelectedServiceData(info.records));
+    }
   };
 
   React.useEffect(() => {
     getData();
-    console.log("I am selected service data", selectedServiceData);
   }, [selectedService]);
 
   //navigating to /map (without selectedService set) will redirect you to landing
