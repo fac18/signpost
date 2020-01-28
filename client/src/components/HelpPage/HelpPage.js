@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ReactComponent as Close } from "../../assets/close.svg";
 import "./HelpPage.css";
 
+
 const instructions = [
   "Zoom in",
   "Zoom out",
@@ -23,7 +24,7 @@ const Help = () => {
         </button>
       </Link>
       <section>
-        <h1 className="headline"> Need help? </h1>
+        <h1> Need help? </h1>
         <article className="help-panel">
           {instructions.map(instruction => (
             <a
