@@ -11,7 +11,7 @@ const AboutUs = () => {
         </button>
       </Link>
       <fieldset className='about-text'>
-        <legend className='title'>Who are we?</legend>
+        <legend>Who are we?</legend>
         <p>
           Signpost is here to empower people who are experiencing homelessness
           in Islington.

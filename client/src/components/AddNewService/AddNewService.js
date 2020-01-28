@@ -24,7 +24,7 @@ const AddNewService = props => {
       </button>
     </Link>
       <fieldset className="add-form">
-      <legend className="title">Add a new service</legend>
+      <legend>Add a new service</legend>
       <form className="form__style" method="POST">
         <label htmlFor="title-input">
           <input id="title-input" className="form__input" placeholder="Title" value={titleInput}

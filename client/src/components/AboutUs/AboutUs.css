@@ -8,11 +8,6 @@
 cursor: pointer;
 }
 
-.title {
-  font-size: 60px;
-  color: var(--coral);
-}
-
 .about-text {
   color: var(--mako);
   width: 600px;

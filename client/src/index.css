@@ -13,6 +13,7 @@ body {
   background-image: url(./assets/signpost-background.png);
 }
 
-.content {
-  font-family: 'Roboto', sans-serif;
+legend {
+  font-size: 50px;
+  color: var(--coral);
 }
