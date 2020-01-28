@@ -33,7 +33,7 @@ const Icons = ({ selectedService, setSelectedService }) => {
       </Link>
       <section>
         <h1 className='headline'> Which service do you need? </h1>
-        <article className='icon-panel'>
+        <section className='icon-panel'>
           {categories.map(category => (
             <Link key={category} to='/map'>
               <a
@@ -52,7 +52,7 @@ const Icons = ({ selectedService, setSelectedService }) => {
               </a>
             </Link>
           ))}
-        </article>
+        </section>
       </section>
     </>
   );
