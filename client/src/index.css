@@ -40,7 +40,7 @@ h2 {
 }
 
 p {
-  font-size: 2vw;;
+  font-size: 1.5vw;;
 }
 
 
@@ -58,7 +58,7 @@ p {
   }
 
   legend {
-    font-size: 15vw;
+    font-size: 10vw;
     color: var(--coral);
   }
 
@@ -69,8 +69,8 @@ p {
 
   h1 {
     margin-top: 0;
-    margin-left: 16vw;
-    font-size: 10vw;
+
+    font-size: 8vw;
     color: var(--mako);
     justify-content: center;
   }
