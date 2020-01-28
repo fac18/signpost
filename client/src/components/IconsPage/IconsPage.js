@@ -28,7 +28,7 @@ const Icons = ({ selectedService, setSelectedService }) => {
         </button>
       </Link>
       <section>
-        <h1 className="headline"> Which service do you need? </h1>
+        <h1> Which service do you need? </h1>
         <article className="icon-panel">
           {categories.map(category => (
             <Link key={category} to="/map">

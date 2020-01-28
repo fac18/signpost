@@ -16,18 +16,18 @@ const AboutUs = () => {
           Signpost is here to empower people who are experiencing homelessness
           in Islington.
         </p>
-        <h1>COMMUNITY-DRIVEN?</h1>
+        <h2>COMMUNITY-DRIVEN?</h2>
         <p>
           We do our best to keep our information up to date. If you know of a
           service we've missed, or there is a problem with a service listed,
           please let us know. With more of us building the knowledge base, more
           support can be provided.
         </p>
-        <h1>WORRIED ABOUT DATA?</h1>
+        <h2>WORRIED ABOUT DATA?</h2>
         <p>
           We don't, and never will, collect your data or track your location.
         </p>
-        <h1>NOT IN ISLINGTON?</h1>
+        <h2>NOT IN ISLINGTON?</h2>
         <p>
           At the moment Signpost only operates in Islington. We're looking to
           branch out into other boroughs. If you think your area should be

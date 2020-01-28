@@ -9,12 +9,6 @@
   cursor: pointer;
 }
 
-.headline {
-  margin-top: 5px;
-  font-size: 50px;
-  color: var(--mako);
-  justify-content: center;
-}
 
 .help-panel {
   margin-top: 10px;
