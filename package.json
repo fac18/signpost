@@ -4,20 +4,33 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "start": "cd server && node index.js",
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "start:watch": "cd server && nodemon ./index.js",
+    "start:dev": "concurrently \"npm run start:watch\" \"cd client && npm run start\"",
+    "coverage": "cd client && npm test -- --coverage --watchAll=false && codecov && cd ../server && npm test -- --coverage --watchAll=false && codecov",
+    "test": "cd client && npm run test && cd ../server && npm test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "coverage": "^0.4.1",
     "dotenv": "^8.2.0",
-    "experss": "0.0.1-security",
     "express": "^4.17.1",
     "password-generator": "^2.2.3",
     "querystring": "^0.2.0",
     "react-router-dom": "^5.1.2",
     "url": "^0.11.0"
+  },
+  "homepage": "https://github.com/fac18/signpost",
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-react": "^7.18.0",
+    "prettier": "1.19.1",
+    "supertest": "^4.0.2"
   }
 }
