@@ -7,3 +7,27 @@
 .close-button {
 cursor: pointer;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.service-info {
+  color: var(--mako);
+  max-width: 400px;
+  margin: auto;
+}
+
+.edit-button {
+  background-color: var(--mako);
+  color: var(--coral);
+  font-family: "Passion One", cursive;
+  font-size: 30px;
+  padding: 10px;
+  box-shadow: 5px 5px 10px var(--mako);
+  border-color: var(--mako);
+  border-radius: 10px;
+  margin: 20px;
+  outline: none;
+}
