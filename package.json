@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cd server && node index.js",
-    "heroku-postbuild": "cd ../client && npm install && npm run build",
+    "heroku-postbuild": "cd client && npm install && npm run build",
     "coverage": "cd client && npm test -- --coverage --watchAll=false && codecov && cd ../server && npm test -- --coverage --watchAll=false && codecov",
     "test": "cd client && npm run test && cd ../server && npm test"
   },
@@ -23,6 +23,7 @@
     "react-router-dom": "^5.1.2",
     "url": "^0.11.0"
   },
+  "homepage": "https://github.com/fac18/signpost/tree/master/server",
   "devDependencies": {
     "supertest": "^4.0.2"
   }
