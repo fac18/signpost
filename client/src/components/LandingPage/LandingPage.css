@@ -1,6 +1,6 @@
 .about-button {
   display: flex;
-  margin: 10px;
+  margin: 1vw;
   background-color: transparent;
   border: transparent;
   outline: none;
@@ -10,13 +10,13 @@
 }
 
 .signpost {
-  font-size: 80px;
+  font-size: 5vw;
   color: var(--mako);
   text-shadow: 5px 10px 18px var(--light-grey);
 }
 
-.subtext {
-  font-size: 25px;
+.tagline {
+  font-size: 2vw;
   color: var(--mako);
 }
 
@@ -24,12 +24,61 @@
   background-color: var(--mako);
   color: var(--coral);
   font-family: "Passion One", cursive;
-  font-size: 30px;
-  padding: 10px;
-  box-shadow: 5px 10px 18px var(--mako);
+  font-size: 2vw;
+  padding: 0.5vw;
+  box-shadow: 5px 5px 10px var(--mako);
   border-color: var(--mako);
   border-radius: 10px;
 }
 .start-button:hover{
   cursor: pointer;
+}
+
+
+/* ----------------------
+      MOBILE RESPONSIVE
+   ---------------------- */
+
+@media screen and (min-width:320px) and (max-width:640px) {
+
+  .about-button {
+    display: flex;
+    margin: 1vw;
+    background-color: transparent;
+    border: transparent;
+    outline: none;
+  }
+  .about-button:hover{
+    cursor: pointer;
+  }
+
+.logo {
+    width: 40vw;
+}
+
+.signpost {
+    padding-top: 0;
+    font-size: 15vw;
+    color: var(--mako);
+    text-shadow: 5px 10px 18px var(--light-grey);
+  }
+
+  .tagline {
+    font-size: 8vw;
+    color: var(--mako);
+  }
+
+  .start-button {
+    background-color: var(--mako);
+    color: var(--coral);
+    font-family: "Passion One", cursive;
+    font-size: 8vw;
+    padding: 2vw;
+    box-shadow: 5px 5px 10px var(--mako);
+    border-color: var(--mako);
+    border-radius: 10px;
+  }
+  .start-button:hover{
+    cursor: pointer;
+  }
 }

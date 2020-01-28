@@ -12,11 +12,9 @@ const LandingPage = () => {
           <About />
         </button>
       </Link>
-      <section className='logo'>
-        <Logo />
-      </section>
+        <Logo className="logo"/>
       <h1 className='signpost'>Signpost</h1>
-      <p className='subtext'>
+      <p className='tagline'>
         A community-driven service for those experiencing or at risk of
         homelessness in Islington
       </p>

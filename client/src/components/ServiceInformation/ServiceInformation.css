@@ -1,3 +1,11 @@
+/* --------------------------
+      NAVIGATION BUTTONS
+   -------------------------- */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
 .close-button {
   display: flex;
   background-color: transparent;
@@ -6,4 +14,28 @@
 }
 .close-button {
 cursor: pointer;
+}
+
+/* ---------------------------
+    SERVICE DETAILS STYLING
+--------------------------- */
+
+.service-info {
+  color: var(--mako);
+  font-size: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.edit-button {
+  background-color: var(--mako);
+  color: var(--coral);
+  font-family: "Passion One", cursive;
+  font-size: 30px;
+  padding: 10px;
+  box-shadow: 5px 5px 10px var(--mako);
+  border-color: var(--mako);
+  border-radius: 10px;
+  margin: 20px;
+  outline: none;
 }

@@ -1,17 +1,17 @@
 import React from 'react';
+import "./InfoBar.css"
+
 
 const InfoBar = ({ name, description, address, timings }) => {
   console.log(name);
   return (
     <>
-      <aside>
-        <a>
-          <h2>{name}</h2>
-          <p>{description}</p>
+      <aside className="infobar-style">
+          <h3 className="name">{name}</h3>
           <p>{address}</p>
           <p>{timings}</p>
+          <p>{description}</p>
           <p>See more</p>
-        </a>
       </aside>
     </>
   );
