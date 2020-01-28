@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import InfoBar from "../InfoBar/InfoBar";
 import BufferPage from "../BufferPage/BufferPage";
+import PopUp from "../PopUp/PopUp";
 import { ReactComponent as Close } from "../../assets/close.svg";
 import { ReactComponent as Help } from "../../assets/help.svg";
 import "./Map.css";
@@ -32,6 +33,13 @@ const Map = ({
 
   React.useEffect(() => {
     setTimeout(() => setShowMap(true), 2000);
+  }, []);
+
+  //show pop up if user is inactive on the map for 6s
+  const [popUp, setPopUp] = React.useState(false);
+
+  React.useEffect(() => {
+    setTimeout(() => setPopUp(true), 6000);
   }, []);
 
   // refs
@@ -76,7 +84,7 @@ const Map = ({
     }
   }
   React.useEffect(() => {
-    if (selectedServiceData && showMap) {
+    if (selectedServiceData && showMap && !popUp) {
       const googleMapScript = document.createElement("script");
       googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API_KEY}&libraries=places`;
       window.document.body.appendChild(googleMapScript);
@@ -84,7 +92,7 @@ const Map = ({
         googleMap.current = createGoogleMap();
       });
     }
-  }, [selectedServiceData, showMap]);
+  }, [selectedServiceData, showMap, popUp]);
 
   React.useEffect(() => {
     if (selectedMarker) {
@@ -118,36 +126,36 @@ const Map = ({
   }, [searchLocationGeocoded]);
 
   //new JS work ends here
-
   return (
     <>
       {!showMap ? (
         <BufferPage />
       ) : (
         <>
-          <section className="nav-buttons">
-            <Link to="/icons-page">
-              <button className="close-button">
+          {popUp ? <PopUp popUp={popUp} setPopUp={setPopUp} /> : null}
+          <section className='nav-buttons'>
+            <Link to='/icons-page'>
+              <button className='close-button'>
                 <Close />
               </button>
             </Link>
-            <Link to="/help">
-              <button className="help-button">
+            <Link to='/help'>
+              <button className='help-button'>
                 <Help />
               </button>
             </Link>
           </section>
           <input
             value={searchLocation}
-            type="search"
+            type='search'
             onChange={event => setSearchLocation(event.target.value)}
           ></input>
           <button onClick={geocodeSearch}>submit</button>
-          <div className="wrapper">
-            <div id="google-map" ref={googleMapRef} style={mapStyles} />
-            <div className="over-map">
+          <div className='wrapper'>
+            <div id='google-map' ref={googleMapRef} style={mapStyles} />
+            <div className='over-map'>
               {selectedMarkerData ? (
-                <Link to="/service">
+                <Link to='/service'>
                   <InfoBar
                     name={selectedMarkerData.fields.Name}
                     description={selectedMarkerData.fields.Description}
