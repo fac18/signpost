@@ -26,8 +26,6 @@ const Map = ({
   const [searchLocationGeocoded, setSearchLocationGeocoded] = React.useState(
     null
   );
-  console.log({ selectedService });
-  console.log({ selectedServiceData });
 
   //switch from buffer to map after 2s
   const [showMap, setShowMap] = React.useState(false);
