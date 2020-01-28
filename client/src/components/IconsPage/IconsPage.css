@@ -10,7 +10,7 @@
 }
 
 .headline {
-  margin-top: 5px;
+
   font-size: 45px;
   color: var(--mako);
 }
@@ -22,7 +22,7 @@
 }
 
 .icon-panel__button {
-  margin: 10px;
+  margin-top: 5px;
 }
 
 .icon-text {

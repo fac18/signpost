@@ -22,3 +22,9 @@ a {
   text-decoration: none;
   color: var(--mako);
 }
+
+
+@-webkit-viewport {
+  width: device-width;
+  zoom: 1.0;
+}
