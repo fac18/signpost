@@ -11,6 +11,7 @@ import ThankYou from './components/ThankYou/ThankYou'
 import ServiceInfo from './components/ServiceInformation/ServiceInformation'
 import Help from './components/HelpPage/HelpPage'
 import PopUp from './components/PopUp/PopUp'
+import getData from './utils/getData'
 
 function App() {
   //INITIAL STATE WILL BE NULL WHEN AIRTABLE DATA IS COMING THROUGH
@@ -24,16 +25,11 @@ function App() {
 
   // When the selectedService is changed, trigger the API call to the backend
 
-  const getData = () => {
-    if (selectedService) {
-      fetch(`/api/airtable?q=${selectedService}`)
-        .then(res => res.json())
-        .then(info => setSelectedServiceData(info.records))
-    }
-  }
-
   React.useEffect(() => {
-    getData()
+    getData(selectedService).then(res => {
+      setSelectedServiceData(res.records)
+      console.log(res.records)
+    })
   }, [selectedService])
 
   //navigating to /map (without selectedService set) will redirect you to landing
