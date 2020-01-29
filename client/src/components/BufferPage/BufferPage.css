@@ -1,6 +1,22 @@
-.magnifying-glass {
+/* .magnifying-glass {
   position: absolute;
-  overflow: hidden;
+} */
+#parent {
+  z-index: 0;
+}
+
+#inside {
+  z-index: -1;
+}
+
+#magnifyingGlass {
+  z-index: 1;
+}
+
+#hidden-group {
+  /* overflow: hidden; */
+  position: relative;
+  fill: red;
 }
 
 .buffer {
@@ -11,41 +27,61 @@
 .buffer p {
   position: absolute;
   margin-left: 40%;
-  margin-top: 10vh;
+  margin-top: 20vh;
 }
 
-.food,
-.shelter,
-.learning,
-.shower {
-  position: relative;
-  /* float: right; */
+#food,
+#shelter,
+#learning,
+#shower {
+  position: absolute;
+  top: 100px;
   height: 100px;
   width: 100px;
+  transform: translateX(60px);
+  z-index: 0;
+}
+@keyframes sliding {
+  0% {
+    transform: translateX(50px);
+  }
+  50% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-50px);
+  }
+}
+/* 
+@keyframes sliding2 {
+  0% {
+    right: 0%;
+  }
+  20% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(-50px);
+  }
+} */
+
+#shower {
+  animation: sliding 0.8s;
+}
+#learning {
+  animation: sliding 0.8s;
+  animation-delay: 0.5s;
+}
+#shelter {
+  animation: sliding 0.8s;
+  animation-delay: 1s;
+}
+#food {
+  animation: sliding 0.8s;
+  animation-delay: 1.5s;
 }
 
-.slide4 {
-  animation: bounce 1s infinite;
-}
-.slide3 {
-  animation: bounce2 1s infinite;
-}
-.slide2 {
-  animation: bounce 1s infinite;
-}
-.slide1 {
-  animation: bounce2 1s infinite;
-}
-
-/* @keyframes sliding {
-    0% {
-      right: 0%;
-    }
-    100% {
-      right: 100%;
-    }
-  } */
-
+/* 
 @keyframes bounce {
   0%,
   50%,
@@ -78,7 +114,7 @@
   80% {
     transform: translateY(-30px);
   }
-}
+} */
 
 @media only screen and (max-width: 600px) {
   .buffer p {
