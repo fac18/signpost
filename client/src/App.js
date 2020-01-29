@@ -70,7 +70,13 @@ function App() {
       <Route path="/add-service" component={AddNewService} />
       <Route
         path="/suggest-change"
-        render={() => <SuggestChange selectedMarker={selectedMarker} />}
+        render={() =>
+          selectedMarker ? (
+            <SuggestChange selectedMarker={selectedMarker} />
+          ) : (
+            <Redirect to="/icons-page" />
+          )
+        }
       />
       <Route path="/thank-you" component={ThankYou} />
       <Route path="/help" component={Help} />
