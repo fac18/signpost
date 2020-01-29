@@ -1,6 +1,6 @@
-import React from "react"
-import "./InfoBar.css"
-import { calcOpeningClosing } from "../../utils/calcOpeningClosing"
+import React from 'react'
+import './InfoBar.css'
+import { calcOpeningClosing } from '../../utils/calcOpeningClosing'
 
 const InfoBar = ({ name, description, address, timings }) => {
   const openingInfo = calcOpeningClosing(timings)

@@ -120,6 +120,14 @@ const Map = ({
     }
   }, [selectedMarker])
 
+  //clear selected marker when map unmounts
+  React.useEffect(() => {
+    return () => {
+      setSelectedMarker(null)
+      setSelectedMarkerData(null)
+    }
+  }, [])
+
   const geocodeSearch = () => {
     fetch(
       `https://maps.googleapis.com/maps/api/geocode/json?address=${searchLocation}&key=${GOOGLE_GEOCODE_API_KEY}&region=GB`
