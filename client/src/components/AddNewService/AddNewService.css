@@ -1,3 +1,5 @@
+/* DESKTOP */
+
 .close-button {
   display: flex;
   background-color: transparent;
@@ -5,48 +7,97 @@
   outline: none;
 }
 .close-button {
-cursor: pointer;
-}
-
-.title {
-  font-size: 60px;
-  color: var(--coral)
+  cursor: pointer;
 }
 
 .add-form {
   color: var(--mako);
-  width: 600px;
+  width: 60vw;
   margin: auto;
-  padding: 20px;
+  padding: 1vw;
 }
 
 .form__input {
   color: var(--mako);
-  font-size: 25px;
-  font-family: "Passion One", cursive;
+  font-size: 2vw;
+  font-family: 'Passion One', cursive;
 }
 
 .dropdown {
   color: var(--mako);
-  font-size: 25px;
-  font-family: "Passion One", cursive;
-    padding: 15px;
+  font-size: 2vw;
+  font-family: 'Passion One', cursive;
+  padding: 1vw;
 }
-.dropdown:hover{
+.dropdown:hover {
   cursor: pointer;
 }
 
 .submit-button {
   background-color: var(--mako);
   color: var(--coral);
-  font-family: "Passion One", cursive;
-  font-size: 30px;
-  padding: 10px;
+  font-family: 'Passion One', cursive;
+  font-size: 2vw;
+  padding: 0.5vw;
   box-shadow: 5px 5px 10px var(--mako);
   border-color: var(--mako);
   border-radius: 10px;
-  margin: 10px;
+  margin: 1vw;
 }
-.submit-button:hover{
+.submit-button:hover {
   cursor: pointer;
+}
+
+/* MOBILE RESPONSIVE  */
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .close-button {
+    display: flex;
+    width: 15vw;
+    margin: 1vw;
+    background-color: transparent;
+    border: transparent;
+    outline: none;
+  }
+  .close-button {
+    cursor: pointer;
+  }
+
+  .add-form {
+    color: var(--mako);
+    width: 80vw;
+    margin: auto;
+    padding: 1vw;
+  }
+
+  .form__input {
+    color: var(--mako);
+    font-size: 6vw;
+    font-family: 'Passion One', cursive;
+  }
+
+  .dropdown {
+    color: var(--mako);
+    font-size: 6vw;
+    font-family: 'Passion One', cursive;
+    padding: 1vw;
+  }
+  .dropdown:hover {
+    cursor: pointer;
+  }
+
+  .submit-button {
+    background-color: var(--mako);
+    color: var(--coral);
+    font-family: 'Passion One', cursive;
+    font-size: 6vw;
+    padding: 2vw;
+    box-shadow: 5px 5px 10px var(--mako);
+    border-color: var(--mako);
+    border-radius: 10px;
+    margin: 2vw;
+  }
+  .submit-button:hover {
+    cursor: pointer;
+  }
 }
