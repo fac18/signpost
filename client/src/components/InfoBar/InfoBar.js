@@ -9,7 +9,7 @@ const InfoBar = ({ name, description, address, timings }) => {
       <article className="infobar-style">
         <h3 className="name">{name}</h3>
         <pre>{address}</pre>
-        <pre>{timings}</pre>
+        <pre>{openingInfo}</pre>
         <pre>{description}</pre>
         <pre>See more > </pre>
       </article>
