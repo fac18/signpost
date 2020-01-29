@@ -1,0 +1,58 @@
+.buffer {
+  position: relative;
+  margin-top: 40vh;
+}
+
+.buffer p {
+  position: absolute;
+  margin-left: 40%;
+  margin-top: 20vh;
+}
+
+#food,
+#shelter,
+#learning,
+#shower {
+  position: absolute;
+  top: 100px;
+  height: 100px;
+  width: 100px;
+  transform: translateX(60px);
+  z-index: 0;
+}
+@keyframes sliding {
+  0% {
+    transform: translateX(50px);
+  }
+  50% {
+    transform: translateX(0px);
+  }
+  60% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-50px);
+  }
+}
+
+#shower {
+  animation: sliding 0.8s;
+}
+#learning {
+  animation: sliding 0.8s;
+  animation-delay: 0.5s;
+}
+#shelter {
+  animation: sliding 0.8s;
+  animation-delay: 1s;
+}
+#food {
+  animation: sliding 0.8s;
+  animation-delay: 1.5s;
+}
+
+@media only screen and (max-width: 600px) {
+  .buffer p {
+    margin-left: 10vh;
+  }
+}

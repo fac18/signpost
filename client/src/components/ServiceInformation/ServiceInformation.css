@@ -85,5 +85,8 @@
     margin: 2.5vw;
     outline: none;
   }
+}
 
+table {
+  margin: auto;
 }

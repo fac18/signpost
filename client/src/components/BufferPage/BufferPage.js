@@ -1,13 +1,14 @@
-import React from "react";
+import React from 'react'
+import { ReactComponent as MagnifyingGlass } from '../BufferPage/asset/magnifying-glass.svg'
+import './BufferPage.css'
 
 const BufferPage = () => {
   return (
-    <>
-      <img src="" alt=""></img>
-      🕵️
-      <p>finding community contributions</p>
-    </>
-  );
-};
+    <div className="buffer">
+      <MagnifyingGlass />
+      <p>Finding community contributions...</p>
+    </div>
+  )
+}
 
-export default BufferPage;
+export default BufferPage
