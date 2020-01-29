@@ -43,6 +43,12 @@ p {
   font-size: 1.5vw;
 }
 
+pre {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5vw;
+  margin: 0.5vw;
+}
+
 /* MOBILE RESPONSIVE */
 
 @media screen and (min-width: 320px) and (max-width: 640px) {
@@ -78,5 +84,10 @@ p {
 
   p {
     font-size: 6vw;
+  }
+
+  pre {
+    font-size: 4.5vw;
+    margin: 1vw;
   }
 }
