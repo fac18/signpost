@@ -6,6 +6,7 @@ import { ReactComponent as Add } from '../../assets/add.svg'
 import './ServiceInformation.css'
 
 const ServiceInfo = ({ selectedMarkerData }) => {
+
   const [timings, setTimings] = React.useState({
     Mon: {
       opening: selectedMarkerData.fields.MondayOpening,
@@ -122,4 +123,3 @@ const ServiceInfo = ({ selectedMarkerData }) => {
 
 export default ServiceInfo
 
-// Add closing time, phone number, email, website
