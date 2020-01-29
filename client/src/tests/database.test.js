@@ -1,4 +1,4 @@
-const getData = require('../utils/getData')
+import getData from '../App.js'
 
 //assuming that there are multiple getData functions, and multiple
 //AirTable calls within these e.g. for All data and for data filtered by service type
