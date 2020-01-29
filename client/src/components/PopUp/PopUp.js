@@ -5,7 +5,7 @@ import './PopUp.css'
 
 const PopUp = ({ popUp, setPopUp }) => {
   const hideModal = () => {
-    setPopUp(!setPopUp)
+    setPopUp(prev => !prev)
   }
 
   return (
