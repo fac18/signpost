@@ -19,7 +19,7 @@ body {
 }
 
 legend {
-  font-size: 4vw;
+  font-size: 4.5vw;
   color: var(--coral);
 }
 
@@ -36,11 +36,11 @@ h1 {
 }
 
 h2 {
-  font-size: 2vw;
+  font-size: 2.5vw;
 }
 
 p {
-  font-size: 1.5vw;
+  font-size: 2vw;
 }
 
 pre {
@@ -62,7 +62,7 @@ pre {
   }
 
   legend {
-    font-size: 9vw;
+    font-size: 9.5vw;
     color: var(--coral);
   }
 

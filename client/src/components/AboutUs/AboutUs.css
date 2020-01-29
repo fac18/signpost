@@ -13,6 +13,7 @@
 
 .about-text {
   display: flex;
+  line-height: 2vw;
   justify-content: center;
   color: var(--mako);
   width: 60vw;
@@ -32,6 +33,9 @@
   }
 
   .about-text {
+    display: flex;
+    line-height: 4.5vw;
+    justify-content: center;
     color: var(--mako);
     margin: auto;
   }
