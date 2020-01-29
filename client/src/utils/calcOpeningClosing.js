@@ -1,31 +1,22 @@
 export const calcOpeningClosing = timings => {
-  //set up for time/date calculations
+  //getDay() returns a number - this table will be used to convert it to the name of the day
+  //(Sunday is 0, Monday is 1, etc)
+  const daysLookup = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+
+  //set up for time/date calculations: what is the day/time now
   const today = new Date()
-  //getDay() returns a number
-  const daysLookup = {
-    Sun: 0,
-    Mon: 1,
-    Tue: 2,
-    Wed: 3,
-    Thu: 4,
-    Fri: 5,
-    Sat: 6,
-  }
-
-  const todayName = Object.keys(daysLookup).find(
-    key => daysLookup[key] === today.getDay()
-  )
-
+  //convert the JS day to the name of the day
+  const todayName = daysLookup[today.getDay()]
   const currentTime = today.getTime()
 
-  //date object for today's opening times
+  //JS date object for today's opening times
   let todayOpeningTimeStamp = new Date()
-  if (timings[todayName].opening === 'closed') {
+  if (timings[todayName].opening === "closed") {
     todayOpeningTimeStamp = 0
   } else {
     const [todayOpeningHour, todayOpeningMinutes] = timings[
       todayName
-    ].opening.split(':')
+    ].opening.split(":")
     todayOpeningTimeStamp.setHours(todayOpeningHour, todayOpeningMinutes)
   }
 
@@ -33,11 +24,14 @@ export const calcOpeningClosing = timings => {
   const todayClosingTimeStamp = new Date()
   const [todayClosingHour, todayClosingMinutes] = timings[
     todayName
-  ].closing.split(':')
+  ].closing.split(":")
   todayClosingTimeStamp.setHours(todayClosingHour, todayClosingMinutes)
 
   //for services which are closed - when will they open?
-  let outputArray = [
+  //this array will be added to by for loop below to contain an object for every day of the week
+  //maybe that's not good coding practice....
+  //element 0 is for today, element 1 will be tomorrow, etc
+  let allDaysTimeStamps = [
     {
       openingTimestamp: todayOpeningTimeStamp,
       jsDayRef: today.getDay(),
@@ -45,56 +39,47 @@ export const calcOpeningClosing = timings => {
     },
   ]
 
+  //create an object for each successive day of the week (i.e. tomorrow onwards)
   for (let i = 1; i < 7; i++) {
     let daysAfterToday = i
     let jsCodeDayOfWeek =
-      outputArray[i - 1].jsDayRef + 1 > 6 ? 0 : outputArray[i - 1].jsDayRef + 1
+      allDaysTimeStamps[i - 1].jsDayRef + 1 > 6
+        ? 0
+        : allDaysTimeStamps[i - 1].jsDayRef + 1
     let dayTimeStamp = new Date()
-    let dayName = Object.keys(daysLookup).find(
-      key => daysLookup[key] === jsCodeDayOfWeek
-    )
-    if (timings[dayName].opening === 'closed') {
+    let dayName = daysLookup[jsCodeDayOfWeek]
+    if (timings[dayName].opening === "closed") {
       dayTimeStamp = 0
     } else {
-      const [openingHour, openingMinutes] = timings[dayName].opening.split(':')
+      const [openingHour, openingMinutes] = timings[dayName].opening.split(":")
       dayTimeStamp.setHours(openingHour, openingMinutes)
       dayTimeStamp.setDate(dayTimeStamp.getDate() + daysAfterToday)
     }
-    outputArray.push({
+    allDaysTimeStamps.push({
       openingTimestamp: dayTimeStamp,
       jsDayRef: jsCodeDayOfWeek,
       todayName: dayName,
     })
   }
 
+  //identifies the next day that the service will be open
   //closed days are set to 0 so won't be bigger
-  const nextOpeningTimeStamp =
-    outputArray[1].openingTimestamp > outputArray[0].openingTimestamp
-      ? outputArray[1].openingTimestamp
-      : outputArray[2].openingTimestamp > outputArray[0].openingTimestamp
-      ? outputArray[2].openingTimestamp
-      : outputArray[3].openingTimestamp > outputArray[0].openingTimestamp
-      ? outputArray[3].openingTimestamp
-      : outputArray[4].openingTimestamp > outputArray[0].openingTimestamp
-      ? outputArray[4].openingTimestamp
-      : outputArray[5].openingTimestamp > outputArray[0].openingTimestamp
-      ? outputArray[5].openingTimestamp
-      : outputArray[6].openingTimestamp > outputArray[0].openingTimestamp
-      ? outputArray[6].openingTimestamp
-      : outputArray[0].openingTimestamp
+  const nextOpeningTimeStamp = allDaysTimeStamps.find(
+    element => element.openingTimestamp > allDaysTimeStamps[0].openingTimestamp
+  ).openingTimestamp
 
-  const nextOpeningDay = Object.keys(daysLookup).find(
-    key => daysLookup[key] === nextOpeningTimeStamp.getDay()
-  )
+  //look up the name of the day, and also save the hour and mins as variables for the display text
+  const nextOpeningDay = daysLookup[nextOpeningTimeStamp.getDay()]
   const nextOpeningHour = nextOpeningTimeStamp.getHours()
   const nextOpeningMinutes =
     nextOpeningTimeStamp.getMinutes() > 9
       ? nextOpeningTimeStamp.getMinutes()
       : `0${nextOpeningTimeStamp.getMinutes()}`
 
+  //the variable that will be displayed in InfoBar: will be set by one of the if outcomes below
   let openingInfo
 
-  if (timings[todayName].opening === 'closed') {
+  if (timings[todayName].opening === "closed") {
     //it's closed all day today: when will it next be open?
     openingInfo = `Closed | Opens ${nextOpeningDay} ${nextOpeningHour}:${nextOpeningMinutes}`
   } else if (todayOpeningTimeStamp > currentTime) {
@@ -110,36 +95,3 @@ export const calcOpeningClosing = timings => {
 
   return openingInfo
 }
-
-const data = {
-  Tue: {
-    opening: 'closed',
-    closing: 'closed',
-  },
-  Wed: {
-    opening: '00:00',
-    closing: '02:00',
-  },
-  Thu: {
-    opening: 'closed',
-    closing: 'closed',
-  },
-  Fri: {
-    opening: '10:00',
-    closing: '12:00',
-  },
-  Sat: {
-    opening: 'closed',
-    closing: 'closed',
-  },
-  Sun: {
-    opening: 'closed',
-    closing: 'closed',
-  },
-  Mon: {
-    opening: '16:00',
-    closing: '19:00',
-  },
-}
-
-console.log(calcOpeningClosing(data))
