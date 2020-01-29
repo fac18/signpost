@@ -120,12 +120,11 @@ const Map = ({
     }
   }, [selectedMarker])
 
-  //clear selected marker when map unmounts
+  //reset selected marker when map mounts
+  //(cant unset when dismounts or the service info page won't work)
   React.useEffect(() => {
-    return () => {
-      setSelectedMarker(null)
-      setSelectedMarkerData(null)
-    }
+    setSelectedMarker(null)
+    setSelectedMarkerData(null)
   }, [])
 
   const geocodeSearch = () => {
