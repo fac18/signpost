@@ -5,7 +5,7 @@
   border: transparent;
   outline: none;
 }
-.about-button:hover{
+.about-button:hover {
   cursor: pointer;
 }
 
@@ -23,40 +23,36 @@
 .start-button {
   background-color: var(--mako);
   color: var(--coral);
-  font-family: "Passion One", cursive;
+  font-family: 'Passion One', cursive;
   font-size: 2vw;
   padding: 0.5vw;
   box-shadow: 5px 5px 10px var(--mako);
   border-color: var(--mako);
   border-radius: 10px;
 }
-.start-button:hover{
+.start-button:hover {
   cursor: pointer;
 }
-
 
 /* ----------------------
       MOBILE RESPONSIVE
    ---------------------- */
 
-@media screen and (min-width:320px) and (max-width:640px) {
-
+@media screen and (min-width: 320px) and (max-width: 640px) {
   .about-button {
     display: flex;
+    width: 15vw;
     margin: 1vw;
     background-color: transparent;
     border: transparent;
     outline: none;
   }
-  .about-button:hover{
-    cursor: pointer;
+
+  .logo {
+    width: 40vw;
   }
 
-.logo {
-    width: 40vw;
-}
-
-.signpost {
+  .signpost {
     padding-top: 0;
     font-size: 15vw;
     color: var(--mako);
@@ -71,14 +67,14 @@
   .start-button {
     background-color: var(--mako);
     color: var(--coral);
-    font-family: "Passion One", cursive;
+    font-family: 'Passion One', cursive;
     font-size: 8vw;
     padding: 2vw;
     box-shadow: 5px 5px 10px var(--mako);
     border-color: var(--mako);
     border-radius: 10px;
   }
-  .start-button:hover{
+  .start-button:hover {
     cursor: pointer;
   }
 }
