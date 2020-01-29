@@ -43,7 +43,7 @@ const Map = ({
   // helper functions
   const createGoogleMap = () => {
     const map = new window.google.maps.Map(googleMapRef.current, {
-      zoom: 14,
+      zoom: 13,
       center: {
         lat: 51.5458,
         lng: -0.1043,
@@ -160,31 +160,31 @@ const Map = ({
                     description={selectedMarkerData.fields.ShortDescription}
                     address={selectedMarkerData.fields.Address}
                     timings={{
-                      monday: {
+                      Mon: {
                         opening: selectedMarkerData.fields.MondayOpening,
                         closing: selectedMarkerData.fields.MondayClosing,
                       },
-                      tuesday: {
+                      Tue: {
                         opening: selectedMarkerData.fields.TuesdayOpening,
                         closing: selectedMarkerData.fields.TuesdayClosing,
                       },
-                      wednesday: {
+                      Wed: {
                         opening: selectedMarkerData.fields.WednesdayOpening,
                         closing: selectedMarkerData.fields.WednesdayClosing,
                       },
-                      thursday: {
+                      Thu: {
                         opening: selectedMarkerData.fields.ThursdayOpening,
                         closing: selectedMarkerData.fields.ThursdayClosing,
                       },
-                      friday: {
+                      Fri: {
                         opening: selectedMarkerData.fields.FridayOpening,
                         closing: selectedMarkerData.fields.FridayClosing,
                       },
-                      saturday: {
+                      Sat: {
                         opening: selectedMarkerData.fields.SaturdayOpening,
                         closing: selectedMarkerData.fields.SaturdayClosing,
                       },
-                      sunday: {
+                      Sun: {
                         opening: selectedMarkerData.fields.SundayOpening,
                         closing: selectedMarkerData.fields.SundayClosing,
                       },

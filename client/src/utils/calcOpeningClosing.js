@@ -1,4 +1,4 @@
-const calcOpeningClosing = timings => {
+export const calcOpeningClosing = timings => {
   //set up for time/date calculations
   const today = new Date()
   //getDay() returns a number
