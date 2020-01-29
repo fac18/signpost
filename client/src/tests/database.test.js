@@ -1,4 +1,4 @@
-import getData from '../App.js'
+import getData from '../utils/getData'
 
 //assuming that there are multiple getData functions, and multiple
 //AirTable calls within these e.g. for All data and for data filtered by service type

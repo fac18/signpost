@@ -78,4 +78,4 @@ function App() {
   )
 }
 
-export { App, getData }
+export default App
