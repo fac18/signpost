@@ -151,14 +151,10 @@ const Map = ({
           {popUp ? <PopUp popUp={popUp} setPopUp={setPopUp} /> : null}
           <section className="nav-buttons">
             <Link to="/icons-page">
-              <button className="close-button">
-                <Close />
-              </button>
+              <Close />
             </Link>
             <Link to="/help">
-              <button className="help-button">
-                <Help />
-              </button>
+              <Help />
             </Link>
           </section>
           <input
