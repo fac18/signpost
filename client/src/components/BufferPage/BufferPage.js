@@ -23,34 +23,36 @@ import './BufferPage.css'
 
 const BufferPage = () => {
   return (
-    <>
-      <img
-        src={require(`./icons/magnifying-glass.svg`)}
-        alt={'magnifying glass icon'}
-        className="magnifying-glass"
-      ></img>
-      <img
-        src={require(`./icons/food-water-button.svg`)}
-        alt={'food icon'}
-        className="food"
-      ></img>
-      <img
-        src={require(`./icons/shelter-button.svg`)}
-        alt={'shelter icon'}
-        id="shelter"
-      ></img>
-      <img
-        src={require(`./icons/shower-button.svg`)}
-        alt={'shower icon'}
-        id="shower"
-      ></img>
-      <img
-        src={require(`./icons/learning-button.svg`)}
-        alt={'learning icon'}
-        id="learning"
-      ></img>
+    <div className="buffer">
+      <div className="images">
+        {/* <img
+          src={require(`./icons/magnifying-glass.svg`)}
+          alt={'magnifying glass icon'}
+          className="magnifying-glass"
+        ></img> */}
+        <img
+          src={require(`./icons/food-water-button.svg`)}
+          alt={'food icon'}
+          className="food slide slide1"
+        ></img>
+        <img
+          src={require(`./icons/shelter-button.svg`)}
+          alt={'shelter icon'}
+          className="shelter slide slide2"
+        ></img>
+        <img
+          src={require(`./icons/shower-button.svg`)}
+          alt={'shower icon'}
+          className="shower slide slide3"
+        ></img>
+        <img
+          src={require(`./icons/learning-button.svg`)}
+          alt={'learning icon'}
+          className="learning slide slide4"
+        ></img>
+      </div>
       <p>finding community contributions</p>
-    </>
+    </div>
   )
 }
 
