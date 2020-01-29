@@ -1,8 +1,9 @@
 import React from 'react'
 import './InfoBar.css'
+import { calcOpeningClosing } from '../../utils/calcOpeningClosing'
 
 const InfoBar = ({ name, description, address, timings }) => {
-  console.log(name)
+  const openingInfo = calcOpeningClosing(timings)
   return (
     <>
       <article className="infobar-style">
