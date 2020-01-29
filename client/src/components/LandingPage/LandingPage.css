@@ -1,3 +1,5 @@
+/* DESKTOP */
+
 .about-button {
   display: flex;
   margin: 1vw;
@@ -34,9 +36,7 @@
   cursor: pointer;
 }
 
-/* ----------------------
-      MOBILE RESPONSIVE
-   ---------------------- */
+/* MOBILE RESPONSIVE */
 
 @media screen and (min-width: 320px) and (max-width: 640px) {
   .about-button {

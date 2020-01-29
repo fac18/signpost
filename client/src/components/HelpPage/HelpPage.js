@@ -33,6 +33,7 @@ const Help = () => {
             >
               <figure>
                 <img
+                  className="help-panel__image"
                   src={require(`../../assets/${instruction}.svg`)}
                   alt={instruction}
                 />
