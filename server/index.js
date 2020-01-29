@@ -2,10 +2,12 @@ require('dotenv').config()
 
 const express = require('express')
 const path = require('path')
+const generatePassword = require('password-generator')
 const https = require('https')
 const app = express()
+const url = require('url')
+const querystring = require('querystring')
 const bodyParser = require('body-parser')
-let DB_URL = process.env.DB_URL
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -13,13 +15,20 @@ app.use(bodyParser.json())
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '../client/build')))
 
-// Call api from airtable
+// Put all API endpoints under '/api'
+app.get('/api/passwords', (req, res) => {
+  const count = 5
+  // Generate some passwords
+  const passwords = Array.from(Array(count).keys()).map(i =>
+    generatePassword(12, false)
+  )
+  // Return them as json
+  res.json(passwords)
+  console.log(`Sent ${count} passwords`)
+})
 
 app.get(`/api/airtable`, (req, res) => {
-  if (process.env.NODE_ENV === 'test') {
-    DB_URL = process.env.TEST_DB_URL
-  }
-  const airtableUrl = `${DB_URL}?api_key=${process.env.AIRTABLE_TOKEN}&view=${req.query.q}`
+  const airtableUrl = `https://api.airtable.com/v0/appnOxIi3Xwhtwq3N/Services%20Database?api_key=${process.env.AIRTABLE_TOKEN}&view=${req.query.q}`
 
   console.log(req.query.q)
   console.log('has entered server endpoint airtable')
