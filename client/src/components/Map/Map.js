@@ -31,7 +31,7 @@ const Map = ({
   }, [])
 
   //show pop up after 8s of rendering the map, but don't render it more than once
-  const [popUp, setPopUp] = React.useState(false)
+  const [showPopUp, setShowPopUp] = React.useState(false)
 
   // Function to render the help pop-up only once
   // Can be done with either localStorage or sessionStorage
@@ -55,7 +55,7 @@ const Map = ({
         sessionStorage.setItem('#myModal', expires)
       }
 
-      setPopUp(true)
+      setShowPopUp(true)
     }, 8000)
   }, [])
 
@@ -156,7 +156,9 @@ const Map = ({
         <BufferPage />
       ) : (
         <>
-          {popUp && <PopUp popUp={popUp} setPopUp={setPopUp} />}
+          {showPopUp && (
+            <PopUp showPopUp={showPopUp} setShowPopUp={setShowPopUp} />
+          )}
           <section className="nav-buttons">
             <Link to="/icons-page">
               <button className="close-button">
