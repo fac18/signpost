@@ -1,16 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ReactComponent as Close } from '../../assets/close.svg';
-import './AboutUs.css';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { ReactComponent as Close } from '../../assets/close.svg'
+import './AboutUs.css'
 const AboutUs = () => {
   return (
     <>
-      <Link to='/'>
-        <button className='close-button'>
+      <Link to="/">
+        <button className="close-button">
           <Close />
         </button>
       </Link>
-      <fieldset className='about-text'>
+      <fieldset className="about-text">
         <legend>Who are we?</legend>
         <p>
           Signpost is here to empower people who are experiencing homelessness
@@ -36,6 +36,6 @@ const AboutUs = () => {
         </p>
       </fieldset>
     </>
-  );
-};
-export default AboutUs;
+  )
+}
+export default AboutUs

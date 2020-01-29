@@ -27,14 +27,36 @@ const Map = ({
   const [showMap, setShowMap] = React.useState(false)
 
   React.useEffect(() => {
-    setTimeout(() => setShowMap(true), 2000)
+    setTimeout(() => setShowMap(true), 1500)
   }, [])
 
-  //show pop up if user is inactive on the map for 6s
+  //show pop up after 8s of rendering the map, but don't render it more than once
   const [popUp, setPopUp] = React.useState(false)
 
+  // Function to render the help pop-up only once
+  // Can be done with either localStorage or sessionStorage
+  // The difference is that while data in localStorage
+  // doesn't expire, data in sessionStorage is cleared when the page session ends.
   React.useEffect(() => {
-    setTimeout(() => setPopUp(true), 6000)
+    window.setTimeout(() => {
+      // First check, if sessionStorage is supported.
+      if (window.sessionStorage) {
+        // Get the expiration date of the previous popup.
+        let nextPopup = sessionStorage.getItem('#myModal')
+
+        if (nextPopup > new Date()) {
+          return
+        }
+
+        // Store the expiration date of the current popup in sessionStorage.
+        let expires = new Date()
+        expires = expires.setHours(expires.getHours() + 24)
+
+        sessionStorage.setItem('#myModal', expires)
+      }
+
+      setPopUp(true)
+    }, 8000)
   }, [])
 
   // refs
@@ -79,7 +101,7 @@ const Map = ({
     }
   }
   React.useEffect(() => {
-    if (selectedServiceData && showMap && !popUp) {
+    if (selectedServiceData && showMap) {
       const googleMapScript = document.createElement('script')
       googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API_KEY}&libraries=places`
       window.document.body.appendChild(googleMapScript)
@@ -87,7 +109,7 @@ const Map = ({
         googleMap.current = createGoogleMap()
       })
     }
-  }, [selectedServiceData, showMap, popUp])
+  }, [selectedServiceData, showMap])
 
   React.useEffect(() => {
     if (selectedMarker) {
