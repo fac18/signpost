@@ -27,7 +27,7 @@ const Map = ({
   const [showMap, setShowMap] = React.useState(false)
 
   React.useEffect(() => {
-    setTimeout(() => setShowMap(true), 1500)
+    setTimeout(() => setShowMap(true), 2000)
   }, [])
 
   //show pop up after 8s of rendering the map, but don't render it more than once

@@ -1,26 +1,6 @@
 import React from 'react'
 import './BufferPage.css'
 
-// function chargebattery() {
-//   let a
-//   a = document.getElementById('buffer')
-//   a.image = ''
-//   setTimeout(function() {
-//     a.innerHTML = '&#xf243;'
-//   }, 1000)
-//   setTimeout(function() {
-//     a.innerHTML = '&#xf242;'
-//   }, 2000)
-//   setTimeout(function() {
-//     a.innerHTML = '&#xf241;'
-//   }, 3000)
-//   setTimeout(function() {
-//     a.innerHTML = '&#xf240;'
-//   }, 4000)
-// }
-// chargebattery()
-// setInterval(chargebattery, 5000)
-
 const BufferPage = () => {
   return (
     <div className="buffer">
@@ -51,7 +31,7 @@ const BufferPage = () => {
           className="learning slide slide4"
         ></img>
       </div>
-      <p>finding community contributions</p>
+      <p>Finding community contributions...</p>
     </div>
   )
 }

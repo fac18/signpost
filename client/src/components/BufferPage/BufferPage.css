@@ -11,7 +11,7 @@
 .buffer p {
   position: absolute;
   margin-left: 40%;
-  margin-top: 20vh;
+  margin-top: 10vh;
 }
 
 .food,
@@ -19,29 +19,60 @@
 .learning,
 .shower {
   position: relative;
-  float: right;
+  /* float: right; */
   height: 100px;
   width: 100px;
 }
 
 .slide4 {
-  animation: sliding 2s infinite;
+  animation: bounce 1s infinite;
 }
 .slide3 {
-  animation: sliding 2s infinite;
+  animation: bounce2 1s infinite;
 }
 .slide2 {
-  animation: sliding 2s infinite;
+  animation: bounce 1s infinite;
 }
 .slide1 {
-  animation: sliding 2s infinite;
+  animation: bounce2 1s infinite;
 }
 
-@keyframes sliding {
-  0% {
-    right: 0%;
-  }
+@keyframes bounce {
+  0%,
+  50%,
   100% {
-    right: 100%;
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-45px);
+  }
+  80% {
+    transform: translateY(-60px);
+  }
+}
+
+@keyframes bounce2 {
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-60px);
+  }
+  60% {
+    transform: translateY(-45px);
+  }
+  80% {
+    transform: translateY(-30px);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .buffer p {
+    margin-left: 10vh;
   }
 }
