@@ -1,7 +1,7 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import { ReactComponent as Close } from "../../assets/close.svg"
-import "./PopUp.css"
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { ReactComponent as Close } from '../../assets/close.svg'
+import './PopUp.css'
 
 const PopUp = ({ popUp, setPopUp }) => {
   const hideModal = () => {
