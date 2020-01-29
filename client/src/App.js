@@ -37,6 +37,19 @@ function App() {
   //   mypromise.then(setSelectedServiceData(mypromise.records))
   //   console.log('I am selected service data', selectedServiceData)
   // }, [selectedService])
+|
+  const getData = service => {
+    fetch(`/api/airtable?q=${selectedService}`)
+      .then(res => res.json())
+      .then(info => setSelectedServiceData(info.records));
+  };
+  const getData = () => {
+    if (selectedService) {
+      fetch(`/api/airtable?q=${selectedService}`)
+        .then(res => res.json())
+        .then(info => setSelectedServiceData(info.records));
+    }
+  };
 
   const getData = () => {
     if (selectedService) {
@@ -45,10 +58,6 @@ function App() {
         .then(info => setSelectedServiceData(info.records))
     }
   }
-
-  React.useEffect(() => {
-    getData()
-  }, [selectedService])
 
   // React.useEffect(() => {
   //   if (selectedService) {
@@ -61,6 +70,9 @@ function App() {
   //     f()
   //   }
   // }, [selectedService])
+  React.useEffect(() => {
+    getData();
+  }, [selectedService]);
 
   //navigating to /map (without selectedService set) will redirect you to landing
   return (
