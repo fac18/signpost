@@ -23,17 +23,18 @@
   height: 100px;
   width: 100px;
 }
+
 .slide4 {
-  animation: sliding 3s infinite;
+  animation: sliding 2s infinite;
 }
 .slide3 {
-  animation: sliding 4s infinite;
+  animation: sliding 2s infinite;
 }
 .slide2 {
-  animation: sliding 5s infinite;
+  animation: sliding 2s infinite;
 }
 .slide1 {
-  animation: sliding 6s infinite;
+  animation: sliding 2s infinite;
 }
 
 @keyframes sliding {
