@@ -28,7 +28,7 @@ function App() {
   React.useEffect(() => {
     getData(selectedService).then(res => {
       setSelectedServiceData(res.records)
-      console.log(res)
+      console.log(res.records)
     })
   }, [selectedService])
 

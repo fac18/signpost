@@ -9,11 +9,13 @@ test('Jest is working', () => {
 
 describe('Testing Air Table get calls', () => {
   test('returns all data', () => {
-    const results = getData('Welfare')
-    expect(results.length).toBeGreaterThan(0)
+    getData('Welfare').then(res => {
+      expect(res.length).toBeGreaterThan(0)
+    })
   })
   test('returns data by showers category', () => {
-    const results = getData('Showers')
-    expect(results.length).toBeGreaterThan(0)
+    getData('Showers').then(res => {
+      expect(res.length).toBeGreaterThan(0)
+    })
   })
 })
