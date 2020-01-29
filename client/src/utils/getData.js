@@ -1,5 +1,5 @@
 const getData = selectedService => {
-  fetch(`/api/airtable?q=${selectedService}`)
+  return fetch(`/api/airtable?q=${selectedService}`)
     .then(res => res.json())
     .catch(console.log)
 }

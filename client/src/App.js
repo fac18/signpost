@@ -25,54 +25,12 @@ function App() {
 
   // When the selectedService is changed, trigger the API call to the backend
 
-  // React.useEffect(() => {
-  //   const data = getData(selectedService)
-  //   const mypromise = new Promise((resolve, reject) => {
-  //     if (data) {
-  //       resolve(data)
-  //     } else {
-  //       reject(Error('no data yet'))
-  //     }
-  //   })
-  //   mypromise.then(setSelectedServiceData(mypromise.records))
-  //   console.log('I am selected service data', selectedServiceData)
-  // }, [selectedService])
-|
-  const getData = service => {
-    fetch(`/api/airtable?q=${selectedService}`)
-      .then(res => res.json())
-      .then(info => setSelectedServiceData(info.records));
-  };
-  const getData = () => {
-    if (selectedService) {
-      fetch(`/api/airtable?q=${selectedService}`)
-        .then(res => res.json())
-        .then(info => setSelectedServiceData(info.records));
-    }
-  };
-
-  const getData = () => {
-    if (selectedService) {
-      fetch(`/api/airtable?q=${selectedService}`)
-        .then(res => res.json())
-        .then(info => setSelectedServiceData(info.records))
-    }
-  }
-
-  // React.useEffect(() => {
-  //   if (selectedService) {
-  //     async function f() {
-  //       let mypromise = new Promise((resolve, reject) => {
-  //         resolve(getData(selectedService))
-  //       })
-  //       setSelectedServiceData(await mypromise)
-  //     }
-  //     f()
-  //   }
-  // }, [selectedService])
   React.useEffect(() => {
-    getData();
-  }, [selectedService]);
+    getData(selectedService).then(res => {
+      setSelectedServiceData(res.records)
+      console.log(res)
+    })
+  }, [selectedService])
 
   //navigating to /map (without selectedService set) will redirect you to landing
   return (
