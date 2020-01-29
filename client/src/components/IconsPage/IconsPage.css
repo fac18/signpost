@@ -1,3 +1,5 @@
+/* DESKTOP */
+
 .add-button {
   display: flex;
   margin: 1vw;
@@ -39,18 +41,22 @@
   }
 
   .icon-panel {
+    margin-top: 0;
     grid-template-columns: repeat(auto-fill, 40vw);
-    grid-auto-rows: 35vw;
+    grid-auto-rows: 30vw;
     grid-gap: 1vw;
-    justify-content: left;
-  }
-
-  .icon-panel__button__image {
-    width: 18vw;
+    justify-content: center;
   }
 
   .icon-panel__button {
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
     margin: 10vw;
+  }
+
+  .icon-panel__button__image {
+    width: 20vw;
   }
 
   .icon-text {

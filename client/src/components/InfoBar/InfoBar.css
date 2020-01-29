@@ -1,12 +1,16 @@
+/* DESKTOP */
+
 .name {
   font-size: 2.5vw;
   margin: 0.5vw;
 }
 
 .infobar-style {
-  height: 18vw;
+  height: 13vw;
   color: var(--coral);
 }
+
+/* MOBILE RESPONSIVE */
 
 @media screen and (min-width: 320px) and (max-width: 640px) {
   .name {
@@ -15,7 +19,7 @@
   }
 
   .infobar-style {
-    height: 60vw;
+    height: 50vw;
     color: var(--coral);
   }
 }
