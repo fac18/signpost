@@ -7,15 +7,39 @@ test('Jest is working', () => {
   expect(true).toBeTruthy()
 })
 
-describe('Testing Air Table get calls', () => {
+describe('Testing Air Table recieves calls', () => {
   test('returns all data', () => {
-    getData('Welfare').then(res => {
+    getData('All').then(res => {
       expect(res.length).toBeGreaterThan(0)
     })
   })
   test('returns data by showers category', () => {
     getData('Showers').then(res => {
       expect(res.length).toBeGreaterThan(0)
+    })
+  })
+  test('test equality', () => {
+    getData('Shelter').then(res => {
+      expect(res.results).toEqual(`Test`)
+    })
+  })
+  test('test equality', () => {
+    const mockResponse = {
+      records: [
+        {
+          id: 'recGIFLNsg1SO6EVo',
+          fields: {},
+          createdTime: '2020-01-21T17:09:54.000Z',
+        },
+      ],
+    }
+    global.fetch = jest.fn().mockImplementation(() =>
+      Promise.resolve({
+        json: () => Promise.resolve(mockResponse),
+      })
+    )
+    getData('Shelter').then(res => {
+      expect(res.records[1].id).toEqual(`ecGIFLNsg1SO6Edakjdbahwkd`)
     })
   })
 })
