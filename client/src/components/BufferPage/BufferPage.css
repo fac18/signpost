@@ -37,6 +37,15 @@
   animation: bounce2 1s infinite;
 }
 
+/* @keyframes sliding {
+    0% {
+      right: 0%;
+    }
+    100% {
+      right: 100%;
+    }
+  } */
+
 @keyframes bounce {
   0%,
   50%,
