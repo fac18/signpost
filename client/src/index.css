@@ -60,11 +60,6 @@ p {
     color: var(--coral);
   }
 
-  a {
-    text-decoration: none;
-    color: var(--mako);
-  }
-
   h1 {
     margin-top: 0;
     font-size: 9vw;
@@ -73,10 +68,15 @@ p {
   }
 
   h2 {
-    font-size: 6vw;
+    font-size: 7vw;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--mako);
   }
 
   p {
-    font-size: 5vw;
+    font-size: 6vw;
   }
 }

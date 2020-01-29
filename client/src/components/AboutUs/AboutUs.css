@@ -22,7 +22,7 @@
 @media screen and (min-width: 320px) and (max-width: 640px) {
   .close-button {
     display: flex;
-    width: 15vw;
+    width: 20vw;
     margin: 1vw;
     background-color: transparent;
     border: transparent;
@@ -31,7 +31,6 @@
 
   .about-text {
     color: var(--mako);
-    width: 5vw;
     margin: auto;
   }
 }

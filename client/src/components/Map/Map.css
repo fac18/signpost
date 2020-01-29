@@ -4,6 +4,7 @@
 
 .nav-buttons {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   margin: 0.5vw;
 }
@@ -13,7 +14,6 @@
   background-color: transparent;
   border: transparent;
   outline: none;
-  margin: 1vw;
 }
 .help-button:hover {
   cursor: pointer;
@@ -30,7 +30,6 @@
   border-radius: 10px;
   width: 20vw;
   outline: none;
-  /* font-family: "Passion One", cursive; */
 }
 
 .map-search {
@@ -39,7 +38,7 @@
   font-family: 'Passion One', cursive;
   font-size: 1.25vw;
   padding: 0.25vw;
-  margin: 1vw;
+  margin: 2vw;
   border-color: var(--mako);
   border-radius: 10px;
   outline: none;
@@ -50,7 +49,7 @@
 
 .map-area {
   width: 100%;
-  height: 30vw;
+  height: 32vw;
 }
 
 /* ---------------------------------------
@@ -76,8 +75,9 @@
 
   .nav-buttons {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    margin: 0.5vw;
+    margin: 1vw;
   }
 
   .help-button {
@@ -85,7 +85,8 @@
     background-color: transparent;
     border: transparent;
     outline: none;
-    margin: 1vw;
+    margin: 3vw;
+    width: 14vw;
   }
 
   /* ----------------
@@ -99,14 +100,13 @@
     border-radius: 10px;
     width: 50vw;
     outline: none;
-    /* font-family: "Passion One", cursive; */
   }
 
   .map-search {
     background-color: var(--mako);
     color: var(--coral);
     font-family: 'Passion One', cursive;
-    font-size: 4vw;
+    font-size: 4.5vw;
     padding: 1vw;
     margin: 2vw;
     border-color: var(--mako);
@@ -119,7 +119,7 @@
 
   .map-area {
     width: 100%;
-    height: 100vw;
+    height: 120vw;
   }
 
   /* ---------------------------------------

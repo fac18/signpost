@@ -1,23 +1,23 @@
-import React from "react";
-import { ReactComponent as Add } from "../../assets/add.svg";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { ReactComponent as Add } from '../../assets/add.svg'
+import { Link } from 'react-router-dom'
 
-import "./IconsPage.css";
+import './IconsPage.css'
 
 const categories = [
-  "Shelter",
-  "Shower",
-  "Medical",
-  "Food",
-  "Clothing",
-  "Learning",
-  "Women",
-  "Wellbeing",
-  "Advice",
-  "Children",
-  "Animals",
-  "All"
-];
+  'Shelter',
+  'Shower',
+  'Medical',
+  'Food',
+  'Clothing',
+  'Learning',
+  'Women',
+  'Wellbeing',
+  'Advice',
+  'Children',
+  'Animals',
+  'All',
+]
 
 const Icons = ({ selectedService, setSelectedService }) => {
   return (
@@ -32,7 +32,7 @@ const Icons = ({ selectedService, setSelectedService }) => {
         <article className="icon-panel">
           {categories.map(category => (
             <Link key={category} to="/map">
-              <a
+              <section
                 className="icon-panel__button"
                 value={category}
                 onClick={() => setSelectedService(category)}
@@ -45,13 +45,13 @@ const Icons = ({ selectedService, setSelectedService }) => {
                   />
                   <figcaption className="icon-text">{category}</figcaption>
                 </figure>
-              </a>
+              </section>
             </Link>
           ))}
         </article>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default Icons;
+export default Icons
