@@ -9,7 +9,7 @@
     "start:watch": "cd server && nodemon ./index.js",
     "start:dev": "concurrently \"npm run start:watch\" \"cd client && npm run start\"",
     "coverage": "cd client && npm test -- --coverage --watchAll=false && codecov && cd ../server && npm test -- --coverage --watchAll=false && codecov",
-    "test": "cd client && npm run test && cd ../server && npm test"
+    "test": "NODE_ENV=test cd client && npm run test && cd ../server && npm test"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +20,6 @@
     "dotenv": "^8.2.0",
     "eslint-plugin-html": "^6.0.0",
     "express": "^4.17.1",
-    "password-generator": "^2.2.3",
     "querystring": "^0.2.0",
     "react-router-dom": "^5.1.2",
     "url": "^0.11.0"

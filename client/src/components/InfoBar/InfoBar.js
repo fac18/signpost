@@ -4,6 +4,7 @@ import { calcOpeningClosing } from '../../utils/calcOpeningClosing'
 
 const InfoBar = ({ name, description, address, timings }) => {
   const openingInfo = calcOpeningClosing(timings)
+
   return (
     <>
       <article className="infobar-style">

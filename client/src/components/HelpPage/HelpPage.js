@@ -1,21 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { ReactComponent as Close } from "../../assets/close.svg";
-import "./HelpPage.css";
-
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { ReactComponent as Close } from '../../assets/close.svg'
+import './HelpPage.css'
 
 const instructions = [
-  "Zoom in",
-  "Zoom out",
-  "Location of service",
-  "Search",
-  "See more information",
-  "You are here"
-];
+  'Zoom in',
+  'Zoom out',
+  'Location of service',
+  'Search',
+  'See more information',
+  'You are here',
+]
 
 // Close needs to return to populated map
 const Help = () => {
-  const [instruction, setInstruction] = React.useState(null);
+  const [instruction, setInstruction] = React.useState(null)
   return (
     <>
       <Link to="/map">
@@ -34,6 +33,7 @@ const Help = () => {
             >
               <figure>
                 <img
+                  className="help-panel__image"
                   src={require(`../../assets/${instruction}.svg`)}
                   alt={instruction}
                 />
@@ -44,7 +44,7 @@ const Help = () => {
         </article>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default Help;
+export default Help

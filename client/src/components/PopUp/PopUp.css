@@ -1,11 +1,11 @@
 .modal {
-  height: 200px;
+  height: 220px;
   width: 500px;
   display: block;
   position: fixed;
   z-index: 1;
   left: 30%;
-  top: 30%;
+  top: 40%;
   overflow: auto;
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.7);
@@ -14,4 +14,12 @@
 
 .modal-content {
   color: var(--coral);
+}
+
+.modal-content p {
+  font-size: 1.5em;
+}
+
+.modal-content h2 {
+  font-size: 2em;
 }

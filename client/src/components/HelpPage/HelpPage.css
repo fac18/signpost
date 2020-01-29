@@ -1,6 +1,8 @@
+/* DESKTOP */
+
 .close-button {
   display: flex;
-  margin: 10px;
+  margin: 1vw;
   background-color: transparent;
   border: transparent;
   outline: none;
@@ -9,11 +11,10 @@
   cursor: pointer;
 }
 
-
 .help-panel {
-  margin-top: 10px;
+  margin-top: 2vw;
   display: grid;
-  grid-template-columns: repeat(3, 300px);
+  grid-template-columns: repeat(3, 20vw);
   justify-content: center;
 }
 
@@ -21,5 +22,36 @@
   color: var(--mako);
   text-align: center;
   text-transform: uppercase;
-  font-size: 23px;
+  font-size: 2vw;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .close-button {
+    display: flex;
+    margin: 1vw;
+    background-color: transparent;
+    border: transparent;
+    outline: none;
+  }
+  .close-button:hover {
+    cursor: pointer;
+  }
+
+  .help-panel {
+    display: grid;
+    grid-template-columns: repeat(2, 50vw);
+    justify-content: left;
+  }
+
+  .help-panel__image {
+    width: 20vw;
+  }
+
+  .help-text {
+    color: var(--mako);
+    text-transform: uppercase;
+    font-size: 6vw;
+  }
 }
