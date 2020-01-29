@@ -156,7 +156,7 @@ const Map = ({
         <BufferPage />
       ) : (
         <>
-          {popUp ? <PopUp popUp={popUp} setPopUp={setPopUp} /> : null}
+          {popUp && <PopUp popUp={popUp} setPopUp={setPopUp} />}
           <section className="nav-buttons">
             <Link to="/icons-page">
               <button className="close-button">
