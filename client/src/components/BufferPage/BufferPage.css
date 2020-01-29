@@ -1,24 +1,3 @@
-/* .magnifying-glass {
-  position: absolute;
-} */
-#parent {
-  z-index: 0;
-}
-
-#inside {
-  z-index: -1;
-}
-
-#magnifyingGlass {
-  z-index: 1;
-}
-
-#hidden-group {
-  /* overflow: hidden; */
-  position: relative;
-  fill: red;
-}
-
 .buffer {
   position: relative;
   margin-top: 40vh;
@@ -52,18 +31,6 @@
     transform: translateX(-50px);
   }
 }
-/* 
-@keyframes sliding2 {
-  0% {
-    right: 0%;
-  }
-  20% {
-    transform: translateX(50px);
-  }
-  100% {
-    transform: translateX(-50px);
-  }
-} */
 
 #shower {
   animation: sliding 0.8s;
@@ -80,41 +47,6 @@
   animation: sliding 0.8s;
   animation-delay: 1.5s;
 }
-
-/* 
-@keyframes bounce {
-  0%,
-  50%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-30px);
-  }
-  60% {
-    transform: translateY(-45px);
-  }
-  80% {
-    transform: translateY(-60px);
-  }
-}
-
-@keyframes bounce2 {
-  0%,
-  50%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-60px);
-  }
-  60% {
-    transform: translateY(-45px);
-  }
-  80% {
-    transform: translateY(-30px);
-  }
-} */
 
 @media only screen and (max-width: 600px) {
   .buffer p {
