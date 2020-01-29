@@ -1,5 +1,5 @@
 import React from 'react'
-import { ReactComponent as MagnifyingGlass } from '../BufferPage/magnifying/magnifying-glass.svg'
+import { ReactComponent as MagnifyingGlass } from '../BufferPage/asset/magnifying-glass.svg'
 import './BufferPage.css'
 
 const BufferPage = () => {
