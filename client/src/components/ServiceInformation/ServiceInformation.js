@@ -6,7 +6,38 @@ import { ReactComponent as Add } from '../../assets/add.svg'
 import './ServiceInformation.css'
 
 const ServiceInfo = ({ selectedMarkerData }) => {
-  console.log(selectedMarkerData)
+
+  const [timings, setTimings] = React.useState({
+    Mon: {
+      opening: selectedMarkerData.fields.MondayOpening,
+      closing: selectedMarkerData.fields.MondayClosing,
+    },
+    Tue: {
+      opening: selectedMarkerData.fields.TuesdayOpening,
+      closing: selectedMarkerData.fields.TuesdayClosing,
+    },
+    Wed: {
+      opening: selectedMarkerData.fields.WednesdayOpening,
+      closing: selectedMarkerData.fields.WednesdayClosing,
+    },
+    Thu: {
+      opening: selectedMarkerData.fields.ThursdayOpening,
+      closing: selectedMarkerData.fields.ThursdayClosing,
+    },
+    Fri: {
+      opening: selectedMarkerData.fields.FridayOpening,
+      closing: selectedMarkerData.fields.FridayClosing,
+    },
+    Sat: {
+      opening: selectedMarkerData.fields.SaturdayOpening,
+      closing: selectedMarkerData.fields.SaturdayClosing,
+    },
+    Sun: {
+      opening: selectedMarkerData.fields.SundayOpening,
+      closing: selectedMarkerData.fields.SundayClosing,
+    },
+  })
+
   return (
     <>
       <section className="navbar">
@@ -34,9 +65,54 @@ const ServiceInfo = ({ selectedMarkerData }) => {
         <a href={selectedMarkerData.fields.Website} target="_blank">
           {selectedMarkerData.fields.Website}
         </a>
-        <p>{selectedMarkerData.fields.Opening}</p>
         <p>{selectedMarkerData.fields.Description}</p>
         <p>{selectedMarkerData.fields.Address}</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Opening</th>
+              <th>Closing</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td>{timings.Mon.opening}</td>
+              <td>{timings.Mon.closing}</td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td>{timings.Tue.opening}</td>
+              <td>{timings.Tue.closing}</td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td>{timings.Wed.opening}</td>
+              <td>{timings.Wed.closing}</td>
+            </tr>
+            <tr>
+              <td>Thursday</td>
+              <td>{timings.Thu.opening}</td>
+              <td>{timings.Thu.closing}</td>
+            </tr>
+            <tr>
+              <td>Friday</td>
+              <td>{timings.Fri.opening}</td>
+              <td>{timings.Fri.closing}</td>
+            </tr>
+            <tr>
+              <td>Saturday</td>
+              <td>{timings.Sat.opening}</td>
+              <td>{timings.Sat.closing}</td>
+            </tr>
+            <tr>
+              <td>Sunday</td>
+              <td>{timings.Sun.opening}</td>
+              <td>{timings.Sun.closing}</td>
+            </tr>
+          </tbody>
+        </table>
       </fieldset>
       <Link to="/suggest-change">
         <button className="edit-button">Suggest edit</button>
@@ -46,3 +122,4 @@ const ServiceInfo = ({ selectedMarkerData }) => {
 }
 
 export default ServiceInfo
+
