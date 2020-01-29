@@ -65,7 +65,7 @@ const Map = ({
   // helper functions
   const createGoogleMap = () => {
     const map = new window.google.maps.Map(googleMapRef.current, {
-      zoom: 14,
+      zoom: 13,
       center: {
         lat: 51.5458,
         lng: -0.1043,
@@ -120,6 +120,13 @@ const Map = ({
     }
   }, [selectedMarker])
 
+  //reset selected marker when map mounts
+  //(cant unset when dismounts or the service info page won't work)
+  React.useEffect(() => {
+    setSelectedMarker(null)
+    setSelectedMarkerData(null)
+  }, [])
+
   const geocodeSearch = () => {
     fetch(
       `https://maps.googleapis.com/maps/api/geocode/json?address=${searchLocation}&key=${GOOGLE_GEOCODE_API_KEY}&region=GB`
@@ -138,11 +145,11 @@ const Map = ({
   //move map centre to search location
   React.useEffect(() => {
     if (googleMap.current) {
+      googleMap.current.setZoom(15)
       googleMap.current.panTo(searchLocationGeocoded)
     }
   }, [searchLocationGeocoded])
 
-  //new JS work ends here
   return (
     <>
       {!showMap ? (
@@ -152,14 +159,10 @@ const Map = ({
           {popUp ? <PopUp popUp={popUp} setPopUp={setPopUp} /> : null}
           <section className="nav-buttons">
             <Link to="/icons-page">
-              <button className="close-button">
-                <Close />
-              </button>
+              <Close />
             </Link>
             <Link to="/help">
-              <button className="help-button">
-                <Help />
-              </button>
+              <Help />
             </Link>
           </section>
           <input
@@ -180,9 +183,38 @@ const Map = ({
                   <InfoBar
                     className="map-details"
                     name={selectedMarkerData.fields.Name}
-                    description={selectedMarkerData.fields.Description}
+                    description={selectedMarkerData.fields.ShortDescription}
                     address={selectedMarkerData.fields.Address}
-                    timings={selectedMarkerData.fields.Opening}
+                    timings={{
+                      Mon: {
+                        opening: selectedMarkerData.fields.MondayOpening,
+                        closing: selectedMarkerData.fields.MondayClosing,
+                      },
+                      Tue: {
+                        opening: selectedMarkerData.fields.TuesdayOpening,
+                        closing: selectedMarkerData.fields.TuesdayClosing,
+                      },
+                      Wed: {
+                        opening: selectedMarkerData.fields.WednesdayOpening,
+                        closing: selectedMarkerData.fields.WednesdayClosing,
+                      },
+                      Thu: {
+                        opening: selectedMarkerData.fields.ThursdayOpening,
+                        closing: selectedMarkerData.fields.ThursdayClosing,
+                      },
+                      Fri: {
+                        opening: selectedMarkerData.fields.FridayOpening,
+                        closing: selectedMarkerData.fields.FridayClosing,
+                      },
+                      Sat: {
+                        opening: selectedMarkerData.fields.SaturdayOpening,
+                        closing: selectedMarkerData.fields.SaturdayClosing,
+                      },
+                      Sun: {
+                        opening: selectedMarkerData.fields.SundayOpening,
+                        closing: selectedMarkerData.fields.SundayClosing,
+                      },
+                    }}
                   />
                 </Link>
               ) : null}

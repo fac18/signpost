@@ -46,6 +46,10 @@ function App() {
     }
   }
 
+  React.useEffect(() => {
+    getData()
+  }, [selectedService])
+
   // React.useEffect(() => {
   //   if (selectedService) {
   //     async function f() {
