@@ -138,6 +138,7 @@ const Map = ({
   //move map centre to search location
   React.useEffect(() => {
     if (googleMap.current) {
+      googleMap.current.setZoom(15)
       googleMap.current.panTo(searchLocationGeocoded)
     }
   }, [searchLocationGeocoded])
