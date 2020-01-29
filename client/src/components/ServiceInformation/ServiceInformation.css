@@ -13,7 +13,7 @@
   outline: none;
 }
 .close-button {
-cursor: pointer;
+  cursor: pointer;
 }
 
 /* ---------------------------
@@ -30,7 +30,7 @@ cursor: pointer;
 .edit-button {
   background-color: var(--mako);
   color: var(--coral);
-  font-family: "Passion One", cursive;
+  font-family: 'Passion One', cursive;
   font-size: 30px;
   padding: 10px;
   box-shadow: 5px 5px 10px var(--mako);
@@ -38,4 +38,8 @@ cursor: pointer;
   border-radius: 10px;
   margin: 20px;
   outline: none;
+}
+
+table {
+  margin: auto;
 }
