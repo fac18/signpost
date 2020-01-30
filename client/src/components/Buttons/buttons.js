@@ -1,11 +1,11 @@
 import styled from 'styled-components'
-import { ReactComponent as AddSvg } from '../../assets/add.svg'
-import { ReactComponent as AboutSvg } from '../../assets/about.svg'
-import { ReactComponent as CloseSvg } from '../../assets/close.svg'
+import { ReactComponent as AddSvg } from '../../assets/nav-text/add-txt.svg'
+import { ReactComponent as AboutSvg } from '../../assets/nav-text/about-txt.svg'
+import { ReactComponent as CloseSvg } from '../../assets/nav-text/close-txt.svg'
 import { ReactComponent as ClosePopupSvg } from '../../assets/close.svg'
-import { ReactComponent as HelpSvg } from '../../assets/help.svg'
+import { ReactComponent as HelpSvg } from '../../assets/nav-text/help-txt.svg'
 import { ReactComponent as SearchSvg } from '../../assets/search-btn.svg'
-import { ReactComponent as BackSvg } from '../../assets/back.svg'
+import { ReactComponent as BackSvg } from '../../assets/nav-text/back-text.svg'
 
 const Add = styled(AddSvg)`
   position: fixed;
@@ -22,7 +22,7 @@ const Add = styled(AddSvg)`
 
 const About = styled(AboutSvg)`
   position: fixed;
-  left: 1vw;
+  left: 1.25vw;
   top: 1vw;
 
   @media screen and (min-width: 320px) and (max-width: 640px) {
@@ -84,7 +84,7 @@ const Search = styled(SearchSvg)`
 
 const Back = styled(BackSvg)`
   position: fixed;
-  left: 1vw;
+  left: 1.25vw;
   top: 1vw;
 
   @media screen and (min-width: 320px) and (max-width: 640px) {
