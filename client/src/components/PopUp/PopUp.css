@@ -1,3 +1,5 @@
+/* DESKTOP */
+
 .modal {
   height: 220px;
   width: 500px;
@@ -24,3 +26,21 @@
 .modal-content h2 {
   font-size: 2em;
 }
+
+/* MOBILE RESPONSIVE */
+
+/* @media screen and (min-width: 320px) and (max-width: 640px) {
+  .modal {
+    height: 80vh;
+    width: 80vw;
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 20%;
+    top: 40%;
+    overflow: auto;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 5px 10px 10px var(--mako);
+  }
+} */
