@@ -1,9 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-<<<<<<< HEAD
 import { Close } from '../Buttons/buttons.js'
-=======
->>>>>>> master
 
 // Do something with the text area inputed by the user -> send it somewhere?
 
@@ -17,13 +14,8 @@ const SuggestChange = () => {
 
   return (
     <>
-<<<<<<< HEAD
       <Link to="/map">
         <Close />
-=======
-      <Link to="/service">
-        <button>X</button>
->>>>>>> master
       </Link>
       <h1>Suggest a change</h1>
       <p>

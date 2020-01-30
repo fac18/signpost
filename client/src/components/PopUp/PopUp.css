@@ -13,6 +13,7 @@
 }
 
 .modal-content {
+  margin-top: 5vw;
   color: var(--coral);
 }
 

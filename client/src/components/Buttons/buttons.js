@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { ReactComponent as AddSvg } from '../../assets/add.svg'
 import { ReactComponent as AboutSvg } from '../../assets/about.svg'
 import { ReactComponent as CloseSvg } from '../../assets/close.svg'
+import { ReactComponent as ClosePopupSvg } from '../../assets/close.svg'
 import { ReactComponent as HelpSvg } from '../../assets/help.svg'
 // import { ReactComponent as SearchSvg } from '../../assets/add.svg'
 import { ReactComponent as BackSvg } from '../../assets/back.svg'
@@ -24,6 +25,11 @@ const Close = styled(CloseSvg)`
   top: 0.5vw;
 `
 
+const ClosePopup = styled(ClosePopupSvg)`
+  position: relative;
+  float: left;
+`
+
 const Help = styled(HelpSvg)`
   position: fixed;
   right: 1vw;
@@ -43,4 +49,4 @@ const Back = styled(BackSvg)`
   top: 1vw;
 `
 
-export { Add, About, Close, Help, Back }
+export { Add, About, Close, Help, Back, ClosePopup }
