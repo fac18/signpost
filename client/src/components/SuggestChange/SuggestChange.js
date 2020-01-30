@@ -17,6 +17,10 @@ const SuggestChange = () => {
         <button>X</button>
       </Link>
       <h1>Suggest a change</h1>
+      <p>
+        If you see something wrong about this service, please suggest a change
+        and we'll update it for you!
+      </p>
       <form onSubmit={handleSubmit}>
         <textarea
           rows="10"
