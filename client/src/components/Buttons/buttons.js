@@ -72,7 +72,7 @@ const Help = styled(HelpSvg)`
 
 const Search = styled(SearchSvg)`
   position: relative;
-  margin-top: 6vw;
+  margin-top: 1vw;
   margin-left: 1vw;
   margin-bottom: -1vw;
 
