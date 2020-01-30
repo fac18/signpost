@@ -1,14 +1,7 @@
 /* DESKTOP */
 
-.about-button {
-  display: flex;
-  margin: 1vw;
-  background-color: transparent;
-  border: transparent;
-  outline: none;
-}
-.about-button:hover {
-  cursor: pointer;
+.logo {
+  margin-top: 5vw;
 }
 
 .signpost {
@@ -39,15 +32,6 @@
 /* MOBILE RESPONSIVE */
 
 @media screen and (min-width: 320px) and (max-width: 640px) {
-  .about-button {
-    display: flex;
-    width: 15vw;
-    margin: 1vw;
-    background-color: transparent;
-    border: transparent;
-    outline: none;
-  }
-
   .logo {
     width: 40vw;
   }

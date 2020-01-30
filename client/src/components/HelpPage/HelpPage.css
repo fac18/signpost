@@ -1,16 +1,5 @@
 /* DESKTOP */
 
-.close-button {
-  display: flex;
-  margin: 1vw;
-  background-color: transparent;
-  border: transparent;
-  outline: none;
-}
-.close-button:hover {
-  cursor: pointer;
-}
-
 .help-panel {
   margin-top: 2vw;
   display: grid;
@@ -28,17 +17,6 @@
 /* MOBILE RESPONSIVE */
 
 @media screen and (min-width: 320px) and (max-width: 640px) {
-  .close-button {
-    display: flex;
-    margin: 1vw;
-    background-color: transparent;
-    border: transparent;
-    outline: none;
-  }
-  .close-button:hover {
-    cursor: pointer;
-  }
-
   .help-panel {
     display: grid;
     grid-template-columns: repeat(2, 50vw);

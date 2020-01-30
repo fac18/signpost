@@ -1,30 +1,11 @@
 /* DESKTOP */
 
-/* --------------------------
-      NAVIGATION BUTTONS
-   -------------------------- */
-
-.nav-buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.help-button {
-  display: flex;
-  background-color: transparent;
-  border: transparent;
-  outline: none;
-}
-.help-button:hover {
-  cursor: pointer;
-}
-
 /* ----------------
      MAP STYLING
    ---------------- */
 
 .search-bar {
+  margin-top: 5vw;
   font-size: 1vw;
   padding: 0.5vw;
   border-style: inset;
@@ -72,26 +53,6 @@
 /* MOBILE RESPONSIVE */
 
 @media screen and (min-width: 320px) and (max-width: 640px) {
-  /* --------------------------
-        NAVIGATION BUTTONS
-     -------------------------- */
-
-  .nav-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    /* margin: 1vw; */
-  }
-
-  .help-button {
-    display: flex;
-    background-color: transparent;
-    border: transparent;
-    outline: none;
-    /* margin: 3vw;
-    width: 14vw; */
-  }
-
   /* ----------------
        MAP STYLING
      ---------------- */
