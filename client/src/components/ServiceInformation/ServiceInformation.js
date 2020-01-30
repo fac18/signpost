@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ReactComponent as Close } from '../../assets/close.svg'
-import { ReactComponent as Add } from '../../assets/add.svg'
+import { Close } from '../Buttons/buttons.js'
+import { Add } from '../Buttons/buttons.js'
 
 import './ServiceInformation.css'
 import { constructTimingsObject } from '../../utils/constructTimingsObject'
@@ -10,21 +10,15 @@ const ServiceInfo = ({ selectedMarkerData }) => {
   const [timings, setTimings] = React.useState(
     constructTimingsObject(selectedMarkerData)
   )
-  
+
   return (
     <>
-      <section className="navbar">
-        <Link to="/icons-page">
-          <button className="close-button">
-            <Close />
-          </button>
-        </Link>
-        <Link to="/add-service">
-          <button className="add-button">
-            <Add />
-          </button>
-        </Link>
-      </section>
+      <Link to="/map">
+        <Close />
+      </Link>
+      <Link to="/add-service">
+        <Add />
+      </Link>
       <fieldset className="service-info">
         <legend>{selectedMarkerData.fields.Name}</legend>
         <a href={'tel:' + selectedMarkerData.fields.Phone}>
