@@ -2,15 +2,6 @@ language: node_js
 node_js:
   - 'node'
 script:
-  - cd client && npm i && npm run test
+  - NODE_ENV=test cd client && npm run test && cd ../server && npm test
 after_success:
   - npm run coverage
-  # language: node_js
-# node_js:
-#   - 'stable'
-# cache:
-#   directories:
-#     - node_modules
-# script:
-#   - npm test
-#   - npm run report-coverage
