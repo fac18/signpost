@@ -174,7 +174,7 @@ const Map = ({
           <input
             value={searchLocation}
             type="search"
-            placeholder="search for a location"
+            placeholder="Jump to a location"
             className="search-bar"
             onChange={event => setSearchLocation(event.target.value)}
           ></input>
