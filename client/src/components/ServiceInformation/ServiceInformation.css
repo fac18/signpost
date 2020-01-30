@@ -26,7 +26,6 @@
   margin: 1vw;
   outline: none;
 }
-
 /* MOBILE RESPONSIVE */
 
 @media screen and (min-width: 320px) and (max-width: 640px) {
@@ -53,4 +52,8 @@
     margin: 2.5vw;
     outline: none;
   }
+}
+
+table {
+  margin: auto;
 }

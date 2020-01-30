@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import { ReactComponent as Close } from '../../assets/close.svg'
 import './PopUp.css'
 
-const PopUp = ({ popUp, setPopUp }) => {
+const PopUp = ({ showPopUp, setShowPopUp }) => {
   const hideModal = () => {
-    setPopUp(!setPopUp)
+    setShowPopUp(prev => !prev)
   }
 
   return (

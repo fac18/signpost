@@ -58,6 +58,7 @@ const AddNewService = props => {
           <label htmlFor="service-input">
             <br />
             <select
+              selected={serviceInput}
               aria-label="select services dropdown"
               id="services"
               className="dropdown"
@@ -65,7 +66,7 @@ const AddNewService = props => {
               value={serviceInput}
               onChange={event => setServiceInput(event.target.value)}
             >
-              <option value="" disabled selected>
+              <option value="select-a-service" disabled>
                 Select a service
               </option>
               <option value="Advice">Advice</option>

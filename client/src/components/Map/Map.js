@@ -3,8 +3,14 @@ import { Link } from 'react-router-dom'
 import InfoBar from '../InfoBar/InfoBar'
 import BufferPage from '../BufferPage/BufferPage'
 import PopUp from '../PopUp/PopUp'
+<<<<<<< HEAD
 import { Close } from '../Buttons/buttons.js'
 import { Help } from '../Buttons/buttons.js'
+=======
+import { ReactComponent as Close } from '../../assets/close.svg'
+import { ReactComponent as Help } from '../../assets/help.svg'
+import { constructTimingsObject } from '../../utils/constructTimingsObject'
+>>>>>>> master
 import './Map.css'
 
 const GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_TOKEN
@@ -27,11 +33,11 @@ const Map = ({
   const [showMap, setShowMap] = React.useState(false)
 
   React.useEffect(() => {
-    setTimeout(() => setShowMap(true), 1500)
+    setTimeout(() => setShowMap(true), 2000)
   }, [])
 
   //show pop up after 8s of rendering the map, but don't render it more than once
-  const [popUp, setPopUp] = React.useState(false)
+  const [showPopUp, setShowPopUp] = React.useState(false)
 
   // Function to render the help pop-up only once
   // Can be done with either localStorage or sessionStorage
@@ -55,7 +61,7 @@ const Map = ({
         sessionStorage.setItem('#myModal', expires)
       }
 
-      setPopUp(true)
+      setShowPopUp(true)
     }, 8000)
   }, [])
 
@@ -156,7 +162,9 @@ const Map = ({
         <BufferPage />
       ) : (
         <>
-          {popUp ? <PopUp popUp={popUp} setPopUp={setPopUp} /> : null}
+          {showPopUp && (
+            <PopUp showPopUp={showPopUp} setShowPopUp={setShowPopUp} />
+          )}
           <section className="nav-buttons">
             <Link to="/icons-page">
               <Close />
@@ -168,7 +176,7 @@ const Map = ({
           <input
             value={searchLocation}
             type="search"
-            placeholder="search for a location"
+            placeholder="Jump to a location"
             className="search-bar"
             onChange={event => setSearchLocation(event.target.value)}
           ></input>
@@ -185,36 +193,7 @@ const Map = ({
                     name={selectedMarkerData.fields.Name}
                     description={selectedMarkerData.fields.ShortDescription}
                     address={selectedMarkerData.fields.Address}
-                    timings={{
-                      Mon: {
-                        opening: selectedMarkerData.fields.MondayOpening,
-                        closing: selectedMarkerData.fields.MondayClosing,
-                      },
-                      Tue: {
-                        opening: selectedMarkerData.fields.TuesdayOpening,
-                        closing: selectedMarkerData.fields.TuesdayClosing,
-                      },
-                      Wed: {
-                        opening: selectedMarkerData.fields.WednesdayOpening,
-                        closing: selectedMarkerData.fields.WednesdayClosing,
-                      },
-                      Thu: {
-                        opening: selectedMarkerData.fields.ThursdayOpening,
-                        closing: selectedMarkerData.fields.ThursdayClosing,
-                      },
-                      Fri: {
-                        opening: selectedMarkerData.fields.FridayOpening,
-                        closing: selectedMarkerData.fields.FridayClosing,
-                      },
-                      Sat: {
-                        opening: selectedMarkerData.fields.SaturdayOpening,
-                        closing: selectedMarkerData.fields.SaturdayClosing,
-                      },
-                      Sun: {
-                        opening: selectedMarkerData.fields.SundayOpening,
-                        closing: selectedMarkerData.fields.SundayClosing,
-                      },
-                    }}
+                    timings={constructTimingsObject(selectedMarkerData)}
                   />
                 </Link>
               ) : null}
