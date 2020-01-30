@@ -13,7 +13,9 @@ const PopUp = ({ showPopUp, setShowPopUp }) => {
       <ClosePopup onClick={hideModal} />
       <div className="modal-content">
         <h2>Not sure what to do?</h2>
-        <p>Click the question mark to learn how to use the map.</p>
+        <p>
+          Click the question mark on the top right to learn how to use the map.
+        </p>
       </div>
     </div>
   )

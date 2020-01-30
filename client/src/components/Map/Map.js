@@ -168,7 +168,7 @@ const Map = ({
           <Link to="/help">
             <Help />
           </Link>
-
+          <h3 className="map-title">Click on a pin for more information:</h3>
           <input
             value={searchLocation}
             type="search"
