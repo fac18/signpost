@@ -5,6 +5,7 @@ import BufferPage from '../BufferPage/BufferPage'
 import PopUp from '../PopUp/PopUp'
 import { Close } from '../Buttons/buttons.js'
 import { Help } from '../Buttons/buttons.js'
+import { Search } from '../Buttons/buttons.js'
 import { constructTimingsObject } from '../../utils/constructTimingsObject'
 import './Map.css'
 
@@ -175,9 +176,7 @@ const Map = ({
             className="search-bar"
             onChange={event => setSearchLocation(event.target.value)}
           ></input>
-          <button className="map-search" onClick={geocodeSearch}>
-            submit
-          </button>
+          <Search onClick={geocodeSearch} />
           <div className="wrapper">
             <div id="google-map" ref={googleMapRef} className="map-area" />
             <div className="over-map">

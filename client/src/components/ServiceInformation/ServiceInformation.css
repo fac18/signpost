@@ -6,8 +6,10 @@
 
 .service-info {
   color: var(--mako);
-  width: 80vw;
+  width: 60vw;
   margin: auto;
+  margin-top: 5vw;
+  font-size: 1.75vw;
   padding: 1vw;
 }
 

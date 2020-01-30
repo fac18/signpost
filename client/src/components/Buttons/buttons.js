@@ -4,7 +4,7 @@ import { ReactComponent as AboutSvg } from '../../assets/about.svg'
 import { ReactComponent as CloseSvg } from '../../assets/close.svg'
 import { ReactComponent as ClosePopupSvg } from '../../assets/close.svg'
 import { ReactComponent as HelpSvg } from '../../assets/help.svg'
-// import { ReactComponent as SearchSvg } from '../../assets/add.svg'
+import { ReactComponent as SearchSvg } from '../../assets/search-btn.svg'
 import { ReactComponent as BackSvg } from '../../assets/back.svg'
 
 const Add = styled(AddSvg)`
@@ -17,7 +17,7 @@ const Add = styled(AddSvg)`
     width: 10vw;
     right: 1vw;
     top: 1vw;
-
+  }
 `
 
 const About = styled(AboutSvg)`
@@ -30,6 +30,7 @@ const About = styled(AboutSvg)`
     width: 10vw;
     right: 1vw;
     top: 1vw;
+  }
 `
 
 const Close = styled(CloseSvg)`
@@ -42,7 +43,7 @@ const Close = styled(CloseSvg)`
     width: 12vw;
     left: 0.5vw;
     top: 0.5vw;
-
+  }
 `
 
 const ClosePopup = styled(ClosePopupSvg)`
@@ -53,6 +54,7 @@ const ClosePopup = styled(ClosePopupSvg)`
     position: relative;
     width: 10vw;
     float: left;
+  }
 `
 
 const Help = styled(HelpSvg)`
@@ -65,14 +67,20 @@ const Help = styled(HelpSvg)`
     width: 9vw;
     right: 1vw;
     top: 1.5vw;
+  }
 `
 
-// USE REN'S ONE
-// const Search = styled(AddSvg)`
-//   position: fixed;
-//   right: 22.67%;
-//   bottom: 10%;
-// `
+const Search = styled(SearchSvg)`
+  position: relative;
+  margin-top: 6vw;
+  margin-left: 1vw;
+  margin-bottom: -1vw;
+
+  @media screen and (min-width: 320px) and (max-width: 640px) {
+    position: relative;
+    width: 5vw;
+  }
+`
 
 const Back = styled(BackSvg)`
   position: fixed;
@@ -84,6 +92,7 @@ const Back = styled(BackSvg)`
     width: 5vw;
     left: 1.5vw;
     top: 1vw;
+  }
 `
 
-export { Add, About, Close, Help, Back, ClosePopup }
+export { Add, About, Close, Help, Back, Search, ClosePopup }
