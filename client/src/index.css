@@ -19,6 +19,7 @@ body {
 }
 
 legend {
+  margin-top: 5vw;
   font-size: 4.5vw;
   color: var(--coral);
 }
@@ -29,18 +30,18 @@ a {
 }
 
 h1 {
-  margin-top: 0;
+  margin-top: 5vw;
   font-size: 4vw;
   color: var(--mako);
   justify-content: center;
 }
 
 h2 {
-  font-size: 2.5vw;
+  font-size: 2vw;
 }
 
 p {
-  font-size: 2vw;
+  font-size: 1.75vw;
 }
 
 pre {
@@ -62,12 +63,13 @@ pre {
   }
 
   legend {
-    font-size: 9.5vw;
+    margin-top: 15vw;
+    font-size: 9vw;
     color: var(--coral);
   }
 
   h1 {
-    margin: 0;
+    margin-top: 15vw;
     font-size: 9vw;
     color: var(--mako);
     justify-content: center;

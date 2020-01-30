@@ -1,14 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ReactComponent as Close } from '../../assets/close.svg'
+import { Close } from '../Buttons/buttons.js'
 import './AboutUs.css'
+
 const AboutUs = () => {
   return (
     <>
       <Link to="/">
-        <button className="close-button" aria-label="return to home">
-          <Close />
-        </button>
+        <Close />
       </Link>
       <fieldset className="about-text">
         <legend>Who are we?</legend>

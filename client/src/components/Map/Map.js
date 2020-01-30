@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom'
 import InfoBar from '../InfoBar/InfoBar'
 import BufferPage from '../BufferPage/BufferPage'
 import PopUp from '../PopUp/PopUp'
-import { ReactComponent as Close } from '../../assets/close.svg'
-import { ReactComponent as Help } from '../../assets/help.svg'
+import { Close } from '../Buttons/buttons.js'
+import { Help } from '../Buttons/buttons.js'
+import { Search } from '../Buttons/buttons.js'
 import { constructTimingsObject } from '../../utils/constructTimingsObject'
 import './Map.css'
 
@@ -160,18 +161,14 @@ const Map = ({
           {showPopUp && (
             <PopUp showPopUp={showPopUp} setShowPopUp={setShowPopUp} />
           )}
-          <section className="nav-buttons">
-            <Link to="/icons-page">
-              <button className="close-button">
-                <Close />
-              </button>
-            </Link>
-            <Link to="/help">
-              <button className="help-button">
-                <Help />
-              </button>
-            </Link>
-          </section>
+
+          <Link to="/icons-page">
+            <Close />
+          </Link>
+          <Link to="/help">
+            <Help />
+          </Link>
+
           <input
             value={searchLocation}
             type="search"
@@ -179,9 +176,7 @@ const Map = ({
             className="search-bar"
             onChange={event => setSearchLocation(event.target.value)}
           ></input>
-          <button className="map-search" onClick={geocodeSearch}>
-            submit
-          </button>
+          <Search onClick={geocodeSearch} />
           <div className="wrapper">
             <div id="google-map" ref={googleMapRef} className="map-area" />
             <div className="over-map">

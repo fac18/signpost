@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ReactComponent as Close } from '../../assets/close.svg'
+import { Close } from '../Buttons/buttons.js'
 import './AddNewService.css'
+
 const AddNewService = props => {
   const [titleInput, setTitleInput] = React.useState('')
   const [locationInput, setLocationInput] = React.useState('')
@@ -17,9 +18,7 @@ const AddNewService = props => {
   return (
     <>
       <Link to="/icons-page">
-        <button className="close-button" aria-label="go back to menu">
-          <Close />
-        </button>
+        <Close />
       </Link>
       <fieldset className="add-form">
         <legend>Add a new service</legend>

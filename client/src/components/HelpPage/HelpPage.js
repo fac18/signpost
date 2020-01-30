@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ReactComponent as Close } from '../../assets/close.svg'
+import { Close } from '../Buttons/buttons.js'
 import './HelpPage.css'
 
 const instructions = [
@@ -18,9 +18,7 @@ const Help = () => {
   return (
     <>
       <Link to="/map">
-        <button className="close-button" aria-label="back to map">
-          <Close />
-        </button>
+        <Close />
       </Link>
       <section>
         <h1> Need help? </h1>

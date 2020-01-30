@@ -1,14 +1,7 @@
 language: node_js
 node_js:
   - 'node'
+script:
+  - cd client && npm i && npm run test -- --coverage --watchAll=false && codecov && cd ../server && npm test
 after_success:
   - npm run coverage
-# language: node_js
-# node_js:
-#   - 'stable'
-# cache:
-#   directories:
-#     - node_modules
-# script:
-#   - npm test
-#   - npm run report-coverage
