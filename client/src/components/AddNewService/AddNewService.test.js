@@ -50,18 +50,25 @@ test('form fields load', () => {
   expect(contactDetails).toBeInTheDocument()
 })
 
-//if we add validation to form, add test to test that it's working
+test('enter value to title', () => {
+  const history = createMemoryHistory()
+  const { getByPlaceholderText } = render(
+    <Router history={history}>
+      <AddNewService />
+    </Router>
+  )
+  const title = getByPlaceholderText(/title/i)
+  fireEvent.change(title, { target: { value: 'service title' } })
+})
 
-//revisit this in context of post request
-
-// test('add button works', () => {
-//   const history = createMemoryHistory()
-//   const { getByText, getByTestId } = render(
-//     <Router history={history}>
-//       <AddNewService />
-//     </Router>
-//   )
-//   const buttonNode = getByTestId(/add-button/i)
-//   fireEvent.click(buttonNode)
-//   getByText(/Thank you for your contribution!/i)
-// })
+test('add button fires handler', () => {
+  const history = createMemoryHistory()
+  const { getByText, getByTestId } = render(
+    <Router history={history}>
+      <AddNewService />
+    </Router>
+  )
+  const buttonNode = getByTestId(/add-button/i)
+  fireEvent.click(buttonNode)
+  //how to check that the handler ran when it's in the component file??
+})
