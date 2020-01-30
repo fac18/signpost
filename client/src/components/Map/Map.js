@@ -5,6 +5,7 @@ import BufferPage from '../BufferPage/BufferPage'
 import PopUp from '../PopUp/PopUp'
 import { ReactComponent as Close } from '../../assets/close.svg'
 import { ReactComponent as Help } from '../../assets/help.svg'
+import { constructTimingsObject } from '../../utils/constructTimingsObject'
 import './Map.css'
 
 const GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_TOKEN
@@ -191,36 +192,7 @@ const Map = ({
                     name={selectedMarkerData.fields.Name}
                     description={selectedMarkerData.fields.ShortDescription}
                     address={selectedMarkerData.fields.Address}
-                    timings={{
-                      Mon: {
-                        opening: selectedMarkerData.fields.MondayOpening,
-                        closing: selectedMarkerData.fields.MondayClosing,
-                      },
-                      Tue: {
-                        opening: selectedMarkerData.fields.TuesdayOpening,
-                        closing: selectedMarkerData.fields.TuesdayClosing,
-                      },
-                      Wed: {
-                        opening: selectedMarkerData.fields.WednesdayOpening,
-                        closing: selectedMarkerData.fields.WednesdayClosing,
-                      },
-                      Thu: {
-                        opening: selectedMarkerData.fields.ThursdayOpening,
-                        closing: selectedMarkerData.fields.ThursdayClosing,
-                      },
-                      Fri: {
-                        opening: selectedMarkerData.fields.FridayOpening,
-                        closing: selectedMarkerData.fields.FridayClosing,
-                      },
-                      Sat: {
-                        opening: selectedMarkerData.fields.SaturdayOpening,
-                        closing: selectedMarkerData.fields.SaturdayClosing,
-                      },
-                      Sun: {
-                        opening: selectedMarkerData.fields.SundayOpening,
-                        closing: selectedMarkerData.fields.SundayClosing,
-                      },
-                    }}
+                    timings={constructTimingsObject(selectedMarkerData)}
                   />
                 </Link>
               ) : null}
