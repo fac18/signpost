@@ -1,16 +1,5 @@
 /* DESKTOP */
 
-.add-button {
-  display: flex;
-  margin: 1vw;
-  background-color: transparent;
-  border: transparent;
-  outline: none;
-}
-.add-button:hover {
-  cursor: pointer;
-}
-
 .icon-panel {
   display: grid;
   grid-template-columns: repeat(4, 20vw [col-start]);
@@ -31,17 +20,7 @@
 /* MOBILE RESPONSIVE  */
 
 @media screen and (min-width: 320px) and (max-width: 640px) {
-  .add-button {
-    display: flex;
-    width: 15vw;
-    margin: 1vw;
-    background-color: transparent;
-    border: transparent;
-    outline: none;
-  }
-
   .icon-panel {
-    margin-top: 0;
     grid-template-columns: repeat(auto-fill, 40vw);
     grid-auto-rows: 30vw;
     grid-gap: 1vw;
@@ -52,7 +31,6 @@
     display: flex;
     justify-content: center;
     vertical-align: middle;
-    margin: 10vw;
   }
 
   .icon-panel__button__image {

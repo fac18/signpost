@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import { Link } from 'react-router-dom';
-import { ReactComponent as Close } from '../../assets/close.svg';
+import { Close } from '../Buttons/buttons.js'
 import postAddServiceData from '../../utils/postData';
 import './AddNewService.css';
 
@@ -36,6 +36,7 @@ const AddNewService = () => {
     Contact_Details,
   } = state;
 
+
   const handleSubmit = event => {
     event.preventDefault();
     postAddServiceData(state);
@@ -46,9 +47,7 @@ const AddNewService = () => {
   return (
     <>
       <Link to="/icons-page">
-        <button className="close-button">
-          <Close />
-        </button>
+        <Close />
       </Link>
       <fieldset className="add-form">
         <legend>Add a new service</legend>
@@ -169,7 +168,7 @@ const AddNewService = () => {
             />
           </label>
           <br />
-          <button type="submit" className="submit-button">
+          <button type="submit" className="submit-button" data-testid="add-button">
             Add
           </button>
         </form>

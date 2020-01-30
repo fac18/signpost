@@ -1,5 +1,6 @@
 import React from 'react'
-import { ReactComponent as Add } from '../../assets/add.svg'
+import { Add } from '../Buttons/buttons.js'
+import { Back } from '../Buttons/buttons.js'
 import { Link } from 'react-router-dom'
 
 import './IconsPage.css'
@@ -23,9 +24,10 @@ const Icons = ({ selectedService, setSelectedService }) => {
   return (
     <>
       <Link to="/add-service">
-        <button className="add-button">
-          <Add />
-        </button>
+        <Add />
+      </Link>
+      <Link to="/">
+        <Back />
       </Link>
       <section>
         <h1> Which service do you need? </h1>
