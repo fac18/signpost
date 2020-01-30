@@ -6,10 +6,19 @@ const https = require('https')
 const app = express()
 const bodyParser = require('body-parser')
 let DB_URL = process.env.DB_URL
+let ADD_URL = process.env.ADD_URL
+
+// Variables for posting data to Airtable db
+let token = process.env.AIRTABLE_TOKEN
+let Airtable = require('airtable')
+let base = new Airtable({ apiKey: token }).base('appnOxIi3Xwhtwq3N')
+Airtable.configure({
+  endpointUrl: ADD_URL,
+  apiKey: { token },
+})
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '../client/build')))
 
@@ -21,7 +30,7 @@ app.get(`/api/airtable`, (req, res) => {
   }
   const airtableUrl = `${DB_URL}?api_key=${process.env.AIRTABLE_TOKEN}&view=${req.query.q}`
 
-  console.log(req.query.q)
+  console.log('Query', req.query.q)
   console.log('has entered server endpoint airtable')
 
   https.get(airtableUrl, response => {
@@ -36,6 +45,45 @@ app.get(`/api/airtable`, (req, res) => {
       res.end(data)
     })
   })
+})
+
+// Post input data from client to server (airtable db)
+app.post(`/api/add`, (req, res) => {
+  console.log('This is req body state', req.body)
+  const addServiceData = {
+    Title: req.body.Title,
+    Location: req.body.Location,
+    Opening_Times: req.body.Opening_Times,
+    Service: req.body.Service,
+    Contact_Name: req.body.Contact_Name,
+    Contact_Details: req.body.Contact_Details,
+  }
+  console.log('Title', req.body.Title)
+  console.log(('Add service data', addServiceData))
+
+  base('Add Reviews').create(
+    [
+      {
+        fields: {
+          Title: req.body.Title,
+          Location: req.body.Location,
+          Opening_Times: req.body.Opening_Times,
+          Service: req.body.Service,
+          Contact_Name: req.body.Contact_Name,
+          Contact_Details: req.body.Contact_Details,
+        },
+      },
+    ],
+    function(err, records) {
+      if (err) {
+        console.error(err)
+        return
+      }
+      records.forEach(function(record) {
+        console.log(record.getId())
+      })
+    }
+  )
 })
 
 // The "catchall" handler: for any request that doesn't
