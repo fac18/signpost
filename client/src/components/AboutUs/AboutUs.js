@@ -6,7 +6,7 @@ const AboutUs = () => {
   return (
     <>
       <Link to="/">
-        <button className="close-button">
+        <button className="close-button" aria-label="return to home">
           <Close />
         </button>
       </Link>

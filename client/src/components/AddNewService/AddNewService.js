@@ -17,7 +17,7 @@ const AddNewService = props => {
   return (
     <>
       <Link to="/icons-page">
-        <button className="close-button">
+        <button className="close-button" aria-label="go back to menu">
           <Close />
         </button>
       </Link>

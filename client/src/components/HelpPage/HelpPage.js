@@ -18,7 +18,7 @@ const Help = () => {
   return (
     <>
       <Link to="/map">
-        <button className="close-button">
+        <button className="close-button" aria-label="back to map">
           <Close />
         </button>
       </Link>
