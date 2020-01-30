@@ -10,11 +10,11 @@ const ServiceInfo = ({ selectedMarkerData }) => {
   const [timings, setTimings] = React.useState(
     constructTimingsObject(selectedMarkerData)
   )
-  
+
   return (
     <>
       <section className="navbar">
-        <Link to="/icons-page">
+        <Link to="/map">
           <button className="close-button">
             <Close />
           </button>
