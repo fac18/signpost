@@ -2,6 +2,6 @@ language: node_js
 node_js:
   - 'node'
 script:
-  - cd client && npm i && npm run test && cd ../server && npm test
+  - cd client && npm i && npm run test -- --coverage --watchAll=false && codecov && cd ../server && npm test
 after_success:
   - npm run coverage
