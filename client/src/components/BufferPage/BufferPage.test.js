@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import BufferPage from './BufferPage'
+import { render, getByTestId } from '@testing-library/react'
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
@@ -13,8 +14,8 @@ test('message renders', () => {
   expect(title).toBeInTheDocument()
 })
 
-test('svg renders', () => {
-  const { getByTitle } = render(<BufferPage />)
-  const svg = getByTitle(/magnifying-glass/i)
+test('magnifying glass svg renders', () => {
+  const { getByText } = render(<BufferPage />)
+  const svg = getByText(/magnifying-glass/i)
   expect(svg).toBeInTheDocument()
 })

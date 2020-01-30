@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import InfoBar from './InfoBar'
+import { render } from '@testing-library/react'
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
   ReactDOM.render(
     <InfoBar
-      name="Service"
+      name="MyService"
       description="Info about Service"
       address="123 Service St"
       timings={{
@@ -89,7 +90,7 @@ test('see more text renders', () => {
 test('service title renders', () => {
   const { getByText } = render(
     <InfoBar
-      name="Service"
+      name="MyService"
       description="Info about Service"
       address="123 Service St"
       timings={{
