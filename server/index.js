@@ -23,7 +23,6 @@ app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, '../client/build')))
 
 // Call api from airtable
-
 app.get(`/api/airtable`, (req, res) => {
   if (process.env.NODE_ENV === 'test') {
     DB_URL = process.env.TEST_DB_URL
@@ -49,18 +48,6 @@ app.get(`/api/airtable`, (req, res) => {
 
 // Post input data from client to server (airtable db)
 app.post(`/api/add`, (req, res) => {
-  console.log('This is req body state', req.body)
-  const addServiceData = {
-    Title: req.body.Title,
-    Location: req.body.Location,
-    Opening_Times: req.body.Opening_Times,
-    Service: req.body.Service,
-    Contact_Name: req.body.Contact_Name,
-    Contact_Details: req.body.Contact_Details,
-  }
-  console.log('Title', req.body.Title)
-  console.log(('Add service data', addServiceData))
-
   base('Add Reviews').create(
     [
       {
