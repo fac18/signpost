@@ -13,5 +13,8 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^25.1.0"
+  },
+  "dependencies": {
+    "airtable": "^0.8.1"
   }
 }
