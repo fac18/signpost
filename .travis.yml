@@ -6,6 +6,8 @@ cache:
     - client/node_modules
 script:
   - cd client && npm i && npm run test
+after_failure:
+  - cat /home/travis/.npm/_logs/2020-01-30T13_12_23_766Z-debug.log
 
 # after_success:
 #   - npm run coverage
