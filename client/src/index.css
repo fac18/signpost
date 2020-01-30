@@ -62,12 +62,12 @@ pre {
   }
 
   legend {
-    font-size: 9.5vw;
+    font-size: 10vw;
     color: var(--coral);
   }
 
   h1 {
-    margin: 0;
+    margin-top: 9vw;
     font-size: 9vw;
     color: var(--mako);
     justify-content: center;
