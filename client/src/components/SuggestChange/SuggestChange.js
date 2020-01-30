@@ -31,6 +31,7 @@ const SuggestChange = () => {
             cols="30"
             value={textInput}
             onChange={event => setTextInput(event.target.value)}
+            data-testid="input-box"
           ></textarea>
           <br />
           <Link to="/thank-you">

@@ -64,3 +64,22 @@ it('renders without crashing', () => {
     div
   )
 })
+
+// test('enter value to title', () => {
+//   const history = createMemoryHistory()
+//   const { getByPlaceholderText, debug } = render(
+//     <Router history={history}>
+//       <Map
+//         selectedService={'Wellbeing'}
+//         selectedServiceData={fakeServiceData}
+//         selectedMarker={null}
+//         setSelectedMarker={fakeFunction}
+//         selectedMarkerData={null}
+//         setSelectedMarkerData={fakeFunction}
+//       />
+//     </Router>
+//   )
+//   const input = getByPlaceholderText(/Jump to a location/i)
+//   debug()
+//   fireEvent.change(input, { target: { value: 'Finsbury Park' } })
+// })
