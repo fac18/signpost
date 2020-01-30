@@ -2,6 +2,6 @@ language: node_js
 node_js:
   - 'node'
 script:
-  - NODE_ENV=test cd client && npm run test && cd ../server && npm test
+  - cd client && npm run test && cd ../server && npm test
 after_success:
   - npm run coverage
