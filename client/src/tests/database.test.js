@@ -38,7 +38,7 @@ describe('Testing Air Table recieves calls', () => {
         json: () => Promise.resolve(mockResponse),
       })
     )
-    getData('Shelter').then(res => {
+    return getData('Shelter').then(res => {
       expect(res.records[1].id).toEqual(`ecGIFLNsg1SO6Edakjdbahwkd`)
     })
   })
