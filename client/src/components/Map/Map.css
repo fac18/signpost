@@ -6,7 +6,8 @@
 
 .search-bar {
   margin-top: 5vw;
-  font-size: 1vw;
+  margin-bottom: 2vw;
+  font-size: 1.25vw;
   padding: 0.5vw;
   border-style: inset;
   border-radius: 10px;
@@ -64,6 +65,7 @@
     border-radius: 10px;
     width: 50vw;
     outline: none;
+    margin-top: 15vw;
   }
 
   .map-search {

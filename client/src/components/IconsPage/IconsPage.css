@@ -21,7 +21,6 @@
 
 @media screen and (min-width: 320px) and (max-width: 640px) {
   .icon-panel {
-    margin-top: 0;
     grid-template-columns: repeat(auto-fill, 40vw);
     grid-auto-rows: 30vw;
     grid-gap: 1vw;
@@ -32,7 +31,6 @@
     display: flex;
     justify-content: center;
     vertical-align: middle;
-    margin: 10vw;
   }
 
   .icon-panel__button__image {

@@ -1,3 +1,57 @@
 /* DESKTOP */
 
+.change-text {
+  width: 60vw;
+  margin: auto;
+  padding: 1vw;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+  line-height: 2vw;
+}
+
+.suggestion-box {
+  padding: 3vw;
+  width: 25vw;
+  font-size: 1.5vw;
+}
+
+.change-button {
+  background-color: var(--mako);
+  color: var(--coral);
+  font-family: 'Passion One', cursive;
+  font-size: 2vw;
+  padding: 0.5vw;
+  box-shadow: 5px 5px 10px var(--mako);
+  border-color: var(--mako);
+  border-radius: 10px;
+  margin: 1vw;
+  outline: none;
+}
+
 /* MOBILE RESPONSIVE */
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .change-text {
+    color: var(--mako);
+    width: 70vw;
+    margin-top: 20vw;
+    line-height: 5vw;
+  }
+
+  .suggestion-box {
+    padding: 8vw;
+    width: 50vw;
+    font-size: 5vw;
+  }
+
+  .change-button {
+    background-color: var(--mako);
+    color: var(--coral);
+    font-family: 'Passion One', cursive;
+    font-size: 6vw;
+    padding: 2vw;
+    box-shadow: 5px 5px 10px var(--mako);
+    border-color: var(--mako);
+    border-radius: 10px;
+    margin: 2vw;
+  }
+}

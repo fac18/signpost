@@ -8,10 +8,9 @@
   color: var(--mako);
   width: 60vw;
   margin: auto;
-  padding: 1vw;
   margin-top: 5vw;
-  margin-bottom: 5vw;
-  font-size: 2vw;
+  font-size: 1.75vw;
+  padding: 1vw;
 }
 
 .edit-button {
@@ -35,22 +34,22 @@
 
   .service-info {
     color: var(--mako);
-    font-size: 8vw;
-    max-width: 60vw;
+    font-size: 6vw;
+    width: 90vw;
     margin: auto;
+    margin-top: 15vw;
   }
 
   .edit-button {
     background-color: var(--mako);
     color: var(--coral);
     font-family: 'Passion One', cursive;
-    font-size: 8vw;
+    font-size: 6vw;
     padding: 2vw;
     box-shadow: 5px 5px 10px var(--mako);
     border-color: var(--mako);
     border-radius: 10px;
-    margin: 2.5vw;
-    outline: none;
+    margin: 2vw;
   }
 }
 
