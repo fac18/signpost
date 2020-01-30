@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import InfoBar from '../InfoBar/InfoBar'
 import BufferPage from '../BufferPage/BufferPage'
 import PopUp from '../PopUp/PopUp'
-import { ReactComponent as Close } from '../../assets/close.svg'
-import { ReactComponent as Help } from '../../assets/help.svg'
+import { Close } from '../Buttons/buttons.js'
+import { Help } from '../Buttons/buttons.js'
 import './Map.css'
 
 const GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_TOKEN
@@ -159,14 +159,10 @@ const Map = ({
           {popUp ? <PopUp popUp={popUp} setPopUp={setPopUp} /> : null}
           <section className="nav-buttons">
             <Link to="/icons-page">
-              <button className="close-button">
-                <Close />
-              </button>
+              <Close />
             </Link>
             <Link to="/help">
-              <button className="help-button">
-                <Help />
-              </button>
+              <Help />
             </Link>
           </section>
           <input

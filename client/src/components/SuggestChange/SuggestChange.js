@@ -1,20 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { Close } from '../Buttons/buttons.js'
 
 // Do something with the text area inputed by the user -> send it somewhere?
 
 const SuggestChange = () => {
-  const [textInput, setTextInput] = React.useState("");
+  const [textInput, setTextInput] = React.useState('')
 
   const handleSubmit = event => {
     //write call to backend to insert data (from state)
-    event.preventDefault();
-  };
+    event.preventDefault()
+  }
 
   return (
     <>
-      <Link to="/">
-        <button>X</button>
+      <Link to="/map">
+        <Close />
       </Link>
       <h1>Suggest a change</h1>
       <form onSubmit={handleSubmit}>
@@ -30,7 +31,7 @@ const SuggestChange = () => {
         </Link>
       </form>
     </>
-  );
-};
+  )
+}
 
-export default SuggestChange;
+export default SuggestChange

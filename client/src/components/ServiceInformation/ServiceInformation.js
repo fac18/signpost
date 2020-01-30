@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ReactComponent as Close } from '../../assets/close.svg'
-import { ReactComponent as Add } from '../../assets/add.svg'
+import { Close } from '../Buttons/buttons.js'
+import { Add } from '../Buttons/buttons.js'
 
 import './ServiceInformation.css'
 
@@ -9,18 +9,12 @@ const ServiceInfo = ({ selectedMarkerData }) => {
   console.log(selectedMarkerData)
   return (
     <>
-      <section className="navbar">
-        <Link to="/icons-page">
-          <button className="close-button">
-            <Close />
-          </button>
-        </Link>
-        <Link to="/add-service">
-          <button className="add-button">
-            <Add />
-          </button>
-        </Link>
-      </section>
+      <Link to="/icons-page">
+        <Close />
+      </Link>
+      <Link to="/add-service">
+        <Add />
+      </Link>
       <fieldset className="service-info">
         <legend>{selectedMarkerData.fields.Name}</legend>
         <a href={'tel:' + selectedMarkerData.fields.Phone}>

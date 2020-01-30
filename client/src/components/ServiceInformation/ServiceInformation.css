@@ -1,32 +1,17 @@
 /* DESKTOP */
 
-/* --------------------------
-      NAVIGATION BUTTONS
-   -------------------------- */
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-}
-.close-button {
-  display: flex;
-  background-color: transparent;
-  border: transparent;
-  outline: none;
-}
-.close-button {
-  cursor: pointer;
-}
-
 /* ---------------------------
     SERVICE DETAILS STYLING
 --------------------------- */
 
 .service-info {
   color: var(--mako);
-  font-size: 2vw;
-  max-width: 60vw;
+  width: 60vw;
   margin: auto;
+  padding: 1vw;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+  font-size: 2vw;
 }
 
 .edit-button {
@@ -45,31 +30,13 @@
 /* MOBILE RESPONSIVE */
 
 @media screen and (min-width: 320px) and (max-width: 640px) {
-  /* --------------------------
-      NAVIGATION BUTTONS
-   -------------------------- */
-
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-  }
-  .close-button {
-    display: flex;
-    background-color: transparent;
-    border: transparent;
-    outline: none;
-  }
-  .close-button {
-    cursor: pointer;
-  }
-
   /* ---------------------------
     SERVICE DETAILS STYLING
 --------------------------- */
 
   .service-info {
     color: var(--mako);
-    font-size: 6vw;
+    font-size: 8vw;
     max-width: 60vw;
     margin: auto;
   }
