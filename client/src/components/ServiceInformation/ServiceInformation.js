@@ -10,7 +10,7 @@ const ServiceInfo = ({ selectedMarkerData }) => {
   const [timings, setTimings] = React.useState(
     constructTimingsObject(selectedMarkerData)
   )
-
+  
   return (
     <>
       <section className="navbar">
@@ -40,6 +40,9 @@ const ServiceInfo = ({ selectedMarkerData }) => {
         </a>
         <p>{selectedMarkerData.fields.Description}</p>
         <p>{selectedMarkerData.fields.Address}</p>
+        <p>
+          {selectedMarkerData.fields.Accessible && 'Wheelchair accessible: Yes'}
+        </p>
         <table>
           <thead>
             <tr>
