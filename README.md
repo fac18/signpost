@@ -129,3 +129,4 @@ We learnt:
 Design process, e.g. rapid prototyping, user research, user testing, using Figma to build a prototype
 
 ### Tech Stack
+React, Express, AirTable Google Maps API, Google Geocoding API

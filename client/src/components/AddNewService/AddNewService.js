@@ -107,7 +107,11 @@ const AddNewService = props => {
           <br />
         </form>
         <Link to="/thank-you">
-          <button type="submit" className="submit-button">
+          <button
+            type="submit"
+            className="submit-button"
+            data-testid="add-button"
+          >
             Add
           </button>
         </Link>
