@@ -32,4 +32,4 @@ it('app initially renders landing page and shows title', () => {
 //   fireEvent.click(getByText(/shower/i))
 
 //   expect(container.innerHTML).toMatch(/contributions/i)
-})
+// })
