@@ -97,6 +97,13 @@ Our top 5 user research insights were:
 Prototyping wasn't too hard because the previous steps had given us a very clear idea of what we wanted to build 😊
 We made a list of all the 'screens' and divided them up between us
 
+##### Figma snapshots
+
+![](https://i.imgur.com/GuOQCWf.png =500x)
+![](https://i.imgur.com/xZDmCoX.png =400x)
+![](https://i.imgur.com/xwhVcSq.png)
+![](https://i.imgur.com/5b621aM.png =450x)
+
 #### User Testing
 
 We wrote our user testing script and questions, and tracked responses in [this Google Doc](https://docs.google.com/document/d/1lQWcgmyjNmRlyZqQc-Wxc6-UaOgbgnxEwWQv-LosjRs/edit)
