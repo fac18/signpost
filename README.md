@@ -34,11 +34,25 @@ Signpost is an app/desktop website that lets people experiencing or at risk of h
 
 ### 💾Installation Guide
 
+<<<<<<< HEAD
 1. Clone the repo `git clone https://github.com/fac18/signpost.git`
 2. Intall the dependencies by running `npm i && cd client && npm i && cd ..`
 3. Set up two `.env` files (ask for the keys if you're reviewing us). There should be two .env files, one in the client folder root and one in the server folder root too. \*
 4. To check tests run `npm test`
 5. Start the server with `npm run start:dev` and go to `localhost:3000` \*
+=======
+1. Clone the repo ```git clone https://github.com/fac18/signpost.git```
+2. Intall the dependencies by running ```npm i && cd client && npm i && cd ..```
+3. Set up two ```.env``` files (ask for the keys if you're reviewing us). There should be two .env files, one in the client folder root and one in the server folder root too. *
+4. To check tests run ```npm test```
+5. Start the server with ```npm run start:dev``` and go to ```localhost:3000``` *
+
+### User Journey
+
+
+### User Stories
+[User stories doc](https://docs.google.com/document/d/1HgGcLrVzai1T27yJSQyO0vW0nqcD8waRmjuJtfOCnys/edit)
+>>>>>>> master
 
 ### Design Process
 
@@ -123,6 +137,7 @@ Our changes following user testing:
 
 ### 🏃First Build Sprint
 
+<<<<<<< HEAD
 Mon/Tues: slow start: planning and researching. Lots of big initial blockers.
 Weds: trying to figure out how to build Express backend with React front end, also how to overwrite Git project
 Thurs: Lift off! Move Google Maps call to front end, stick with Express for AirTable. Connected pages by using React Router
@@ -135,6 +150,22 @@ Tuesday: Updated database - small map error handling has been implemented - init
 Wednesday: Kill the InfoBar when moving onto different pages and coming back to the map. Added svg loading animation.
 Thursday: Sorted mobile responsiveness. Made the postdata function work to airtable from the backend. React testing. Fixed travis/node_modules bug to get our first.
 Friday: Presentation!
+=======
+![](https://i.imgur.com/JpnwXGq.png)
+
+- Mon/Tues: slow start: planning and researching.  Lots of big initial blockers.
+- Weds: trying to figure out how to build Express backend with React front end, also how to overwrite Git project
+- Thurs: Lift off! Move Google Maps call to front end, stick with Express for AirTable. Connected pages by using React Router
+- Fri: Displayed markers by accessing dummy data - made improvements with making a connection between both our map API and our airtable API - made initial style for main pages - added all of necessary svg icons - rendered the components in App by passing their states too so they can be updated/accessed where needed.
+
+### 🏃Second Build Sprint
+
+![](https://i.imgur.com/yJ2205u.png)
+
+- Monday: Sprint #1 mini presentations (we've talked about what we've found interesting from the prev. week and showed our estimates and actuals to the class). Start new week with a new sprint planning. Continue with styling/svg and connections between routes. Connected both the map API and the airtable API, managed to display the pins with the correct data accessed from our database. Initial search bar that finds the places inputed by the user. 
+- Tuesday: Updated database - small map error handling has been implemented - initial move to make the app responsive for mobile as our approach was more desktop at the beginning. - set up CodeCov and Travis - EsLint and prettier have been configured - made services' element clickable by adding mailto: and phone: - add SVG animation for thank you page and add a small pop-up after being in the map for 6 seconds, needs fixing. We have separated the tasks and each one has taken an specific task to do. Pretty well organised. 
+- Wed + Thursday: Kill the InfoBar when moving onto different pages and coming back to the map + Make posts requests to the airtable database. Display open/closed options to each service
+>>>>>>> master
 
 Problems: entering opening hours into Airtable in consistent way - no data validation
 

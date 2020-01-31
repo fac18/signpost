@@ -63,6 +63,7 @@ const AddNewService = () => {
                 placeholder="Title"
                 value={Title}
                 onChange={onChange}
+                required
               />
             </label>
             <br />
@@ -76,6 +77,7 @@ const AddNewService = () => {
                 placeholder="Location"
                 value={Location}
                 onChange={onChange}
+                required
               />
             </label>
             <br />
@@ -101,7 +103,6 @@ const AddNewService = () => {
                 name="Service"
                 id="Service"
                 className="dropdown"
-                required
                 value={Service}
                 onChange={onChange}
               >
