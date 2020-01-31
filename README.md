@@ -109,10 +109,10 @@ Our changes following user testing:
 
 ### 🏃First Build Sprint
 
-Mon/Tues: slow start: planning and researching.  Lots of big initial blockers.
-Weds: trying to figure out how to build Express backend with React front end, also how to overwrite Git project
-Thurs: Lift off! Move Google Maps call to front end, stick with Express for AirTable. Connected pages by using React Router
-Fri: Displayed markers by accessing dummy data - made improvements with making a connection between both our map API and our airtable API - made initial style for main pages - added all of necessary svg icons - rendered the components in App by passing their states too so they can be updated/accessed where needed.
+- Mon/Tues: slow start: planning and researching.  Lots of big initial blockers.
+- Weds: trying to figure out how to build Express backend with React front end, also how to overwrite Git project
+- Thurs: Lift off! Move Google Maps call to front end, stick with Express for AirTable. Connected pages by using React Router
+- Fri: Displayed markers by accessing dummy data - made improvements with making a connection between both our map API and our airtable API - made initial style for main pages - added all of necessary svg icons - rendered the components in App by passing their states too so they can be updated/accessed where needed.
 
 ### 🏃Second Build Sprint
 
