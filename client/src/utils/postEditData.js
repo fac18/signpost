@@ -1,5 +1,5 @@
-async function postAddServiceData(state) {
-  const response = await fetch(`/api/add`, {
+async function postEditData(state) {
+  const response = await fetch(`/api/edit`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -10,10 +10,10 @@ async function postAddServiceData(state) {
   return await response.json()
 }
 
-postAddServiceData()
+postEditData()
   .then(data => {
     console.log(data)
   })
   .catch(console.log)
 
-export default postAddServiceData
+export default postEditData

@@ -1,16 +1,34 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useReducer } from 'react'
+import { Link, Redirect } from 'react-router-dom'
 import { Close } from '../Buttons/buttons.js'
+import postEditData from '../../utils/postEditData'
 import './SuggestChange.css'
 
-// Do something with the text area inputed by the user -> send it somewhere?
+const initialState = {
+  textInput: '',
+}
+
+function reducer(state, { field, value }) {
+  return {
+    ...state,
+    [field]: value,
+  }
+}
 
 const SuggestChange = () => {
-  const [textInput, setTextInput] = React.useState('')
+  const [state, dispatch] = useReducer(reducer, initialState)
+  const [changePage, setChangePage] = React.useState(false)
+
+  const onChange = e => {
+    dispatch({ field: e.target.name, value: e.target.value })
+  }
+
+  const { textInput } = state
 
   const handleSubmit = event => {
-    //write call to backend to insert data (from state)
     event.preventDefault()
+    postEditData(state)
+    setChangePage(!changePage)
   }
 
   return (
@@ -24,21 +42,26 @@ const SuggestChange = () => {
           If you see something wrong about this service, please suggest a change
           and we'll update it for you!
         </p>
-        <form onSubmit={handleSubmit}>
-          <textarea
-            className="suggestion-box"
-            rows="10"
-            cols="30"
-            value={textInput}
-            onChange={event => setTextInput(event.target.value)}
-          ></textarea>
-          <br />
-          <Link to="/thank-you">
+        {changePage ? (
+          <Redirect to="thank-you"></Redirect>
+        ) : (
+          <form onSubmit={handleSubmit}>
+            <textarea
+              name="textInput"
+              type="textarea"
+              className="suggestion-box"
+              rows="10"
+              cols="30"
+              value={textInput}
+              onChange={onChange}
+              data-testid="input-box"
+            ></textarea>
+            <br />
             <button className="change-button" type="submit">
               Post
             </button>
-          </Link>
-        </form>
+          </form>
+        )}
       </fieldset>
     </>
   )
