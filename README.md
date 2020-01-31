@@ -130,19 +130,27 @@ Problems: entering opening hours into Airtable in consistent way - no data valid
 ### Learning Outcomes
 We learnt:
 #### 🎨 DESIGN
-Design process, e.g. rapid prototyping, user research, user testing, using Figma to build a prototype
+Rapid prototyping\
+User research\
+User testing, using Figma to build a prototype
 
-💽INFRASTRUCTURE
-Building a React app with an Express backend
-...and setting up Travis and Codecov with them
-Airtable
+#### 💽INFRASTRUCTURE
+Building a React app with an Express backend\
+...and setting up Travis and Codecov with them\
+Airtable\
+Google Maps and Geocoding APIs
 
-🤸REACT
-React Router
-React Refs
-React useReducer
-More testing: including testing with a Router, and jest.useFakeTimers
+#### 🤸REACT
+React Router\
+React Refs\
+React useReducer\
 Styled components
+
+#### 🧪 TESTING
+Testing with React Router\
+jest.useFakeTimers\
+Mocking
+
 
 ### 💻 Tech Stack
 React, Express, AirTable Google Maps API, Google Geocoding API
