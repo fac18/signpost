@@ -34,6 +34,7 @@ const props = {
     Description:
       'Weekly drop-in for homeless people and those who are socially isolated or lonely, offering food (light snacks, tea, soup, sandwiches), a change of clothes and somewhere to spend time. Limited counselling, advice and information also available. Entrance costs 50 pence. Open Mondays 10am to 12pm.',
     TuesdayClosing: 'closed',
+    Accessible: true,
   },
   createdTime: '2020-01-28T11:37:35.000Z',
 }
