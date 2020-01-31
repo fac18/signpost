@@ -4,6 +4,7 @@ import AddNewService from './AddNewService'
 import { render, cleanup, fireEvent } from '@testing-library/react'
 import { Router } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
+import postAddServiceData from '../../utils/postData'
 
 afterEach(cleanup)
 
@@ -50,25 +51,19 @@ test('form fields load', () => {
   expect(contactDetails).toBeInTheDocument()
 })
 
-test('enter value to title', () => {
+test('enter values to inputs and send data', () => {
+  jest.mock('../../utils/postData')
+
   const history = createMemoryHistory()
-  const { getByPlaceholderText } = render(
+  const { getByPlaceholderText, getByTestId } = render(
     <Router history={history}>
       <AddNewService />
     </Router>
   )
   const title = getByPlaceholderText(/title/i)
   fireEvent.change(title, { target: { value: 'service title' } })
-})
-
-test('add button fires handler', () => {
-  const history = createMemoryHistory()
-  const { getByText, getByTestId } = render(
-    <Router history={history}>
-      <AddNewService />
-    </Router>
-  )
+  const location = getByPlaceholderText(/location/i)
+  fireEvent.change(location, { target: { value: 'service address' } })
   const buttonNode = getByTestId(/add-button/i)
   fireEvent.click(buttonNode)
-  //how to check that the handler ran when it's in the component file??
 })
