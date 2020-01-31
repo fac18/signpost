@@ -19,7 +19,6 @@ A community-driven service for those experiencing or at risk of homelessness in 
 - [Learning Outcomes](#learning-outcomes)
 - [Tech Stack](#tech-stack)
 
----
 
 ### Team
 
@@ -34,20 +33,12 @@ Signpost is an app/desktop website that lets people experiencing or at risk of h
 
 ### 💾Installation Guide
 
-<<<<<<< HEAD
+
 1. Clone the repo `git clone https://github.com/fac18/signpost.git`
 2. Intall the dependencies by running `npm i && cd client && npm i && cd ..`
 3. Set up two `.env` files (ask for the keys if you're reviewing us). There should be two .env files, one in the client folder root and one in the server folder root too. \*
 4. To check tests run `npm test`
 5. Start the server with `npm run start:dev` and go to `localhost:3000` \*
-=======
-1. Clone the repo ```git clone https://github.com/fac18/signpost.git```
-2. Intall the dependencies by running ```npm i && cd client && npm i && cd ..```
-3. Set up two ```.env``` files (ask for the keys if you're reviewing us). There should be two .env files, one in the client folder root and one in the server folder root too. *
-4. To check tests run ```npm test```
-5. Start the server with ```npm run start:dev``` and go to ```localhost:3000``` *
-
-### User Journey
 
 
 ### User Stories
@@ -137,7 +128,7 @@ Our changes following user testing:
 
 ### 🏃First Build Sprint
 
-<<<<<<< HEAD
+
 Mon/Tues: slow start: planning and researching. Lots of big initial blockers.
 Weds: trying to figure out how to build Express backend with React front end, also how to overwrite Git project
 Thurs: Lift off! Move Google Maps call to front end, stick with Express for AirTable. Connected pages by using React Router
