@@ -136,7 +136,10 @@ const Map = ({
       .then(res => res.json())
       .then(result => {
         //idea: add a message to say the search was invalid
-        if (result.status != 'ZERO_RESULTS') {
+        if (
+          result.status !== 'ZERO_RESULTS' &&
+          result.status !== 'INVALID_REQUEST'
+        ) {
           const lat = result.results[0].geometry.location.lat
           const lng = result.results[0].geometry.location.lng
           setSearchLocationGeocoded(new window.google.maps.LatLng(lat, lng))
