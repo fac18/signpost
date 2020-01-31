@@ -25,7 +25,7 @@ A community-driven service for those experiencing or at risk of homelessness in 
 
 🐰Scrum master: [Renata](https://github.com/renatajarmova)\
 🐝UX/UI lead: [Beth](https://github.com/bethanyios) \
-🥰DevOps lead: [Rosa](https://github.com/rosalie-baxter)\
+✅DevOps lead: [Rosa](https://github.com/rosalie-baxter)\
 🥐Quality assurance lead: [Gillian](https://github.com/yeo-yeo)
 
 ### Overview
