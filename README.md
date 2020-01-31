@@ -22,17 +22,17 @@ A community-driven service for those experiencing or at risk of homelessness in 
 
 ### Team
 
-Scrum master: [Renata](https://github.com/renatajarmova)\
-UX/UI lead: [Beth](https://github.com/bethanyios) \
-DevOps lead: [Rosa](https://github.com/rosalie-baxter)\
-Quality assurance lead: [Gillian](https://github.com/yeo-yeo)
+🐰Scrum master: [Renata](https://github.com/renatajarmova)\
+🐝UX/UI lead: [Beth](https://github.com/bethanyios) \
+🥰DevOps lead: [Rosa](https://github.com/rosalie-baxter)\
+🥐Quality assurance lead: [Gillian](https://github.com/yeo-yeo)
 
 
 ### Overview
 
 Signpost is an app/desktop website that lets people experiencing or at risk of homelessness find services relevant for them.  Services are organised into categories and displayed as pins on a map.  Further information such as opening hours and contact details are available for each service.  Users can contribute their own suggestions and services to make sure the data is relevant and maintainable.
 
-### Installation Guide
+### 💾Installation Guide
 
 1. Clone the repo ```git clone https://github.com/fac18/signpost.git```
 2. Intall the dependencies by running ```npm i && cd client && npm i && cd ..```
@@ -107,14 +107,14 @@ Our changes following user testing:
 - Add next buttons
 - Colour
 
-### First Build Sprint
+### 🏃First Build Sprint
 
 Mon/Tues: slow start: planning and researching.  Lots of big initial blockers.
 Weds: trying to figure out how to build Express backend with React front end, also how to overwrite Git project
 Thurs: Lift off! Move Google Maps call to front end, stick with Express for AirTable. Connected pages by using React Router
 Fri: Displayed markers by accessing dummy data - made improvements with making a connection between both our map API and our airtable API - made initial style for main pages - added all of necessary svg icons - rendered the components in App by passing their states too so they can be updated/accessed where needed.
 
-### Second Build Sprint
+### 🏃Second Build Sprint
 
 Monday: Sprint #1 mini presentations (we've talked about what we've found interesting from the prev. week and showed our estimates and actuals to the class). Start new week with a new sprint planning. Continue with styling/svg and connections between routes. Connected both the map API and the airtable API, managed to display the pins with the correct data accessed from our database. Initial search bar that finds the places inputed by the user. 
 Tuesday: Updated database - small map error handling has been implemented - initial move to make the app responsive for mobile as our approach was more desktop at the beginning. - set up CodeCov and Travis - EsLint and prettier have been configured - made services' element clickable by adding mailto: and phone: - add SVG animation for thank you page and add a small pop-up after being in the map for 6 seconds, needs fixing. We have separated the tasks and each one has taken an specific task to do. Pretty well organised. To dos for tomorrow: Kill the InfoBar when moving onto different pages and coming back to the map + Make posts requests to the airtable database.
@@ -122,11 +122,25 @@ Tuesday: Updated database - small map error handling has been implemented - init
 Problems: entering opening hours into Airtable in consistent way - no data validation
 
 ### Potential Future Developments
+ - Add more data to Airtable
  - Expand geographical location
 
 ### Learning Outcomes
 We learnt:
+#### 🎨 DESIGN
 Design process, e.g. rapid prototyping, user research, user testing, using Figma to build a prototype
 
-### Tech Stack
+💽INFRASTRUCTURE
+Building a React app with an Express backend
+...and setting up Travis and Codecov with them
+Airtable
+
+🤸REACT
+React Router
+React Refs
+React useReducer
+More testing: including testing with a Router, and jest.useFakeTimers
+Styled components
+
+### 💻 Tech Stack
 React, Express, AirTable Google Maps API, Google Geocoding API
