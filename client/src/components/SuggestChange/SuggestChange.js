@@ -29,8 +29,6 @@ const SuggestChange = () => {
     event.preventDefault()
     postEditData(state)
     setChangePage(!changePage)
-    console.log({ state })
-    console.log(event)
   }
 
   return (
@@ -56,6 +54,7 @@ const SuggestChange = () => {
               cols="30"
               value={textInput}
               onChange={onChange}
+              data-testid="input-box"
             ></textarea>
             <br />
             <button className="change-button" type="submit">

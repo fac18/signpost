@@ -41,8 +41,6 @@ const AddNewService = () => {
     event.preventDefault()
     postAddServiceData(state)
     setChangePage(!changePage)
-    console.log({ state })
-    console.log(event)
   }
 
   return (
