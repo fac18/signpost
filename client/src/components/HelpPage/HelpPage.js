@@ -14,7 +14,6 @@ const instructions = [
 
 // Close needs to return to populated map
 const Help = () => {
-  const [instruction, setInstruction] = React.useState(null)
   return (
     <>
       <Link to="/map">
@@ -27,7 +26,7 @@ const Help = () => {
             <a
               className="help-panel__icon"
               value={instruction}
-              onClick={() => setInstruction({ instruction })}
+              key={instruction}
             >
               <figure>
                 <img
