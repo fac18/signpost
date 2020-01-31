@@ -49,6 +49,7 @@ const Close = styled(CloseSvg)`
 const ClosePopup = styled(ClosePopupSvg)`
   position: relative;
   float: left;
+  cursor: pointer;
 
   @media screen and (min-width: 320px) and (max-width: 640px) {
     position: relative;
