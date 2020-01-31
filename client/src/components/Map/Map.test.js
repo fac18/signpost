@@ -1,9 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Map from './Map'
-import { render } from '@testing-library/react'
+import { render, cleanup, fireEvent } from '@testing-library/react'
 import { Router } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
+
+afterEach(cleanup)
 
 const fakeFunction = () => {
   console.log('i am pretending to do something')
@@ -65,21 +67,44 @@ it('renders without crashing', () => {
   )
 })
 
-// test('enter value to title', () => {
-//   const history = createMemoryHistory()
-//   const { getByPlaceholderText, debug } = render(
-//     <Router history={history}>
-//       <Map
-//         selectedService={'Wellbeing'}
-//         selectedServiceData={fakeServiceData}
-//         selectedMarker={null}
-//         setSelectedMarker={fakeFunction}
-//         selectedMarkerData={null}
-//         setSelectedMarkerData={fakeFunction}
-//       />
-//     </Router>
-//   )
-//   const input = getByPlaceholderText(/Jump to a location/i)
-//   debug()
-//   fireEvent.change(input, { target: { value: 'Finsbury Park' } })
-// })
+jest.useFakeTimers()
+
+it('map renders after settimeout finishes', () => {
+  const history = createMemoryHistory()
+  const { getByPlaceholderText } = render(
+    <Router history={history}>
+      <Map
+        selectedService={'Wellbeing'}
+        selectedServiceData={fakeServiceData}
+        selectedMarker={null}
+        setSelectedMarker={fakeFunction}
+        selectedMarkerData={null}
+        setSelectedMarkerData={fakeFunction}
+      />
+    </Router>
+  )
+  jest.advanceTimersByTime(2100)
+  const input = getByPlaceholderText(/Jump to a location/i)
+  expect(input).toBeInTheDocument()
+})
+
+test('enter location and search', () => {
+  const history = createMemoryHistory()
+  const { getByPlaceholderText, getByTestId } = render(
+    <Router history={history}>
+      <Map
+        selectedService={'Wellbeing'}
+        selectedServiceData={fakeServiceData}
+        selectedMarker={null}
+        setSelectedMarker={fakeFunction}
+        selectedMarkerData={null}
+        setSelectedMarkerData={fakeFunction}
+      />
+    </Router>
+  )
+  jest.advanceTimersByTime(2100)
+  const input = getByPlaceholderText(/Jump to a location/i)
+  fireEvent.change(input, { target: { value: 'Finsbury Park' } })
+  const submitButton = getByTestId(/submit-geocode/)
+  fireEvent.click(submitButton)
+})
