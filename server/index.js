@@ -7,6 +7,7 @@ const app = express()
 const bodyParser = require('body-parser')
 let DB_URL = process.env.DB_URL
 let ADD_URL = process.env.ADD_URL
+let EDIT_URL = process.env.EDIT_URL
 
 // Variables for posting data to Airtable db
 let token = process.env.AIRTABLE_TOKEN
@@ -47,6 +48,7 @@ app.get(`/api/airtable`, (req, res) => {
 })
 
 // Post input data from client to server (airtable db)
+
 app.post(`/api/add`, (req, res) => {
   base('Add Reviews').create(
     [
@@ -58,6 +60,32 @@ app.post(`/api/add`, (req, res) => {
           Service: req.body.Service,
           Contact_Name: req.body.Contact_Name,
           Contact_Details: req.body.Contact_Details,
+        },
+      },
+    ],
+    function(err, records) {
+      if (err) {
+        console.error(err)
+        return
+      }
+      records.forEach(function(record) {
+        console.log(record.getId())
+      })
+    }
+  )
+})
+
+// Post suggested input from client to server (airtable db)
+Airtable.configure({
+  endpointUrl: EDIT_URL,
+  apiKey: { token },
+})
+app.post(`/api/edit`, (req, res) => {
+  base('Suggestions Reviews').create(
+    [
+      {
+        fields: {
+          textInput: req.body.textInput,
         },
       },
     ],
