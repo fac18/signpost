@@ -124,6 +124,8 @@ Problems: entering opening hours into Airtable in consistent way - no data valid
 ### Potential Future Developments
  - Add more data to Airtable
  - Expand geographical location
+ - Add more error handling
+ - Test Google Map and stop it loading multiple times
 
 ### Learning Outcomes
 We learnt:
