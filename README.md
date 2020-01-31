@@ -11,7 +11,7 @@ A community-driven service for those experiencing or at risk of homelessness in 
 - [Team](#team)
 - [Overview](#overview)
 - [Installation Guide](#installation-guide)
-- [User Journey](#user-journey)
+- [User Stories](#user-stories)
 - [Design Process](#design-process)
 - [First Build Sprint](#first-build-sprint)
 - [Second Build Sprint](#second-build-sprint)
@@ -43,7 +43,7 @@ Signpost is an app/desktop website that lets people experiencing or at risk of h
 
 ### User Stories
 [User stories doc](https://docs.google.com/document/d/1HgGcLrVzai1T27yJSQyO0vW0nqcD8waRmjuJtfOCnys/edit)
->>>>>>> master
+
 
 ### Design Process
 
@@ -141,7 +141,7 @@ Tuesday: Updated database - small map error handling has been implemented - init
 Wednesday: Kill the InfoBar when moving onto different pages and coming back to the map. Added svg loading animation.
 Thursday: Sorted mobile responsiveness. Made the postdata function work to airtable from the backend. React testing. Fixed travis/node_modules bug to get our first.
 Friday: Presentation!
-=======
+
 ![](https://i.imgur.com/JpnwXGq.png)
 
 - Mon/Tues: slow start: planning and researching.  Lots of big initial blockers.
