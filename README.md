@@ -140,6 +140,8 @@ Problems: entering opening hours into Airtable in consistent way - no data valid
 
 ### Google analytics
 
+![](https://i.imgur.com/gFoYnle.png)
+
 ### Potential Future Developments
 
 - Add more data to Airtable
