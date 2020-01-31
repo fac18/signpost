@@ -5,8 +5,6 @@ import { render, cleanup, fireEvent } from '@testing-library/react'
 import { Router } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
 
-afterEach(cleanup)
-
 const fakeFunction = () => {
   console.log('i am pretending to do something')
 }
@@ -108,3 +106,5 @@ test('enter location and search', () => {
   const submitButton = getByTestId(/submit-geocode/)
   fireEvent.click(submitButton)
 })
+
+afterEach(cleanup)

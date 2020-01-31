@@ -34,7 +34,10 @@ test('services h1 shows on page load', () => {
   const history = createMemoryHistory()
   const { getByText } = render(
     <Router history={history}>
-      <IconsPage setSelectedService={setSelectedService} />
+      <IconsPage
+        selectedService={null}
+        setSelectedService={setSelectedService}
+      />
     </Router>
   )
   const button = getByText(/shower/i)
