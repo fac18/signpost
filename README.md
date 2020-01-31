@@ -211,5 +211,8 @@ React, Express, AirTable Google Maps API, Google Geocoding API
 ### Presentation
 
 ![](https://i.imgur.com/Xburh7t.png)
+
+https://www.canva.com/design/DADyewMfXjQ/iKPmKiOdVbBxuggMUKcB1A/view?utm_content=DADyewMfXjQ&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
+
 We used canvas for our presentation, amending the style to match our design scheme.
 To make it more interesting, and to learn from each other, we decided to talk about what another team member had worked on. We pulled up interesting cases and specific elements in order to highlight important points.
