@@ -55,6 +55,7 @@ const SuggestChange = () => {
               value={textInput}
               onChange={onChange}
               data-testid="input-box"
+              required
             ></textarea>
             <br />
             <button className="change-button" type="submit">
