@@ -176,7 +176,7 @@ const Map = ({
             className="search-bar"
             onChange={event => setSearchLocation(event.target.value)}
           ></input>
-          <Search onClick={geocodeSearch} />
+          <Search data-testid="submit-geocode" onClick={geocodeSearch} />
           <div className="wrapper">
             <div id="google-map" ref={googleMapRef} className="map-area" />
             <div className="over-map">
