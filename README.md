@@ -109,12 +109,16 @@ Our changes following user testing:
 
 ### 🏃First Build Sprint
 
+![](https://i.imgur.com/JpnwXGq.png)
+
 - Mon/Tues: slow start: planning and researching.  Lots of big initial blockers.
 - Weds: trying to figure out how to build Express backend with React front end, also how to overwrite Git project
 - Thurs: Lift off! Move Google Maps call to front end, stick with Express for AirTable. Connected pages by using React Router
 - Fri: Displayed markers by accessing dummy data - made improvements with making a connection between both our map API and our airtable API - made initial style for main pages - added all of necessary svg icons - rendered the components in App by passing their states too so they can be updated/accessed where needed.
 
 ### 🏃Second Build Sprint
+
+![](https://i.imgur.com/yJ2205u.png)
 
 - Monday: Sprint #1 mini presentations (we've talked about what we've found interesting from the prev. week and showed our estimates and actuals to the class). Start new week with a new sprint planning. Continue with styling/svg and connections between routes. Connected both the map API and the airtable API, managed to display the pins with the correct data accessed from our database. Initial search bar that finds the places inputed by the user. 
 - Tuesday: Updated database - small map error handling has been implemented - initial move to make the app responsive for mobile as our approach was more desktop at the beginning. - set up CodeCov and Travis - EsLint and prettier have been configured - made services' element clickable by adding mailto: and phone: - add SVG animation for thank you page and add a small pop-up after being in the map for 6 seconds, needs fixing. We have separated the tasks and each one has taken an specific task to do. Pretty well organised. 
