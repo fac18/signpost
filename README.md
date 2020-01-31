@@ -42,7 +42,9 @@ Signpost is an app/desktop website that lets people experiencing or at risk of h
 
 ### User Journey
 
+
 ### User Stories
+[User stories doc](https://docs.google.com/document/d/1HgGcLrVzai1T27yJSQyO0vW0nqcD8waRmjuJtfOCnys/edit)
 
 ### Design Process
 #### Initial Exploration
