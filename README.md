@@ -104,10 +104,10 @@ We made a list of all the 'screens' and divided them up between us
 
 ##### Figma snapshots
 
-![](https://i.imgur.com/GuOQCWf.png =500x)
-![](https://i.imgur.com/xZDmCoX.png =400x)
+![](https://i.imgur.com/GuOQCWf.png)
+![](https://i.imgur.com/xZDmCoX.png)
 ![](https://i.imgur.com/xwhVcSq.png)
-![](https://i.imgur.com/5b621aM.png =450x)
+![](https://i.imgur.com/5b621aM.png)
 
 #### User Testing
 
